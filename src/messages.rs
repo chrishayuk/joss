@@ -82,9 +82,6 @@ pub enum Message {
     FieldsRunTogether,
     /// E31.
     CantExpress,
-    /// Not in the listing: `arg(0,0)`, which has no direction. SUPPLIED: the
-    /// situation exists, and how JOSS answered it was not recovered.
-    ArgOfOrigin,
 }
 
 /// Every message, for lists and for tests.
@@ -119,7 +116,6 @@ pub const ALL: &[Message] = &[
     Message::IllegalIteration,
     Message::FieldsRunTogether,
     Message::CantExpress,
-    Message::ArgOfOrigin,
 ];
 
 impl Message {
@@ -170,7 +166,6 @@ impl Message {
             IllegalIteration => "Illegal set of values for iteration.",
             FieldsRunTogether => "Your fields run together in the form.",
             CantExpress => "I can't express value in your form.",
-            ArgOfOrigin => "I have arguments of zero for arg.",
         }
     }
 }

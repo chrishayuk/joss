@@ -24,7 +24,7 @@ Error above:  Negative argument for sqrt.
 Set e=2.71828183.
 Type log(1), log(2), log(e).
   log(1) =      0
-  log(2) =       .693147181
+  log(2) =       .69314718
   log(e) =      1
 
 Type exp(0), exp(.5), exp(1).

@@ -205,7 +205,6 @@ fn fault(fault: Fault) -> Trouble {
         Fault::NegativeBase => Message::NegativeBase,
         Fault::ZeroToNegative => Message::ZeroToNegative,
         Fault::BadAngle => Message::BadAngle,
-        Fault::BadArg => Message::ArgOfOrigin,
     })
 }
 

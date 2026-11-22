@@ -116,7 +116,10 @@ term: `-3*2` is -9.
 
 Numbers are held as nine decimal digits and a power of ten from -99 to
 99. Results are rounded to nine digits; a result too large is an error
-and one too small is nought.
+and one too small is nought. `log`, `exp` and powers are worked out as the
+routines of the listing of January 1965 work them out, which is not always
+the correctly rounded answer: a logarithm below 1 is cut off at nine digits,
+and a whole power below 30 is done by repeated squaring (chapter 16).
 
 ## Functions
 
@@ -192,7 +195,6 @@ Arithmetic:
 | `I have a negative base to a fractional power.` | `(-8)*.5` |
 | `I have zero to a negative power.` | `0*(-1)` |
 | `Please keep \|x\|<100 for sin(x) or cos(x).` | `sin(100)` |
-| `I have arguments of zero for arg.` | `arg(0,0)` (supplied: see chapter 16) |
 
 Values and numbers:
 
@@ -258,7 +260,6 @@ Type log(0).
 Type (-8)*.5.
 Type 0*(-1).
 Type sin(100).
-Type arg(0,0).
 Type x.
 Type v(100).
 Type 3.141592653.
@@ -321,8 +322,6 @@ Type 0*(-1).
 Error above:  I have zero to a negative power.
 Type sin(100).
 Error above:  Please keep |x|<100 for sin(x) or cos(x).
-Type arg(0,0).
-Error above:  I have arguments of zero for arg.
 Type x.
 Error above:  x is undefined.
 Type v(100).

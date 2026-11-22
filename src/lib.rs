@@ -6,5 +6,6 @@ pub mod lex;
 pub mod messages;
 pub mod num;
 pub mod parse;
+pub mod routines;
 pub mod session;
 pub mod transcript;

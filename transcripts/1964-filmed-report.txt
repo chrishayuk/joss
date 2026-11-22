@@ -35,16 +35,19 @@ J~ 3/2 = 1.5
 J~ 3*2 = 9
 U: Type [.7*5-2.3*(-.7)]/[7*6-|9*5-5*7|*(2/3)].
 J~ [.7*5-2.3*(-.7)]/[7*6-|9*5-5*7|*(2/3)] = -3.33630357·10*(-6)
-~: [.7*5-2.3*(-.7)]/[7*6-|9*5-5*7|*(2/3)] =-3.33630356·10*(-6)
-# One unit in the ninth digit. The answer is that sensitive to 2.3*(-.7), which
-# is .5582008774: JOSS evidently had .558200878 where this has .558200877.
+# Reproduced by following the listing's arithmetic: 7*6, 9*5 and 5*7 by repeated
+# squaring (routine =35), 2.3*(-.7) and 19076*(2/3) as exp[b·log(a)] with the
+# listing's own log and exp (F1, F2). Correctly rounded functions give ...356.
 U: Type sqrt(49).
 J~ sqrt(49) = 7
 U: Type sqrt(sqrt(sqrt(sqrt(3*2*2*2*2)))).
 J~ sqrt(sqrt(sqrt(sqrt(3*2*2*2*2)))) = 3
 U: Type cos (3.14159265/4).
-# Put right (4): the report prints the answer without the space the user typed
-# after cos. JOSS labels an answer with the expression as typed.
+# Changed (4), interpretation: the report prints the answer without the space the
+# user typed after cos. JOSS labels an answer with the expression as typed, so
+# one of the two lines was retyped inaccurately; which one is not known. The
+# verifier compares this retyped line with spaces left out, so either reading
+# passes.
 J~ cos (3.14159265/4) = .707106781
 U: Type log(2.71828183).
 J~ log(2.71828183) = 1
@@ -72,9 +75,9 @@ J~
 J~       x =  2
 J~ sqrt(x) =  1.41421356
 J~  log(x) =   .69314718
-~:   log(x) =       .693147181
-# log 2 is .69314718056. JOSS typed nine digits and dropped a nought at the end,
-# so its log 2 was .693147180: one unit low in the ninth digit.
+# log(2) is .69314718056. The page has .69314718, which is .693147180: routine
+# F1 of the January 1965 listing cuts a log below 1 off at nine digits rather
+# than rounding it (cards F001E660-E670), and this reconstruction follows it.
 J~  exp(x) =  7.3890561
 J~
 J~       x =  3
@@ -209,10 +212,10 @@ J:  70   8.3666003   4.2484952    2.5154387 30
 J:
 J:  71   8.4261498   4.2626799    6.8376712 30
 J:  72   8.4852814   4.2766661    1.8586717 31
-~:  72   8.4852814   4.2766661    1.8586718 31
-# e to the 72nd is 1.858671745...·10*31. To nine digits that is 1.85867175, which
-# this form would round to ...718. JOSS typed ...717: its own exp(72) was one
-# unit low in the ninth digit.
+# e to the 72nd is 1.858671745...·10*31, which rounds to 1.85867175 at nine
+# digits. Routine F2 of the January 1965 listing, followed here, gives
+# 1.85867174 (it works from x·log10(e) with an eleven-digit constant), which
+# this form types as 1.8586717, as on the page.
 J:  73   8.5440038   4.2904594    5.0523936 31
 J:  74   8.6023253   4.3040651    1.3733830 32
 J:  75   8.6602540   4.3174881    3.7332420 32

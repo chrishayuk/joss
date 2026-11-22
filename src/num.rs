@@ -12,6 +12,8 @@
 
 use std::cmp::Ordering;
 
+use crate::routines;
+
 /// Significant digits carried.
 pub const DIGITS: u32 = 9;
 /// The largest and smallest power of ten of the leading digit.
@@ -35,8 +37,6 @@ pub enum Fault {
     ZeroToNegative,
     /// sin or cos of a number too large for the answer to mean anything.
     BadAngle,
-    /// arg(0,0).
-    BadArg,
 }
 
 /// `m` × 10^(`e` − 8). Either `m` is 0 (and `e` is 0), or 10^8 ≤ |m| < 10^9,
@@ -342,6 +342,14 @@ impl Num {
     /// b an integer and a an integer power of 10, b = .5, b = -.5, and b an
     /// integer with 2 ≤ b ≤ 29, before resorting to exp[b·log(a)]."
     /// (P-2922, p. 25)
+    ///
+    /// The order and the methods are those of routine =35 of the January
+    /// 1965 listing (pp. 166-168). In particular a whole power below 30 is
+    /// done by repeated squaring (cards =035E816-852): the product starts at
+    /// 1, and for each binary digit of |b| from the lowest, if it is 1 the
+    /// product is multiplied by the current power, then the power is squared;
+    /// each multiplication is rounded to nine digits. For a negative b the
+    /// first power is 1/a, rounded.
     pub fn pow(self, b: Num) -> Result<Num, Fault> {
         let a = self;
         // Anything to the power 0 is 1, zero included: the listing's
@@ -352,65 +360,94 @@ impl Num {
         if a.m == 0 {
             return if b.m > 0 { Ok(ZERO) } else { Err(Fault::ZeroToNegative) };
         }
-        let whole = b.to_i64();
-        if a.m < 0 && whole.is_none() {
+        let integral = b.is_integer();
+        if a.m < 0 && !integral {
             return Err(Fault::NegativeBase);
         }
-        if b == ONE {
-            return Ok(a);
+        // =035E290-360: a negative number to an odd power is negative. A
+        // whole b of ten digits or more ends in a nought, so is even.
+        let whole = |n: Num| -> Option<i128> {
+            (n.e <= 20).then(|| {
+                let m = n.m.abs() as i128;
+                if n.e >= 8 {
+                    m * 10i128.pow((n.e - 8) as u32)
+                } else {
+                    m / 10i128.pow((8 - n.e) as u32)
+                }
+            })
+        };
+        let odd = integral && b.e <= 8 && whole(b).is_some_and(|w| w % 2 == 1);
+        let sign = |n: Num| if a.m < 0 && odd { n.neg() } else { n };
+        let a_abs = a.abs();
+        // =035E370-390: |a| = 1.
+        if a_abs == ONE {
+            return Ok(sign(ONE));
         }
-        if let Some(n) = whole {
-            if a.is_power_of_ten() {
-                let e = a.e as i64 * n;
-                if e > MAX_EXP as i64 {
+        if integral {
+            // =035E700-795: a power of ten to a whole power.
+            if a_abs.is_power_of_ten() {
+                // Past 10^21 the answer is out of range whatever a is.
+                let size = whole(b).unwrap_or(i128::MAX / 1000);
+                let e = a.e as i128 * if b.m < 0 { -size } else { size };
+                if e > MAX_EXP as i128 {
                     return Err(Fault::Overflow);
                 }
-                if e < MIN_EXP as i64 {
+                if e < MIN_EXP as i128 {
                     return Ok(ZERO);
                 }
-                return Ok(Num { m: UNIT, e: e as i32 });
+                return Ok(sign(Num { m: UNIT, e: e as i32 }));
             }
-        }
-        let half = Num { m: 5 * UNIT, e: -1 };
-        if b == half {
-            return a.sqrt();
-        }
-        if b == half.neg() {
-            return ONE.div(a.sqrt()?);
-        }
-        if let Some(n) = whole {
-            if (2..=29).contains(&n) {
-                let mut result = a;
-                for _ in 1..n {
-                    result = result.mul(a)?;
+            // =035E800-852: |b| below 30, by repeated squaring.
+            if let Some(whole) = whole(b).filter(|w| *w < 30) {
+                let mut power = if b.m < 0 { ONE.div(a_abs)? } else { a_abs };
+                let mut product = ONE;
+                let mut rest = whole;
+                loop {
+                    if rest & 1 == 1 {
+                        product = product.mul(power)?;
+                    }
+                    rest >>= 1;
+                    if rest == 0 {
+                        break;
+                    }
+                    power = power.mul(power)?;
                 }
-                return Ok(result);
+                return Ok(sign(product));
+            }
+        } else {
+            // =035E440-504: b = 1/2 and b = -1/2.
+            let half = Num { m: 5 * UNIT, e: -1 };
+            if b.abs() == half {
+                let root = a.sqrt()?;
+                return if b.m > 0 { Ok(root) } else { ONE.div(root) };
             }
         }
-        // exp[b·log(a)], each of the three done to nine digits as JOSS did.
-        let magnitude = b.mul(a.abs().log()?)?.exp()?;
-        // A negative number to a whole power: the sign follows the power.
-        Ok(if a.m < 0 && whole.is_some_and(|n| n % 2 != 0) {
-            magnitude.neg()
-        } else {
-            magnitude
-        })
+        // =035E530-690: exp[b·log(a)], each of the three done to nine
+        // digits.
+        let magnitude = b.mul(a_abs.log()?)?.exp()?;
+        Ok(sign(magnitude))
     }
 
-    /// The natural logarithm.
+    /// The natural logarithm: routine F1 of the January 1965 listing.
     pub fn log(self) -> Result<Num, Fault> {
         if self.m <= 0 {
             return Err(Fault::BadLog);
         }
-        Num::from_f64(self.to_f64().ln())
+        routines::log(self.m, self.e)
     }
 
+    /// e to the power: routine F2 of the January 1965 listing.
     pub fn exp(self) -> Result<Num, Fault> {
-        // Past these the answer is out of range whatever the digits are.
-        if self.e >= 3 {
-            return if self.m > 0 { Err(Fault::Overflow) } else { Ok(ZERO) };
+        if self.m == 0 {
+            return Ok(ONE);
         }
-        Num::from_f64(self.to_f64().exp())
+        routines::exp(self.m < 0, self.m.abs(), self.e)
+    }
+
+    /// The number `coef` × 10^(`e` − 8), rounded to nine digits; overflow is
+    /// a fault and underflow is zero.
+    pub(crate) fn from_parts(negative: bool, coef: i64, e: i32) -> Result<Num, Fault> {
+        normal(negative, coef as i128, e - 8)
     }
 
     pub fn sin(self) -> Result<Num, Fault> {
@@ -431,9 +468,14 @@ impl Num {
     }
 
     /// arg(x, y): the angle of the point [x, y], from −π to π.
+    ///
+    /// arg(0,0) is 0: routine F10 of the January 1965 listing (pp. 56-57)
+    /// tests y = 0 first and sets the angle to zero (card F010E110) before it
+    /// looks at x, and the quadrant step that follows leaves a zero angle
+    /// alone when x is not negative.
     pub fn arg(x: Num, y: Num) -> Result<Num, Fault> {
         if x.m == 0 && y.m == 0 {
-            return Err(Fault::BadArg);
+            return Ok(ZERO);
         }
         Num::from_f64(y.to_f64().atan2(x.to_f64()))
     }
@@ -577,11 +619,41 @@ mod tests {
     }
 
     #[test]
+    fn powers_follow_the_listing() {
+        // Routine =35 of the January 1965 listing. Whole powers below 30 by
+        // repeated squaring, each product rounded: not the correctly rounded
+        // 15.4772823.
+        assert_eq!(n("1.23456789").pow(n("13")).unwrap(), n("15.4772825"));
+        // A power of ten to a large whole power: overflow, or underflow to
+        // zero, without the exponent arithmetic itself overflowing.
+        let big = Num { m: UNIT, e: 99 };
+        let small = Num { m: UNIT, e: -99 };
+        let huge = Num { m: UNIT, e: 17 };
+        assert_eq!(big.pow(huge), Err(Fault::Overflow));
+        assert_eq!(small.pow(huge), Ok(ZERO));
+        assert_eq!(big.pow(Num { m: UNIT, e: 99 }), Err(Fault::Overflow));
+        // A whole power too large for an i64 is still whole, and even.
+        assert_eq!(n("-1").pow(Num { m: UNIT, e: 18 }), Ok(ONE));
+        assert_eq!(n("-1").pow(n("3")), Ok(n("-1")));
+        assert_eq!(n("-2").pow(Num { m: UNIT, e: 18 }), Err(Fault::Overflow));
+        assert_eq!(n("2").pow(n("-3")).unwrap(), n(".125"));
+        assert_eq!(n("-2").pow(n("-3")).unwrap(), n("-.125"));
+        assert_eq!(n("3").pow(n("-.5")).unwrap(), n(".577350268"));
+    }
+
+    #[test]
+    fn arg_of_the_origin_is_zero() {
+        // Routine F10 tests y = 0 before x (card F010E110).
+        assert_eq!(Num::arg(ZERO, ZERO), Ok(ZERO));
+    }
+
+    #[test]
     fn the_functions_hit_their_magic_values() {
         // Figure 3b of P-2922.
         let e = n("2.71828183");
         assert_eq!(ONE.log().unwrap(), ZERO);
-        assert_eq!(n("2").log().unwrap(), n(".693147181"));
+        // The listing cuts a log below 1 off at nine digits: see routines.rs.
+        assert_eq!(n("2").log().unwrap(), n(".69314718"));
         assert_eq!(e.log().unwrap(), ONE);
         assert_eq!(ZERO.exp().unwrap(), ONE);
         assert_eq!(n(".5").exp().unwrap(), n("1.64872127"));

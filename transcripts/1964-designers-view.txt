@@ -39,9 +39,9 @@ U: Set e=2.71828183.
 U: Type log(1), log(2), log(e).
 J:   log(1) =      0
 J:   log(2) =       .69314718
-~:   log(2) =       .693147181
-# log 2 is .69314718056. JOSS dropped a nought at the end, so its log 2 was
-# .693147180: one unit low in the ninth digit.
+# log(2) is .69314718056. The page has .69314718, which is .693147180: routine
+# F1 of the January 1965 listing cuts a log below 1 off at nine digits rather
+# than rounding it (cards F001E660-E670), and this reconstruction follows it.
 J:   log(e) =      1
 U:
 U: Type exp(0), exp(.5), exp(1).
@@ -170,9 +170,9 @@ J:
 J:        x =      2
 J:  sqrt(x) =      1.41421356
 J:   log(x) =       .69314718
-~:   log(x) =       .693147181
-# log 2 is .69314718056. JOSS dropped a nought at the end, so its log 2 was
-# .693147180: one unit low in the ninth digit.
+# log(2) is .69314718056. The page has .69314718, which is .693147180: routine
+# F1 of the January 1965 listing cuts a log below 1 off at nine digits rather
+# than rounding it (cards F001E660-E670), and this reconstruction follows it.
 J:   exp(x) =      7.3890561
 J:
 J:        x =      3

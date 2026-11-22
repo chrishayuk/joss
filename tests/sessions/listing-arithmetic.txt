@@ -1,0 +1,41 @@
+# Not an original page. A session typed for this test, to hold the reconstruction to
+# what the listing of January 1965 does where no page shows it: a form number that
+# is an expression (G11, p. 78); powers (=35, pp. 166-168), including whole powers
+# by repeated squaring and the overflow and underflow of a power of ten; arg(0,0)
+# (F10, pp. 56-57); and log and exp as routines F1 and F2 compute them (pp. 44-47).
+# 1.23456789*13 by repeated squaring is 15.4772825; correctly rounded it is
+# 15.4772823. log(2) is .69314718056: F1 cuts a log below 1 off at nine digits.
+U: Set n=2.
+U: Form n:
+U: x = __.__
+U: Type 3.14159 in form 2.
+J: x =  3.14
+U: Form n+.5:
+J: Error above:  Form number must be integer and 0<form<10*9.
+U: Form m:
+J: Error above:  m is undefined.
+U: Type (10*99)*(10*17).
+J: Error above:  I have an overflow.
+U: Type (10*(-99))*(10*17).
+J: (10*(-99))*(10*17) =  0
+U: Type (-1)*(10*18).
+J: (-1)*(10*18) =   1
+U: Type (-2)*(10*18).
+J: Error above:  I have an overflow.
+U: Type 1.23456789*13.
+J: 1.23456789*13 =  15.4772825
+U: Type (-2)*3, 2*(-3), (-2)*(-3), 3*(-.5), 4*.5.
+J:   (-2)*3 =      -8
+J:   2*(-3) =        .125
+J: (-2)*(-3) =      -.125
+J:  3*(-.5) =        .577350268
+J:     4*.5 =       2
+U: Type arg(0,0), arg(-1,0).
+J: arg(0,0) =       0
+J: arg(-1,0) =      3.14159265
+U: Type log(2), log(.5), log(10), exp(72), exp(100).
+J:   log(2) =        .69314718
+J:  log(.5) =       -.69314718
+J:  log(10) =       2.30258509
+J:  exp(72) =       1.85867174·10*31
+J: exp(100) =       2.68811714·10*43

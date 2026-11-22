@@ -83,6 +83,7 @@ it:
 | `joss --quiet file` | only what JOSS typed |
 | `joss --colour file` | your lines in green, as the console's ribbon had them |
 | `joss --year 1964 file` | the JOSS of March 1964: its wording and its columns (see below) |
+| `joss -i file` | type the lines in a file, then hand the typewriter over: carry on at the console |
 | `joss --check file` | read a file without running it and say what is wrong with it |
 | `joss --verify transcripts/*.txt` | replay the original sessions and compare with the page |
 | `joss --patience N` | press the interrupt key after N steps |

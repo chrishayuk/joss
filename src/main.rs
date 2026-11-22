@@ -5,6 +5,8 @@
 //!     joss --marked file       the same, with `U: ` and `J: ` in front of
 //!                              each line to show who typed it
 //!     joss --quiet file        print only what JOSS typed
+//!     joss -i file             type the lines in a file, then hand the
+//!                              typewriter over: carry on at the console
 //!     joss --check file        read a file without running it; report lines
 //!                              that are not JOSS
 //!     joss --verify file...    replay transcripts of original sessions (see
@@ -37,7 +39,7 @@ enum Show {
     Quiet,
 }
 
-const USAGE: &str = "usage: joss [--marked | --quiet] [--colour] [--year 1964|1965] [--patience N] [file]\n       joss --check file...\n       joss --verify transcript...";
+const USAGE: &str = "usage: joss [--marked | --quiet] [--colour] [--year 1964|1965] [--patience N] [-i] [file]\n       joss --check file...\n       joss --verify transcript...";
 
 fn main() -> ExitCode {
     let mut show = Show::Page;
@@ -45,6 +47,7 @@ fn main() -> ExitCode {
     let mut check = false;
     let mut verify = false;
     let mut status = false;
+    let mut then_console = false;
     let mut year = Year::Y1965;
     let mut patience = None;
     let mut files = Vec::new();
@@ -57,6 +60,7 @@ fn main() -> ExitCode {
             "--check" => check = true,
             "--verify" => verify = true,
             "--status" => status = true,
+            "-i" | "--interactive" => then_console = true,
             "--year" => match args.next().as_deref() {
                 Some("1964") => year = Year::Y1964,
                 Some("1965") => year = Year::Y1965,
@@ -96,17 +100,31 @@ fn main() -> ExitCode {
     }
 
     let stdin = io::stdin();
-    let interactive = files.is_empty() && stdin.is_terminal();
-    let lines: Box<dyn Iterator<Item = io::Result<String>>> = match files.first() {
+    // Lines from a file are echoed onto the page; lines typed at a terminal
+    // are already there.
+    let at_terminal = stdin.is_terminal();
+    let lines: Box<dyn Iterator<Item = (io::Result<String>, bool)>> = match files.first() {
         Some(path) => match std::fs::read_to_string(path) {
-            Ok(text) => Box::new(text.lines().map(|l| Ok(l.to_string())).collect::<Vec<_>>().into_iter()),
+            Ok(text) => {
+                let from_file = text
+                    .lines()
+                    .map(|l| (Ok(l.to_string()), false))
+                    .collect::<Vec<_>>()
+                    .into_iter();
+                if then_console {
+                    Box::new(from_file.chain(stdin.lock().lines().map(move |l| (l, at_terminal))))
+                } else {
+                    Box::new(from_file)
+                }
+            }
             Err(error) => {
                 eprintln!("joss: {path}: {error}");
                 return ExitCode::from(2);
             }
         },
-        None => Box::new(stdin.lock().lines()),
+        None => Box::new(stdin.lock().lines().map(move |l| (l, at_terminal))),
     };
+    let mut interactive = false;
 
     let mut session = Session::new();
     session.patience = patience;
@@ -114,7 +132,8 @@ fn main() -> ExitCode {
     let mut out = io::stdout().lock();
     // JOSS typed in black and the user in green.
     let (green, plain) = if colour { ("\x1b[32m", "\x1b[0m") } else { ("", "") };
-    for line in lines {
+    for (line, typed_here) in lines {
+        interactive = typed_here;
         let Ok(line) = line else { break };
         // `! interrupt after 13 lines`: not something typed, but a key
         // pressed. The INTERRUPT button is pressed once JOSS has typed that

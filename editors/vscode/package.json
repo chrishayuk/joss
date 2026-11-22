@@ -2,50 +2,142 @@
   "name": "joss-language",
   "displayName": "JOSS",
   "description": "Syntax highlighting, a language server and a run button for JOSS, the conversational language RAND ran on the JOHNNIAC in 1963-65.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "publisher": "chrishayuk",
   "license": "Apache-2.0",
   "private": true,
-  "repository": { "type": "git", "url": "https://github.com/chrishayuk/joss" },
-  "engines": { "vscode": "^1.85.0" },
-  "categories": ["Programming Languages", "Linters"],
-  "keywords": ["joss", "johnniac", "rand", "retro", "language server"],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chrishayuk/joss"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Programming Languages",
+    "Linters"
+  ],
+  "keywords": [
+    "joss",
+    "johnniac",
+    "rand",
+    "retro",
+    "language server"
+  ],
   "main": "./dist/extension.js",
   "activationEvents": [],
   "contributes": {
     "languages": [
       {
         "id": "joss",
-        "aliases": ["JOSS", "joss"],
-        "extensions": [".joss"],
+        "aliases": [
+          "JOSS",
+          "joss"
+        ],
+        "extensions": [
+          ".joss"
+        ],
         "configuration": "./language-configuration.json"
       }
     ],
     "grammars": [
-      { "language": "joss", "scopeName": "source.joss", "path": "./syntaxes/joss.tmLanguage.json" }
+      {
+        "language": "joss",
+        "scopeName": "source.joss",
+        "path": "./syntaxes/joss.tmLanguage.json"
+      }
     ],
-    "snippets": [{ "language": "joss", "path": "./snippets/joss.code-snippets" }],
+    "snippets": [
+      {
+        "language": "joss",
+        "path": "./snippets/joss.code-snippets"
+      }
+    ],
     "commands": [
-      { "command": "joss.run", "title": "Run Session", "category": "JOSS", "icon": "$(play)" },
-      { "command": "joss.realCharacters", "title": "Write · ≠ ≤ ≥ for @ != <= >=", "category": "JOSS" },
-      { "command": "joss.restartServer", "title": "Restart Language Server", "category": "JOSS" }
+      {
+        "command": "joss.run",
+        "title": "Run Session",
+        "category": "JOSS",
+        "icon": "$(play)"
+      },
+      {
+        "command": "joss.realCharacters",
+        "title": "Write · ≠ ≤ ≥ for @ != <= >=",
+        "category": "JOSS"
+      },
+      {
+        "command": "joss.restartServer",
+        "title": "Restart Language Server",
+        "category": "JOSS"
+      }
     ],
     "menus": {
-      "editor/title/run": [{ "command": "joss.run", "when": "resourceLangId == joss" }],
+      "editor/title/run": [
+        {
+          "command": "joss.run",
+          "when": "resourceLangId == joss"
+        }
+      ],
       "commandPalette": [
-        { "command": "joss.run", "when": "editorLangId == joss" },
-        { "command": "joss.realCharacters", "when": "editorLangId == joss" },
-        { "command": "joss.restartServer", "when": "editorLangId == joss" }
+        {
+          "command": "joss.run",
+          "when": "editorLangId == joss"
+        },
+        {
+          "command": "joss.realCharacters",
+          "when": "editorLangId == joss"
+        },
+        {
+          "command": "joss.restartServer",
+          "when": "editorLangId == joss"
+        }
       ]
     },
     "keybindings": [
-      { "command": "joss.run", "key": "ctrl+enter", "mac": "cmd+enter", "when": "editorTextFocus && editorLangId == joss" },
-      { "command": "type", "args": { "text": "·" }, "key": "alt+8", "when": "editorTextFocus && !editorReadonly && editorLangId == joss" },
-      { "command": "type", "args": { "text": "≠" }, "key": "alt+=", "when": "editorTextFocus && !editorReadonly && editorLangId == joss" },
-      { "command": "type", "args": { "text": "≤" }, "key": "alt+,", "when": "editorTextFocus && !editorReadonly && editorLangId == joss" },
-      { "command": "type", "args": { "text": "≥" }, "key": "alt+.", "when": "editorTextFocus && !editorReadonly && editorLangId == joss" }
+      {
+        "command": "joss.run",
+        "key": "ctrl+enter",
+        "mac": "cmd+enter",
+        "when": "editorTextFocus && editorLangId == joss"
+      },
+      {
+        "command": "type",
+        "args": {
+          "text": "·"
+        },
+        "key": "alt+8",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == joss"
+      },
+      {
+        "command": "type",
+        "args": {
+          "text": "≠"
+        },
+        "key": "alt+=",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == joss"
+      },
+      {
+        "command": "type",
+        "args": {
+          "text": "≤"
+        },
+        "key": "alt+,",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == joss"
+      },
+      {
+        "command": "type",
+        "args": {
+          "text": "≥"
+        },
+        "key": "alt+.",
+        "when": "editorTextFocus && !editorReadonly && editorLangId == joss"
+      }
     ],
-    "taskDefinitions": [{ "type": "joss" }],
+    "taskDefinitions": [
+      {
+        "type": "joss"
+      }
+    ],
     "configuration": {
       "title": "JOSS",
       "properties": {
@@ -61,7 +153,11 @@
         },
         "joss.trace.server": {
           "type": "string",
-          "enum": ["off", "messages", "verbose"],
+          "enum": [
+            "off",
+            "messages",
+            "verbose"
+          ],
           "default": "off",
           "description": "Log the messages exchanged with the language server."
         }

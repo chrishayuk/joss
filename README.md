@@ -48,12 +48,12 @@ joss                       # sit at the console
 echo 'Type 2+2.' | joss
 ```
 
-For Visual Studio Code, download `joss-language-0.1.1.vsix` from the
+For Visual Studio Code, download `joss-language-0.1.2.vsix` from the
 [latest release](https://github.com/chrishayuk/joss/releases/latest) and
 install it:
 
 ```bash
-code --install-extension joss-language-0.1.1.vsix
+code --install-extension joss-language-0.1.2.vsix
 ```
 
 Open any `.joss` file and you get highlighting, hover help, problems as you

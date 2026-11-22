@@ -2,7 +2,7 @@
   "name": "joss-language",
   "displayName": "JOSS",
   "description": "Syntax highlighting, a language server and a run button for JOSS, the conversational language RAND ran on the JOHNNIAC in 1963-65.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "chrishayuk",
   "license": "Apache-2.0",
   "private": true,

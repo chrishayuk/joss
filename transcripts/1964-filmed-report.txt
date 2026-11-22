@@ -10,7 +10,7 @@
 # P: the paper moved to a new page      ! a key pressed, or a setting
 # ~: what this reconstruction types instead of the J: line above it
 #
-# Five things are put right, each marked where it happens. Not reproduced: the
+# Four things are put right, each marked where it happens. Not reproduced: the
 # sign-on (JOSS typed "Press 'IN' for JOSS service." and "Please identify
 # yourself."; the user typed RAND) and the line "3-21-64 RAND" that headed each page.
 ! joss 1964

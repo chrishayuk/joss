@@ -270,7 +270,17 @@ JOSS types. `cargo test` runs every one and compares (`tests/tutorial.rs`).
 
 ## In the browser
 
-`web/` is a playground that runs the console in a web page. The interpreter
+`web/` is a playground that runs the console in a web page. It opens on a
+typewriter, because that is what JOSS was: paper on a platen, your lines in
+green and JOSS's in black, a red light while JOSS has the typewriter, and a
+soft gong when it hands it back. JOSS types at ten characters a second, as
+the papers say it did, or faster if you ask. It signs on as the listing of
+January 1965 does ("JOSS at your service." "Initials please:") or as the
+1964 film does, and heads each page with the time, the date and your
+initials. The sign-on and the headings are played by the page
+(`web/typewriter.js`, which says where each comes from); everything after
+them is the interpreter. `?sit=1965-primes` types a sitting in; `&speed=fast`.
+Below it is a second view, for typing in a file. The interpreter
 is compiled unchanged for WASI (`wasm32-wasip1`), and `web/wasi.js` is a small
 host that supplies standard input and output, so no other library is needed.
 

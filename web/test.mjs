@@ -66,6 +66,13 @@ const film = new Sitting((request) => replay(module, request), { year: "1964" })
 await film.type("Type 7/0.");
 check("1964", film.result.page.at(-1).text === "Error above:  Zero divisor.");
 
+// The typewriter's keys: `@` is the raised dot, and so on, but not inside
+// quotes and not in the picture of a form.
+const { typewriterKeys } = await import("./typewriter.js");
+check("typewriter keys", typewriterKeys("Type x@2 if a != b <= c >= d.") === "Type x·2 if a ≠ b ≤ c ≥ d.");
+check("typewriter keys in quotes", typewriterKeys('Type "a@b != c".') === 'Type "a@b != c".');
+check("typewriter keys in a form", typewriterKeys("x = __ @ != __", true) === "x = __ @ != __");
+
 // The language server, as the editor asks it.
 let asked = 0;
 if (existsSync(root + "web/lsp-worker.js") && existsSync(root + "web/joss-lsp.wasm")) {

@@ -38,6 +38,8 @@
   .lamp { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; background: #b53a2a; }
   .lamp.green { background: #2e9a55; }
   #report { white-space: pre-wrap; font: 13px/1.5 ui-monospace, Menlo, monospace; background: var(--paper); color: var(--ink); border: 1px solid var(--rule); padding: 12px; margin-top: 12px; display: none; }
+  .sit { margin: 8px 0 24px; }
+  .sit .label button, .sit .label select { font-size: 12px; }
   .joss-hover { max-width: 46ch; font: 13px/1.45 system-ui, sans-serif; padding: 4px 6px; }
   .joss-hover code { font-family: ui-monospace, Menlo, monospace; }
 </style>
@@ -50,6 +52,12 @@
      When something goes wrong, put it right and type <code>Go.</code></p>
   <p class="dim">Times is <b>·</b> (type <code>@</code>), and <b>*</b> is “to the power”. Type <code>!=</code>, <code>&lt;=</code>, <code>&gt;=</code> for ≠ ≤ ≥. Every instruction ends with a full stop.</p>
 
+  <section class="sit">
+    <p class="label">Sit at the console <span class="dim">/ as it was in 1964 and 1965. Click the paper and type, or <button id="sit-play">TYPE A SITTING IN</button> <select id="sit-example"></select></span></p>
+    <div id="typewriter"></div>
+  </section>
+
+  <p class="label" style="margin-top:28px">Or type in a file</p>
   <div class="bar">
     <label>Sitting <select id="examples"></select></label>
     <label>JOSS of <select id="year"><option>1965</option><option>1964</option></select></label>
@@ -283,6 +291,26 @@ examples = exampleList;
 transcripts = transcriptList;
 for (const example of examples) $("examples").append(new Option(example.name));
 for (const transcript of transcripts) $("transcripts").append(new Option(transcript.name));
+
+// The typewriter. `?sit=name` types that sitting in at it; `&speed=fast`.
+const query = new URLSearchParams(location.search);
+const { mountTypewriter } = await import("./typewriter.js");
+const sitExample = examples.find((e) => e.name === query.get("sit"));
+const typewriter = mountTypewriter($("typewriter"), {
+  year: sitExample?.year ?? "1965",
+  speed: query.get("speed") ?? "1964",
+  signOn: query.get("signon") !== "no",
+});
+for (const example of examples) $("sit-example").append(new Option(example.name));
+$("sit-example").value = sitExample?.name ?? "1965-quadratic-with-mistakes";
+$("sit-play").addEventListener("click", async () => {
+  const example = examples.find((e) => e.name === $("sit-example").value);
+  if (!example) return;
+  await typewriter.setYear(example.year);
+  typewriter.play(example.lines);
+});
+window.jossTypewriter = typewriter;
+if (sitExample) typewriter.play(sitExample.lines);
 
 import("./editor.js")
   .then((module) => module.upgrade($("program")))

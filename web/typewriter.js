@@ -81,7 +81,9 @@ class Sound {
     this.ctx = null;
   }
   wake() {
-    if (!this.on) return null;
+    // Silent until the reader has clicked or typed on the page: a browser will
+    // not start sound before then, and should not be asked to.
+    if (!this.on || (typeof navigator !== "undefined" && navigator.userActivation && !navigator.userActivation.hasBeenActive)) return null;
     try {
       this.ctx ??= new (window.AudioContext || window.webkitAudioContext)();
       if (this.ctx.state === "suspended") this.ctx.resume();

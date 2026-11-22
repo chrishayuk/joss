@@ -1,0 +1,18 @@
+* A user had 720 words for steps, forms, values and the place JOSS keeps
+* in a task. This part asks for itself and never stops, so each Do takes
+* a little more, until there is none left.
+1.1 Set n = n+1.
+1.2 Do part 1.
+Type size.
+9
+Set n = 0.
+Do part 1.
+I need more storage space.
+Type n.
+       n =      59
+Type size.
+720
+* The task is still there, waiting. Cancel gives its space back.
+Cancel.
+Type size.
+12

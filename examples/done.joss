@@ -1,0 +1,8 @@
+* Done leaves the part at once. Here it passes over the numbers that are
+* not wanted; the for goes on to the next value.
+1.1 Done if fp(n/3) = 0.
+1.2 Done if fp(n/5) = 0.
+1.3 Type n in form 1.
+Form 1:
+__ divides by neither 3 nor 5
+Do part 1 for n = 1(1)20.

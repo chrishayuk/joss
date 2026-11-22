@@ -1,0 +1,69 @@
+* From J. C. Shaw, "JOSS: Examples of the Use of an Experimental On-Line Computing Service", RAND P-3131, April 1965, pages 6 and 7.
+*  Matrix inversion with simple pivoting on the diagonal.
+
+1.1 Set p=a(n,n).
+1.2 Set a(n,n)=1.
+1.3 Do part 2 for j=1(1)N.
+1.4 Do part 3 for i=1(1)N.
+
+2.1 Set a(n,j)=a(n,j)/p.
+
+3.1 Done if i=n.
+3.2 Set q=a(i,n).
+3.3 Set a(i,n)=0.
+3.4 Do part 4 for j=1(1)N.
+
+4.1 Set a(i,j)=a(i,j)-a(n,j)·q.
+
+*  JOSS can help with the input:
+
+11.1 Demand a(i,j).
+12.1 Do part 11 for j=1(1)N.
+
+*  For the output:
+
+21.1 Type a(i,1), a(i,2), a(i,3), a(i,4) in form 1.
+Form 1:
+__._____  __._____  __._____  __._____
+
+Do part 12 for *
+*  An asterisk at the end can kill the line... I forgot something:
+Set N=4.
+Do part 12 for i=1(1)N.
+  a(1,1) = 3.582
+  a(1,2) = -.670
+  a(1,3) = .873
+  a(1,4) = 1.055
+  a(2,1) = -.251
+  a(2,2) = 4.569
+  a(2,3) = .675
+  a(2,4) = -.497
+  a(3,1) = 1.675
+  a(3,2) = -.764
+  a(3,3) = 2.781
+  a(3,4) = .778
+  a(4,1) = .564
+  a(4,2) = -.466
+  a(4,3) = 1.387
+  a(4,4) = 4.965
+Do part 21 for i=1(1)4.
+ 3.58200   -.67000    .87300   1.05500
+ -.25100   4.56900    .67500   -.49700
+ 1.67500   -.76400   2.78100    .77800
+  .56400   -.46600   1.38700   4.96500
+Do part 1 for n=1(1)N.
+Do part 21 for i=1(1)4.
+  .32861    .02877   -.08326   -.05390
+  .04839    .21513   -.07921    .02366
+ -.19033    .04018    .42024   -.02139
+  .02038    .00570   -.11537    .21573
+
+*  Invert the matrix back again:
+
+Do part 1 for n=1(1)N.
+Do part 21 for i=1(1)N.
+ 3.58200   -.67000    .87300   1.05500
+ -.25100   4.56900    .67500   -.49700
+ 1.67500   -.76400   2.78100    .77800
+  .56400   -.46600   1.38700   4.96500
+Delete all.

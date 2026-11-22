@@ -1,0 +1,24 @@
+* From J. C. Shaw, "JOSS: A Designer's View of an Experimental On-Line Computing System", RAND P-2922, August 1964, figure 3h.
+4.1 Demand b(i).
+4.2 Set s = s+b(i).
+
+Set s=0.
+Do part 4 for i=1(1)4.
+    b(1) = 543
+    b(2) = 237
+    b(3) = 411
+    b(4) = 733
+Type s.
+       s =   1924
+5.1 Set b(i) = b(i)/s.
+Do part 5 for i=1(1)4.
+Type b.
+    b(1) =       .282224532
+    b(2) =       .123180873
+    b(3) =       .213617464
+    b(4) =       .380977131
+Set s=0.
+Do step 4.2 for i=1(1)4.
+Type s.
+       s =      1
+Delete all.

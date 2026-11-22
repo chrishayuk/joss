@@ -1,0 +1,101 @@
+# JOSS_Program_Notes_and_Tests.pdf, pages 6-9 of 43. Typed list of the "=" directory
+# (subroutines), then D and G entries. From OCR (clean typescript; not re-verified
+# line by line).
+
+JOSS Routines:
+
+= 0   Read clock
+= 1   Step one character
+= 2   Advance to nonspace
+= 3   Eliminate spaces
+= 4   Put (P1) in next S cell (P12)+1
+= 5   Converter
+= 6   Packer
+= 7   Unpacker
+= 8   Assign buffer
+= 9   Assign drum
+= 10  Deal out a storage space
+= 11  Unpack (Q3)
+= 12  Push Q2-Q3 Operand PDL
+= 13  Pop Q2-Q3 Operand PDL
+= 14  Push Q4-Q5 Operator PDL
+= 15  Pop Q4-Q5 Operator PDL
+= 16  Push Q6-Q7 Auxiliary PDL
+= 17  Pop Q6-Q7 Auxiliary PDL
+= 18  Push Q8-Q9 Control PDL
+= 19  Pop Q8-Q9 Control PDL
+= 20  Evaluate unsigned numerical expression
+= 21  Evaluate expression
+= 22  Type time line
+= 23  Evaluate condition
+= 24  Convert function to operator
+[page 7]
+= 25  Output line from S to stn
+= 26  Evaluate grouped list
+= 27  Accumulate letters (6 max)
+= 28  Erase left linked list
+= 29  Erase right linked list
+= 30  Check range and pack (Q3)
+= 31  Add
+= 32  Subtract
+= 33  Multiply
+= 34  Divide
+= 35  Exponentiate
+= 36  Convert integer for output
+= 37  Simple direct tests
+= 38  Simple indirect tests
+= 39  Verify space and advance to nonspace in R
+= 40  Positive integer test on (Q3)
+= 41  Subscript range test and replace (Q3)
+= 42  Limit range test on (Q3)
+= 43  Deck test on (Q3)
+= 44  Part test on (Q3)
+= 45  Step test on (Q3)
+= 46  Form test on (Q3)
+= 47  Move stn to bottom of list
+= 48  'TO' routine
+= 49  Update time of last activity
+= 50  Find part a/c P20
+[page 8]
+= 51  Find step a/c P21
+= 52  Find form a/c P22
+= 53  Kick out current program (if any)
+= 54  Bring in program a/c stn (if any)
+= 55  Switch to user (CL+SU)
+= 56  Erase step a/c H21-H26
+= 57  Erase form a/c H24-H26
+= 58  Release current buffer (if any) for stn
+= 59  Release drum to available list
+= 60  Initialize drum for stn (H12)
+= 61  Convert time for output
+= 62  Insert space in output
+= 63  Copy step number from R to S
+= 64  Unpack message to S for output composition
+= 65  Output canned message
+= 66  Put (P11) in next S cell (P12)+1
+= 67  Block transfer R->S
+= 68  Compute part (P20) for step (P21)
+= 69  Insert period and CR+EOM in output
+= 70  Compare (H21) w (H22)
+= 71  Find single indexed value
+= 72  Find double indexed value
+= 73  Assign value
+= 74  Evaluate indexed letter
+= 75  Erase value(s) for letter
+= 76  Erase one level of control structure
+[page 9]
+= 77  Match groupers
+= 78  Cancel
+= 79  Verify preceding space
+= 80  Transmit line for drum routine
+D 0   Error routine
+D 1   Ext of G5 for 'all ---'
+D 2   Ext of G5 for spec. values
+D 3   Ext of G6 for 'all ---'
+D 4   Ext of D3 for 'all values'
+D 5
+D 6   Ext of G6 for spec. values
+D 7   Ext of G6 for values in form
+D 8   Ext of G6 for step, part, form, size
+G 5   Delete (step, part, form)
+G 6   Type (via D extensions)

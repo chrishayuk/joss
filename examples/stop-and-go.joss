@@ -1,0 +1,13 @@
+* Stop as a breakpoint. JOSS stops when it reaches the step and hands the
+* typewriter back. The user can look at values, change them, and say Go.
+1.1 Set t = t + n*2.
+1.2 Stop if n = 3.
+1.3 Type n, t in form 1.
+Form 1:
+n = __   sum of squares = ____
+
+Set t = 0.
+Do part 1 for n = 1(1)5.
+Type n, t.
+Delete step 1.2.
+Go.

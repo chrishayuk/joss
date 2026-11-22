@@ -1,0 +1,26 @@
+# page-13 (PDF p. 13, printed p. 5). RETYPED scenario text, continuous with page-12. See page-10 header.
+J:
+J:       x =  3
+J: sqrt(x) =  1.73205081
+J:  log(x) =  1.09861229
+J:  exp(x) = 20.0855369
+J:
+J:       x =  4
+J: Interrupted at step 1.1.
+# The first "J:" blank line above is the "_" of the x = 2 pass (the report's page break hides it).
+U: 1.1 Type x, sqrt(x), log(x), exp(x), in form 1.
+# ?? Printed here with a comma before "in form 1"; JOSS's own listing of this step on page-15
+# (Type all) is printed without that comma. One of the two is a typist slip.
+U: Form1:*
+# Line killed by the trailing asterisk; JOSS ignores it and types nothing.
+U: Form 1:
+U: ___  __._______  __._______   .............
+# Form picture measured: fields at columns 0-2, 5-14, 17-26 and 13 dots at columns 30-42.
+U: Go.
+J:   4   2.0000000   1.3862944    5.4598150 01
+J:   5   2.2360680   1.6094379    1.4841316 02
+J:   6   2.4494897   1.7917595    4.0342879 02
+J:   7   2.6457513   1.9459102    1.0966332 03
+J:   8   2.8284271   2.0794415    2.9809580 03
+J:   9   3.0000000   2.1972246    8.1030839 03
+J: Interrupted at step 1.1.

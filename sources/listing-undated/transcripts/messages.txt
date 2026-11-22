@@ -1,0 +1,33 @@
+# Undated JOSS listing (older than the Jan-65 "666" listing) -- message texts.
+# Region E, PDF pp. 3-7.  First column: error number and the directory comment
+# (pp. 3). Text: decoded from the octal data words read by eye from 400-dpi page
+# images where marked [octal]; otherwise taken from the upper-case printer comment
+# (which shows ≤ < ≥ | as "-" or "/"), marked [comment].
+E0   OUT OF SPACE                 Insufficient storage space.                       [octal]
+E1   OVERFLOW (sic "OVERLFOW")    Overflow.                                         [octal]
+E2   UNDEFINED VALUE              Undefined value.                                  [octal]
+E3   DIVISION BY ZERO             Attempting division by zero.                      [octal]
+E4   ILLEGAL INDEX                Index value must be integer and 0≤index≤99.       [comment; octal identical to Jan-65]
+E5   NUMERAL MORE THAN NINE DIGITS  Numerals must be less than ten digits long.     [octal]
+E6   MALFORMED                    Malformed.                                        [octal]
+E7   ILLEGAL LIMIT                Limit must be integer and |limit|<10*9.           [octal]
+E8   OPEN TASK + DO               Please "cancel" or "go" before anotther "do".     [octal]
+     # ?? the octal as I read it spells "anotther" (double t); comment says ANOTHER.
+     #    Either a typo in the original data or a misread digit.
+E9   ILLEGAL INDIRECT             This command must not be given indirectly.        [octal]
+E10  ILLEGAL DIRECT               This command must not be given directly.          [octal]
+E11  ILLEGAL DECK NUMBER          Deck number must be integer and 0<deck<10*9.      [octal]
+E12  ILLEGAL FORM NUMBER          Form number must be integer and 0<form<10*9.      [comment; octal identical to Jan-65]
+E13  ILLEGAL STEP NUMBER          Step number must satisfy 1≤step<10*9.             [comment; octal identical to Jan-65]
+E14  ILLEGAL ARG FOR SQRT         Attempting sqrt of a negative number.             [octal]
+E15  CONDITIONAL DIRECT           Direct commands must be unconditional.            [octal]
+E16  NO SUCH STEP                 The step called for doesn't exist.                [octal]
+E17  NO SUCH PART                 The part called for doesn't exist.                [comment + first 2 words octal]
+E18  ILLEGAL PART NUMBER          Part number must be integer and 0<part<10*9.      [comment; octal identical to Jan-65]
+E19  NO SUCH FORM                 The form called for doesn't exist.                [comment + first 2 words octal]
+E20  ILLEGAL ARG FOR LOG          Attempting log of a nonpositive number.           [octal]
+E21  NEGATIVE * NON INTEGER       Attempting negative base to noninteger power.     [octal]
+E22  ILLEGAL ARG FOR SIN OR COS   Attempting sin or cos of magnitude ≥100.          [octal]
+E23  ZERO * NEGATIVE              Attempting zero to a negative power.              [octal]
+# Framing (same pages): "Error in line above:  " and "Error in step " + step number + ":  "
+# Other: X1 (p. 28) "PLEASE TYPE YOUR INITIALS." [comment only, not decoded]

@@ -1,0 +1,20 @@
+* A row of Pascal's triangle. Each binomial coefficient comes from the one
+* before it: c becomes c·(n-k)/(k+1).
+1.1 Type n, k, c in form 1.
+1.2 Set c = c·(n-k)/(k+1).
+Form 1:
+__ choose __ is ____
+Set n = 10.
+Set c = 1.
+Do part 1 for k = 0(1)n.
+10 choose  0 is    1
+10 choose  1 is   10
+10 choose  2 is   45
+10 choose  3 is  120
+10 choose  4 is  210
+10 choose  5 is  252
+10 choose  6 is  210
+10 choose  7 is  120
+10 choose  8 is   45
+10 choose  9 is   10
+10 choose 10 is    1

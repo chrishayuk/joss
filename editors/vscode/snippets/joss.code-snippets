@@ -1,0 +1,6 @@
+{
+  "times": { "prefix": ["times", "dot"], "body": "·", "description": "· times (JOSS also accepts @)" },
+  "not equal": { "prefix": ["ne", "neq"], "body": "≠", "description": "≠ is not equal to (JOSS also accepts !=)" },
+  "at most": { "prefix": ["le", "leq"], "body": "≤", "description": "≤ is at most (JOSS also accepts <=)" },
+  "at least": { "prefix": ["ge", "geq"], "body": "≥", "description": "≥ is at least (JOSS also accepts >=)" }
+}

@@ -1,0 +1,24 @@
+* A mistake in the data. JOSS stops at the step that cannot be done and
+* says why. The value is put right, and Go takes up the work where it
+* stopped: nothing is done twice and nothing is lost.
+1.1 Set s = s + sqrt[x(i)].
+1.2 Type i, x(i), s in form 1.
+Form 1:
+__   x = ___   sum of roots so far ___.____
+
+Set x(1) = 4.
+Set x(2) = 9.
+Set x(3) = -16.
+Set x(4) = 25.
+Set s = 0.
+Do part 1 for i = 1(1)4.
+ 1   x =   4   sum of roots so far   2.0000
+ 2   x =   9   sum of roots so far   5.0000
+Error at step 1.1:  I have a negative argument for sqrt.
+Type i, x(i).
+       i =       3
+    x(i) =     -16
+Set x(3) = 16.
+Go.
+ 3   x =  16   sum of roots so far   9.0000
+ 4   x =  25   sum of roots so far  14.0000

@@ -1,0 +1,21 @@
+# page-14 (PDF p. 14, printed p. 6). RETYPED scenario text, continuous with page-13. See page-10 header.
+U: 1.05 Do part 2 if fp(x/40) = 1/40.
+U: 2.1 Page.
+U: 2.2 Type form 2.
+U: Form 2:
+U:  X     SQRT(X)     LOG(X)        EXP(X)
+U: Do part 1 for x = 1(1)100.
+# Step 2.1 Page. acts here (new page; the page-top date line is not reproduced in the report).
+J:  X     SQRT(X)     LOG(X)        EXP(X)
+J:   1   1.0000000    .0000000    2.7182818 00
+J:   2   1.4142136    .6931472    7.3890561 00
+J:   3   1.7320508   1.0986123    2.0085537 01
+J:   4   2.0000000   1.3862944    5.4598150 01
+J:   5   2.2360680   1.6094379    1.4841316 02
+J:   6   2.4494897   1.7917595    4.0342879 02
+J:   7   2.6457513   1.9459102    1.0966332 03
+J:   8   2.8284271   2.0794415    2.9809580 03
+J: Interrupted at step 1.05.
+U: 1.07 Line if fp(x/5) = 1/5.
+U: Do part 1 for x = 1(1)100.
+# [See Example 1 in Appendix A for JOSS' output at this point.]  -> example-1.txt

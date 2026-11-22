@@ -1,0 +1,19 @@
+# P-2922 (Shaw, Aug 1964) Fig. 3c, PDF page 18, printed page -17-. U:/J: as labelled in the figure margin. See NOTES.md.
+U: Set y = 123.456.
+U: Type y, ip(y), fp(y), dp(y), xp(y).
+J:        y =    123.456
+J:    ip(y) =    123
+J:    fp(y) =       .456
+J:    dp(y) =      1.23456
+J:    xp(y) =      2
+U: Type 1.23456·10*2.
+J: 1.23456·10*2 = 123.456
+U:
+U: Type sgn(-3.5), sgn(0), sgn(3.5).
+J: sgn(-3.5) =    -1
+J:   sgn(0) =      0
+J: sgn(3.5) =      1
+U:
+U: Type max(1,2,3), min(1,2,3).
+J: max(1,2,3) =    3
+J: min(1,2,3) =    1

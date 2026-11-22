@@ -1,0 +1,37 @@
+* A root of x*3 - 2·x - 5 = 0 by halving the interval it lies in.
+* Part 2 is the function. s is its sign at the left-hand end.
+1.1 Do part 2 for x = (a+b)/2.
+1.2 Type a, b in form 1.
+1.3 Set b = x if sgn(y) ≠ s.
+1.4 Set a = x if sgn(y) = s.
+1.5 To step 1.1 if b-a > e.
+1.6 Type (a+b)/2.
+
+2.1 Set y = x*3 - 2·x - 5.
+
+Form 1:
+between _.______ and _.______
+
+Set a = 2.
+Set b = 3.
+Set e = .00001.
+Set s = -1.
+Do part 1.
+between 2.000000 and 3.000000
+between 2.000000 and 2.500000
+between 2.000000 and 2.250000
+between 2.000000 and 2.125000
+between 2.062500 and 2.125000
+between 2.093750 and 2.125000
+between 2.093750 and 2.109375
+between 2.093750 and 2.101563
+between 2.093750 and 2.097656
+between 2.093750 and 2.095703
+between 2.093750 and 2.094727
+between 2.094238 and 2.094727
+between 2.094482 and 2.094727
+between 2.094482 and 2.094605
+between 2.094543 and 2.094605
+between 2.094543 and 2.094574
+between 2.094543 and 2.094559
+ (a+b)/2 =       2.09455492

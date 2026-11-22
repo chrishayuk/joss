@@ -1,0 +1,59 @@
+# JOSS_Program_Notes_and_Tests.pdf, pages 13 and 14 of 43. Handwritten notes signed
+# "JCS" (J. C. Shaw). Transcription of handwriting; less certain than typescript.
+
+[page 13]
+F1                                    JCS  11-19-64
+
+   (sqrt(2)/2) · 2^3 · 10^8
+
+   1     0
+   2     1
+   4     2
+   8     3
+   -------
+   5     0
+   10    1
+   -------
+   5.6   0
+   11.2  1
+
+   (sqrt(2)/2)·2^3·10^8 < x < sqrt(2)·2^3·10^8
+
+Check it.  Looks like coefficient
+between 1 and sqrt(2) gets doubled several
+times.
+# (F1 is the log routine in the listing; this is a note on its range reduction.)
+
+[page 14]
+                                      JCS  10-10-64
+Error msg construction:
+
+Error during step ____:__
+  5  1  6   1  4 1  10  1 2
+# the numbers under the words are character counts: "Error"=5, space=1, "during"=6,
+# space=1, "step"=4, space=1, step number=10, ":"=1, two spaces=2  (total 31)
+
+        72
+        31
+        --
+        41 characters for error msg.
+           exclusive of CR+EOM.
+
+This is the major reason for keeping 1≤step<10^9
+so that we wouldn't have to copy wild expressions
+into msg and take up to 3 lines.  With new =20
+we now have to check step label for number of characters.
+Also check:  { 1.
+             { 1.2.
+
+# below: a hand encoding of "I need more storage space." five characters per word,
+# with 8-bit codes written under the first four characters:
+I         n         e         e
+01011001  00100101  00010101  00010101
+d    m    o    r
+e    s    t    o
+r    a    g    e
+s    p    a    c    e
+.    [CR symbol]    [box = end mark]
+# ?? the binary strings are small; digits not individually certain. (Decimal 89 = I,
+# 37 = n, 21 = e agree with the character table in the Jan-65 listing, region A.)

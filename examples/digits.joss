@@ -1,0 +1,20 @@
+* The digits of a whole number, last first, and their sum.
+* ip(n/10) is n without its last digit.
+1.1 Set d = n - 10·ip(n/10).
+1.2 Type d in form 1.
+1.3 Set s = s+d.
+1.4 Set n = ip(n/10).
+1.5 To step 1.1 if n > 0.
+1.6 Type s in form 2.
+Form 1:
+digit _
+Form 2:
+sum  __
+
+Set n = 271828.
+Set s = 0.
+Do part 1.
+
+* dp and xp take a number apart the other way: digit part and exponent part.
+Set x = 271828.
+Type dp(x), xp(x), dp(x)·10*xp(x).

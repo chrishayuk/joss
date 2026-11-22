@@ -1,0 +1,19 @@
+* From C. L. Baker, "JOSS: Scenario of a Filmed Report", RAND RM-4162-PR, June 1964: the film of 21 March 1964, pages 6 to 8 and example 3.
+! joss 1964
+Set k = 2·3.14159265.
+1.1 Set F = sqrt[1/(L·C)]/k.
+1.2 Set f = sqrt[1/(L·C)-R*2/(4·L*2)]/k.
+1.3 Set I = k·F*2·Q/f.
+1.4 Set d = .1/f.
+1.5 Type F, f, I, d.
+Set R = 100.
+Set L = .2.
+Set C = .5·10*(-6).
+Set Q = .001.
+Do part 1.
+Set d = .0002.
+2.1 Type 1000·t, I·exp[-R·t/(2·L)]·sin(k·f·t) in form 3.
+Form 3:
+__.__ ms.   -_.______ amp.
+Do part 2 for t = 0(d)100·d.
+Type all.

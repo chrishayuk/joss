@@ -1,0 +1,30 @@
+# JOSS_Program_Notes_and_Tests.pdf, page 3 of 43. Typed notes; [hw] = handwritten.
+
+JOSS (continued)
+
+
+Forms:
+
+
+Within a form one or more underline characters will be interpreted
+as a blank into which a number is to be placed in fixed point form.
+A string of periods will likewise be interpreted as a blank into
+which a number is to be placed in scientific notation (roughly--
+actually only the coefficient and scale factor exponent will appear).
+In both cases numbers will be rounded to fit.
+
+
+Numerical representation:
+
+Nine decimal coefficient with sign and two decimal scale factor
+exponent with sign.  All constraints are in decimal therefore
+the binary nature of JOHNNIAC never shows through.  Only this
+scientific notation is used so there are no special representations
+for "integer", "boolean", etc.
+# typed "dedimal" and "JOHNNIAN" (overstruck) in the original
+
+[hw] Indexing :   V(i)   A(i,j)
+[hw] For clause :     for x = 1(1)10(5)100, 7.3, 8.49, 15(.01)15.2.
+# ?? handwritten; "7.3" and "8.49" are small and could be misread digits
+[hw, struck] Condition values
+# ?? struck-out handwriting, reading uncertain

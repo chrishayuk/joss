@@ -1,0 +1,67 @@
+# P-3149 (Shaw, May 1965) Figure 3 'JOSS ONE-PAGE SUMMARY', PDF page 11, printed page -10-. NOT a session: a typed two-column reference sheet.
+# Every line is prefixed 'T: ' (text). Columns are approximate (sheet is skewed; left column at col 2, right column at col 38). See NOTES.md.
+T:                        JOSS ONE-PAGE SUMMARY                  1/12/65
+T:
+T:
+T: DIRECT or INDIRECT                  DIRECT (only):
+T:
+T:   Set x=a.                            Cancel.
+T:
+T:   Do step 1.1.                        Delete step 1.1.
+T:   Do step 1.1 for x = a, b, c(d)e.    Delete part 1.
+T:   Do part 1.                          Delete form 2.
+T:   Do part 1 for x = a(b)c(d)e, f, g.  Delete all steps.
+T:                                       Delete all parts.
+T:   Type a,b,c,_.                       Delete all forms.
+# blank item is a single underscore
+T:   Type a,b in form 2.                 Delete all.
+T:   Type "ABCDE".
+T:   Type step 1.1.                      Go.
+T:   Type part 1.
+T:   Type form 2.                        Form 2:
+T:   Type all steps.                     dist. = ..........  accel. = __.___
+# ?? number of dots in 'dist. = ....' read as 10 (could be 9); form field read as __.___
+T:   Type all parts.
+T:   Type all forms.                     x=a
+T:   Type all values.
+T:   Type all.                         RELATIONS:
+T:   Type size.
+T:   Type time.                          = ≠ ≤ ≥ < >
+T:   Type users.
+T:                                     OPERATIONS:
+T:   Delete x,y.
+T:   Delete all values.                  + - · / * () [] ||
+T:
+T:   Line.                             CONDITIONS:
+T:
+T:   Page.                               if a<b<c and d=e or f≠g
+T:
+T: INDIRECT (only):                    FUNCTIONS:
+T:
+T:   1.1 To step 3.1.                    sqrt(a)   (square root)
+T:   1.1 To part 3.                      log(a)    (natural logarithm)
+T:                                       exp(a)
+T:   1.1 Done.                           sin(a)
+T:                                       cos(a)
+T:   1.1 Stop.                           arg(a,b)  (argument of point [a,b])
+T:                                       ip(a)     (integer part)
+T:   1.1 Demand x.                       fp(a)     (fraction part)
+T:                                       dp(a)     (digit part)
+T:                                       xp(a)     (exponent part)
+T:                                       sgn(a)    (sign)
+T:                                       max(a,b)
+T:                                       min(a,b,c)
+T:
+T: PUNCTUATION and SPECIAL CHARACTERS:
+T:
+T:   . , ; : ' " _ # $ ?
+T:   ___._____ indicates a field for a number in a form.
+T:   ......... indicates scientific notation in a form.
+T:   # is the strike-out symbol.
+T:   $ carries the value of the current line number.
+T:   * at the beginning or end kills an instruction line.
+T:   Brackets may be used above in place of parentheses.
+T:   Indexed letters (e.g. v(a), w[a,b]) may be used above in place of x, y.
+# in the original the letters x, y here (and a, b, c two lines below) are underlined; headings DIRECT / INDIRECT / RELATIONS etc. are underlined too
+T:   Arbitrary expressions ( e.g. 3·[sin(2·p+3)-q]+r ) may be used above
+T:     in place of a, b, c, ... .

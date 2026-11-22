@@ -1,0 +1,78 @@
+# P-3131 (Shaw, Apr 1965) PDF page 7, printed page -6-. U: = user (green), J: = JOSS (black). See NOTES.md.
+J: 1307 4-28-65 JCS
+# ?? page-heading line (time date initials) is in JOSS black; the 5 blank lines after it are attributed to JOSS by inference
+J:
+J:
+J:
+J:
+J:
+U: *  Matrix inversion with simple pivoting on the diagonal.
+U:
+U: 1.1 Set p=a(n,n).
+U: 1.2 Set a(n,n)=1.
+U: 1.3 Do part 2 for j=1(1)N.
+U: 1.4 Do part 3 for i=1(1)N.
+U:
+U: 2.1 Set a(n,j)=a(n,j)/p.
+U:
+U: 3.1 Done if i=n.
+U: 3.2 Set q=a(i,n).
+U: 3.3 Set a(i,n)=0.
+U: 3.4 Do part 4 for j=1(1)N.
+U:
+U: 4.1 Set a(i,j)=a(i,j)-a(n,j)·q.
+U:
+U: *  JOSS can help with the input:
+U:
+U: 11.1 Demand a(i,j).
+U: 12.1 Do part 11 for j=1(1)N.
+U:
+U: *  For the output:
+# "output": user typed "oup", backspaced and struck "t" over the "p" (position 3 of the word holds both "p" and "t"), then "put:"
+U:
+U: 21.1 Type a(i,1), a(i,2), a(i,3), a(i,4) in form 1.
+U: Form 1:
+U: __._____  __._____  __._____  __._____
+U:
+U: Do part 12 for *
+U: *  An asterisk at the end can kill the line... I forgot something:
+U: Set N=4.
+U: Do part 12 for i=1(1)N.
+J:   a(1,1) = 
+U+ 3.582
+# Demand lines: J: text is the JOSS prompt (ends with one space after "="); the following "U+" record is the user reply typed on the SAME typewriter line starting in the next column (col 11). Same for the 15 lines below.
+J:   a(1,2) = 
+U+ -.670
+J:   a(1,3) = 
+U+ .873
+J:   a(1,4) = 
+U+ 1.055
+J:   a(2,1) = 
+U+ -.251
+J:   a(2,2) = 
+U+ 4.569
+J:   a(2,3) = 
+U+ .675
+J:   a(2,4) = 
+U+ -.497
+J:   a(3,1) = 
+U+ 1.675
+J:   a(3,2) = 
+U+ -.764
+J:   a(3,3) = 
+U+ 2.781
+J:   a(3,4) = 
+U+ .778
+J:   a(4,1) = 
+U+ .564
+J:   a(4,2) = 
+U+ -.466
+J:   a(4,3) = 
+U+ 1.387
+J:   a(4,4) = 
+U+ 4.965
+U: Do part 21 for i=1(1)4.
+J:  3.58200   -.67000    .87300   1.05500
+J:  -.25100   4.56900    .67500   -.49700
+J:  1.67500   -.76400   2.78100    .77800
+J:   .56400   -.46600   1.38700   4.96500

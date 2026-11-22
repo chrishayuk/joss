@@ -1,0 +1,61 @@
+# P-3131 (Shaw, Apr 1965) PDF page 4, printed page -3-. U: = user (green), J: = JOSS (black). See NOTES.md.
+J: 1238 4-28-65 JCS
+# ?? page-heading line (time date initials) is in JOSS black; the 5 blank lines after it are attributed to JOSS by inference
+J:
+J:
+J:
+J:
+J:
+U: *  Stored program for computing the hypotenuse:
+U:
+U: 1.1 Set c=sqrt(a*2+b*2).
+U: 1.2 Type a,b,c in form 1.
+U: Form 1:
+U: a = __   b = __   c = ___.______
+# form underscores print low and overlap the next typed line in the scan; columns measured
+U: 2.1 Do part 1 for b=1(1)a.
+U: 2.2 Line.
+U: Type all steps.
+J:
+J: 1.1 Set c=sqrt(a*2+b*2).
+J: 1.2 Type a,b,c in form 1.
+J:
+J: 2.1 Do part 1 for b=1(1)a.
+J: 2.2 Line.
+J:
+U: Type form 1.
+J: a = __   b = __   c = ___.______
+J:
+U: Do part 2 for a=1(1)4.
+J: a =  1   b =  1   c =   1.414214
+J:
+J: a =  2   b =  1   c =   2.236068
+J: a =  2   b =  2   c =   2.828427
+J:
+J: a =  3   b =  1   c =   3.162278
+J: a =  3   b =  2   c =   3.605551
+J: a =  3   b =  3   c =   4.242641
+J:
+J: a =  4   b =  1   c =   4.123106
+J: a =  4   b =  2   c =   4.472136
+J: a =  4   b =  3   c =   5.000000
+J: a =  4   b =  4   c =   5.656854
+J:
+U: *  Modification to type only integral c's:
+U:
+U: Delete step 2.2.
+U: 1.2 Type a,b,c in form 1 if fp(c)=0.
+U: Do part 2 for a=1(1)25.
+J: a =  4   b =  3   c =   5.000000
+J: a =  8   b =  6   c =  10.000000
+J: a = 12   b =  5   c =  13.000000
+J: a = 12   b =  9   c =  15.000000
+J: a = 15   b =  8   c =  17.000000
+J: a = 16   b = 12   c =  20.000000
+J: a = 20   b = 15   c =  25.000000
+J: a = 21   b = 20   c =  29.000000
+J: a = 24   b =  7   c =  25.000000
+J: a = 24   b = 10   c =  26.000000
+J: a = 24   b = 18   c =  30.000000
+J:
+U: Delete all.

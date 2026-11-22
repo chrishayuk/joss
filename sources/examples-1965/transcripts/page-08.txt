@@ -1,0 +1,37 @@
+# P-3131 (Shaw, Apr 1965) PDF page 8, printed page -7-. U: = user (green), J: = JOSS (black). See NOTES.md.
+J: 1317 4-28-65 JCS
+# ?? page-heading line (time date initials) is in JOSS black; the 5 blank lines after it are attributed to JOSS by inference
+J:
+J:
+J:
+J:
+J:
+U: Do part 1 for n=1(1)N.
+U: Do part 21 for i=1(1)4.
+J:   .32861    .02877   -.08326   -.05390
+J:   .04839    .21513   -.07921    .02366
+J:  -.19033    .04018    .42024   -.02139
+J:   .02038    .00570   -.11537    .21573
+J:
+U: *  Invert the matrix back again:
+U:
+U: Do part 1 for n=1(1)N.
+U: Do part 21 for i=1(1)N.
+J:  3.58200   -.67000    .87300   1.05500
+J:  -.25100   4.56900    .67500   -.49700
+J:  1.67500   -.76400   2.78100    .77800
+J:   .56400   -.46600   1.38700   4.96500
+U: Delete all.
+U:
+U: *  From Litton Industries' "Problematical Recreations" we get:
+U: *  Problem:  Find four digits A, T, O and M such that
+U: *            sqrt(ATOM) = A+TO+M.
+U: *  C. L. Baker's solution:
+U:
+U: Form 1:
+U: ATOM = ____   sqrt(ATOM) = __
+U: 1 Type x*2, x in form 1 if x*2-9·ip(x*2/10)-99·ip(x*2/1000) = x.
+U: Do step 1 for x=32(1)99.
+J: ATOM = 1296   sqrt(ATOM) = 36
+J: ATOM = 6724   sqrt(ATOM) = 82
+U: Delete all.

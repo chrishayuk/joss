@@ -1,0 +1,15 @@
+* Paying off a loan: 5000 at 6 per cent a year, 430.33 a month.
+* The table shows the debt at the end of each month.
+1.1 Set i = d·r/1200.
+1.2 Set d = d + i - p.
+1.3 Type m, i, d in form 1.
+Form 1:
+month __   interest ___.__   still owing _____.__
+Form 2:
+The last payment is ___.__
+
+Set d = 5000.
+Set r = 6.
+Set p = 430.33.
+Do part 1 for m = 1(1)12.
+Type p+d in form 2.

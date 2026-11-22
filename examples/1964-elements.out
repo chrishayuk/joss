@@ -1,0 +1,62 @@
+* From J. C. Shaw, "JOSS: A Designer's View of an Experimental On-Line Computing System", RAND P-2922, August 1964, figures 3a to 3c.
+Type 2+2.
+     2+2 =      4
+
+Set x=3.
+Type x.
+       x =      3
+Type x+2, x-2, 2·x, x/2, x*2.
+     x+2 =      5
+     x-2 =      1
+     2·x =      6
+     x/2 =      1.5
+     x*2 =      9
+
+Type [(|x-5|·3+4)·2-15]·3+10.
+[(|x-5|·3+4)·2-15]·3+10 = 25
+Type sqrt(3), sqrt(4).
+ sqrt(3) =      1.73205081
+ sqrt(4) =      2
+
+Type sqrt(-1).
+Error above:  Negative argument for sqrt.
+
+Set e=2.71828183.
+Type log(1), log(2), log(e).
+  log(1) =      0
+  log(2) =       .693147181
+  log(e) =      1
+
+Type exp(0), exp(.5), exp(1).
+  exp(0) =      1
+ exp(.5) =      1.64872127
+  exp(1) =      2.71828183
+
+Type sin(.5), cos(.5), sin(.5)*2+cos(.5)*2.
+ sin(.5) =       .479425539
+ cos(.5) =       .877582562
+sin(.5)*2+cos(.5)*2 = 1
+
+Type arg(1,0), arg(0,1), arg(-1,0), 4·arg(3,3).
+arg(1,0) =      0
+arg(0,1) =      1.57079633
+arg(-1,0) =     3.14159265
+4·arg(3,3) =    3.14159265
+Set y = 123.456.
+Type y, ip(y), fp(y), dp(y), xp(y).
+       y =    123.456
+   ip(y) =    123
+   fp(y) =       .456
+   dp(y) =      1.23456
+   xp(y) =      2
+Type 1.23456·10*2.
+1.23456·10*2 = 123.456
+
+Type sgn(-3.5), sgn(0), sgn(3.5).
+sgn(-3.5) =    -1
+  sgn(0) =      0
+sgn(3.5) =      1
+
+Type max(1,2,3), min(1,2,3).
+max(1,2,3) =    3
+min(1,2,3) =    1

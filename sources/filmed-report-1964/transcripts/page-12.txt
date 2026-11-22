@@ -1,0 +1,25 @@
+# page-12 (PDF p. 12, printed p. 4). RETYPED scenario text, continuous with page-11. See page-10 header.
+U: Type y.
+J: Error above:  Undefined.
+U: Set y = exp(10).
+U: Type y.
+J: y = 22026.4658
+U: Type y, ip(y), fp(y), dp(y), xp(y).
+J:     y = 22026.4658
+J: ip(y) = 22026
+J: fp(y) =      .4658
+J: dp(y) =     2.20264658
+J: xp(y) =     4
+U: 1.1 Type x, sqrt(x), log(x), exp(x), _.
+U: Do step 1.1 for x = 1(1)100.
+J:       x =  1
+J: sqrt(x) =  1
+J:  log(x) =  0
+J:  exp(x) =  2.71828183
+J:
+J:       x =  2
+J: sqrt(x) =  1.41421356
+J:  log(x) =   .69314718
+J:  exp(x) =  7.3890561
+# [User presses INTERRUPT button.] "JOSS has calculated several lines and will stop when they have
+# been printed." Output continues on page-13. A blank line (from the trailing "_") follows here.

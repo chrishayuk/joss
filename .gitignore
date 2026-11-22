@@ -1,0 +1,7 @@
+target
+.DS_Store
+node_modules
+# the scanned documents and their page images: see sources/README.md
+sources/*/*.pdf
+sources/*/pages/
+sources/*/*.ocr.txt

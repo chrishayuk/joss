@@ -1,0 +1,26 @@
+* From J. C. Shaw, "JOSS: Examples of the Use of an Experimental On-Line Computing Service", RAND P-3131, April 1965, page 5.
+*  Root finding:
+
+1.1 Set w=y.
+1.2 Do part 2 for x=x+d.
+1.3 Set d=d·y/(w-y).
+1.4 To part 1 if |y|≥e.
+1.5 Type "Root".
+
+2.1 Set y=exp(x)-20·log(x).
+2.2 Type x,y in form 1.
+
+Form 1:
+x = __.______   y = __.______
+
+Type step 1.4.
+Do part 2 for x=.5(.5)3.
+Do part 2 for x=3.5, 4.
+Do part 2 for x=1.2.
+Do part 1 for d=-.05.
+Set e=.00005.
+Go.
+Do part 2 for x=3.1.
+Do part 1 for d=.1.
+Do part 2 for x=x-.000001.
+Delete all.

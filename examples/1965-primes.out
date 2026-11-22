@@ -1,0 +1,33 @@
+* From J. C. Shaw, "JOSS: Experience with an Experimental Computing Service for Users at Remote Typewriter Consoles", RAND P-3149, May 1965, figure 1.
+*   PRIME NUMBERS
+
+1.1 Do part 2 for d = 2(1)ip[sqrt(x)] if x > 3.
+1.2 Type x if x ≠ 0.
+
+2.1 Set x = 0 if fp(x/d) = 0.
+
+Do part 1 for x = 2(1)50.
+       x =       2
+       x =       3
+       x =       5
+       x =       7
+       x =      11
+       x =      13
+       x =      17
+       x =      19
+       x =      23
+       x =      29
+       x =      31
+       x =      37
+       x =      41
+       x =      43
+       x =      47
+
+Type all steps.
+
+1.1 Do part 2 for d = 2(1)ip[sqrt(x)] if x > 3.
+1.2 Type x if x ≠ 0.
+
+2.1 Set x = 0 if fp(x/d) = 0.
+
+Delete all.

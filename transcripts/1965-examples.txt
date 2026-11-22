@@ -1,0 +1,401 @@
+# J. C. Shaw, "JOSS: Examples of the Use of an Experimental On-Line Computing
+# Service", RAND P-3131, April 1965. Eight pages typed at a JOSS console on
+# 28 April 1965 between 12:30 and 13:41, reproduced in two colours: the user in
+# green, JOSS in black.
+#
+# U: typed by the user       J: typed by JOSS, column for column
+# D: a line JOSS began and the user finished (Demand)
+# P: the paper moved to a new page      ! a key pressed, or a setting
+# ~: what this reconstruction types instead of the J: line above it
+#
+! joss 1965
+#
+# P-3131 (Shaw, Apr 1965) PDF page 3, printed page -2-.
+# JOSS heads the page: 1230 4-28-65 JCS
+P:
+U: *  Some elements of the language:
+U:
+U: Type 2+2.
+J:      2+2 =       4
+U: Type 2+2+.
+J: Eh?
+U: Type x.
+J: Error above:  x is undefined.
+U: Set x=3.
+U: Type x.
+J:        x =       3
+U: Type x+2, x-2, 2·x, x/2, x*2.
+J:      x+2 =       5
+J:      x-2 =       1
+J:      2·x =       6
+J:      x/2 =       1.5
+J:      x*2 =       9
+U: Type [(|x-5|·3+4)·2-15]·3+10.
+J: [(|x-5|·3+4)·2-15]·3+10 =  25
+U: Type sqrt(144), log(10), exp(1), sin(.2), cos(.2), arg(3,3), 4·arg(3,3).
+J: sqrt(144) =     12
+J:  log(10) =       2.30258509
+J:   exp(1) =       2.71828183
+J:  sin(.2) =        .198669331
+J:  cos(.2) =        .980066578
+J: arg(3,3) =        .785398163
+J: 4·arg(3,3) =     3.14159265
+U: Type sgn(-3.5), sgn(0), sgn(3.5).
+J: sgn(-3.5) =     -1
+J:   sgn(0) =       0
+J: sgn(3.5) =       1
+U: Type max(6·x, 20, x*3).
+J: max(6·x, 20, x*3) =  27
+U: Type min(6·x, 20, x*3).
+J: min(6·x, 20, x*3) =  18
+U: Set y=123.456.
+U: Type y, ip(y), fp(y), dp(y), xp(y).
+J:        y =     123.456
+J:    ip(y) =     123
+J:    fp(y) =        .456
+J:    dp(y) =       1.23456
+J:    xp(y) =       2
+U: Type 1.23456·10*2.
+J: 1.23456·10*2 =  123.456
+U: Type all values.
+J:
+J:        x =       3
+J:        y =     123.456
+J:
+U: Delete all values.
+#
+# P-3131 (Shaw, Apr 1965) PDF page 4, printed page -3-.
+# JOSS heads the page: 1238 4-28-65 JCS
+P:
+U: *  Stored program for computing the hypotenuse:
+U:
+U: 1.1 Set c=sqrt(a*2+b*2).
+U: 1.2 Type a,b,c in form 1.
+U: Form 1:
+U: a = __   b = __   c = ___.______
+U: 2.1 Do part 1 for b=1(1)a.
+U: 2.2 Line.
+U: Type all steps.
+J:
+J: 1.1 Set c=sqrt(a*2+b*2).
+J: 1.2 Type a,b,c in form 1.
+J:
+J: 2.1 Do part 1 for b=1(1)a.
+J: 2.2 Line.
+J:
+U: Type form 1.
+J: a = __   b = __   c = ___.______
+# A blank line. Nothing on the page says who made it: taken as the user's.
+U:
+U: Do part 2 for a=1(1)4.
+J: a =  1   b =  1   c =   1.414214
+J:
+J: a =  2   b =  1   c =   2.236068
+J: a =  2   b =  2   c =   2.828427
+J:
+J: a =  3   b =  1   c =   3.162278
+J: a =  3   b =  2   c =   3.605551
+J: a =  3   b =  3   c =   4.242641
+J:
+J: a =  4   b =  1   c =   4.123106
+J: a =  4   b =  2   c =   4.472136
+J: a =  4   b =  3   c =   5.000000
+J: a =  4   b =  4   c =   5.656854
+J:
+U: *  Modification to type only integral c's:
+U:
+U: Delete step 2.2.
+U: 1.2 Type a,b,c in form 1 if fp(c)=0.
+U: Do part 2 for a=1(1)25.
+J: a =  4   b =  3   c =   5.000000
+J: a =  8   b =  6   c =  10.000000
+J: a = 12   b =  5   c =  13.000000
+J: a = 12   b =  9   c =  15.000000
+J: a = 15   b =  8   c =  17.000000
+J: a = 16   b = 12   c =  20.000000
+J: a = 20   b = 15   c =  25.000000
+J: a = 21   b = 20   c =  29.000000
+J: a = 24   b =  7   c =  25.000000
+J: a = 24   b = 10   c =  26.000000
+J: a = 24   b = 18   c =  30.000000
+# A blank line. Nothing on the page says who made it: taken as the user's.
+U:
+U: Delete all.
+#
+# P-3131 (Shaw, Apr 1965) PDF page 5, printed page -4-.
+# JOSS heads the page: 1250 4-28-65 JCS
+P:
+U: *  Integration of 1/x by Gauss two-point rule:
+U:
+U: 1.1 Type X,Y in form 1 if fp(X)=0.
+U: 1.2 Do part 2 for x=X+p·h, X+q·h.
+U: 2.1 Set y=1/x.
+U: 2.2 Set Y=Y+.5·h·y.
+U: Form 1:
+U: __   _._____
+# ?? user-typed form line partly overprinted by the next line in the scan; taken to be identical to the JOSS-typed copy of Form 1 further down (which is clear)
+U: Set p=.5-.5/sqrt(3).
+U: Set q=.5+.5/sqrt(3).
+U: Set Y=0.
+U: Set h=.1.
+U: Do part 1 for X=1(h)10.
+J:  1    .00000
+J:  2    .69315
+J:  3   1.09861
+J:  4   1.38629
+J:  5   1.60944
+J:  6   1.79176
+J:  7   1.94591
+J:  8   2.07944
+J:  9   2.19722
+J: 10   2.30259
+U: Type 10, log(10) in form 1.
+# the "0" of log(10) is a strikeover: user typed "log(1)" , backspaced over ")" and struck "0" on top of it, then typed ")" again (see the user comment two lines below). Printed position holds both ")" and "0"; "0" is what JOSS used (output is log(10))
+J: 10   2.30259
+U: *  Notice above that JOSS allows backspacing and strikeovers.
+U: Type all.
+J:
+J: 1.1 Type X,Y in form 1 if fp(X)=0.
+J: 1.2 Do part 2 for x=X+p·h, X+q·h.
+J:
+J: 2.1 Set y=1/x.
+J: 2.2 Set Y=Y+.5·h·y.
+J:
+J:
+J: Form 1:
+J: __   _._____
+J:
+J:
+J:        h =        .1
+J:        p =        .211324866
+J:        q =        .788675134
+J:        x =      10.0788675
+J:        y =        .0992174964
+J:        X =      10
+J:        Y =       2.31253534
+J:
+U: Delete all.
+# Six consoles were in use. Here there is one, so the transcript says how many.
+! users 6
+U: Type users.
+J: 6
+#
+# P-3131 (Shaw, Apr 1965) PDF page 6, printed page -5-.
+# JOSS heads the page: 1300 4-28-65 JCS
+P:
+U: *  Root finding:
+U:
+U: 1.1 Set w=y.
+U: 1.2 Do part 2 for x=x+d.
+U: 1.3 Set d=d·y/(w-y).
+U: 1.4 To part 1 if |y|≥e.
+# the "y" between the bars carries a strikeover (another character struck on the same position; looks like "|" over/under "y"); JOSS lists the step back as |y|≥e
+U: 1.5 Type "Root".
+U:
+U: 2.1 Set y=exp(x)-20·log(x).
+U: 2.2 Type x,y in form 1.
+U:
+U: Form 1:
+U: x = __.______   y = __.______
+U:
+U: Type step 1.4.
+J: 1.4 To part 1 if |y|≥e.
+U: Do part 2 for x=.5(.5)3.
+J: x =   .500000   y = 15.511665
+J: x =  1.000000   y =  2.718282
+J: x =  1.500000   y = -3.627613
+J: x =  2.000000   y = -6.473888
+J: x =  2.500000   y = -6.143321
+J: x =  3.000000   y = -1.886709
+U: Do part 2 for x=3.5, 4.
+J: x =  3.500000   y =  8.060193
+J: x =  4.000000   y = 26.872263
+U: Do part 2 for x=1.2.
+J: x =  1.200000   y =  -.326314
+U: Do part 1 for d=-.05.
+J: x =  1.150000   y =   .362954
+J: Error at step 1.4:  e is undefined.
+U: Set e=.00005.
+U: Go.
+J: x =  1.176329   y =  -.005521
+J: x =  1.175934   y =  -.000092
+J: x =  1.175928   y =   .000000
+J: Root
+U: Do part 2 for x=3.1.
+J: x =  3.100000   y =  -.430091
+U: Do part 1 for d=.1.
+J: x =  3.200000   y =  1.269514
+J: x =  3.125305   y =  -.023794
+J: x =  3.126680   y =  -.001278
+J: x =  3.126758   y =   .000001
+J: Root
+U: Do part 2 for x=x-.000001.
+J: x =  3.126757   y =  -.000015
+# ?? lower half of this line is clipped in the reproduction (overprinted/cut by the next line); digits 3.126757 and -.000015 read from the top halves, consistent with x=3.126758-.000001
+U: Delete all.
+#
+# P-3131 (Shaw, Apr 1965) PDF page 7, printed page -6-.
+# JOSS heads the page: 1307 4-28-65 JCS
+P:
+U: *  Matrix inversion with simple pivoting on the diagonal.
+U:
+U: 1.1 Set p=a(n,n).
+U: 1.2 Set a(n,n)=1.
+U: 1.3 Do part 2 for j=1(1)N.
+U: 1.4 Do part 3 for i=1(1)N.
+U:
+U: 2.1 Set a(n,j)=a(n,j)/p.
+U:
+U: 3.1 Done if i=n.
+U: 3.2 Set q=a(i,n).
+U: 3.3 Set a(i,n)=0.
+U: 3.4 Do part 4 for j=1(1)N.
+U:
+U: 4.1 Set a(i,j)=a(i,j)-a(n,j)·q.
+U:
+U: *  JOSS can help with the input:
+U:
+U: 11.1 Demand a(i,j).
+U: 12.1 Do part 11 for j=1(1)N.
+U:
+U: *  For the output:
+# "output": user typed "oup", backspaced and struck "t" over the "p" (position 3 of the word holds both "p" and "t"), then "put:"
+U:
+U: 21.1 Type a(i,1), a(i,2), a(i,3), a(i,4) in form 1.
+U: Form 1:
+U: __._____  __._____  __._____  __._____
+U:
+U: Do part 12 for *
+U: *  An asterisk at the end can kill the line... I forgot something:
+U: Set N=4.
+U: Do part 12 for i=1(1)N.
+D:   a(1,1) = 3.582
+D:   a(1,2) = -.670
+D:   a(1,3) = .873
+D:   a(1,4) = 1.055
+D:   a(2,1) = -.251
+D:   a(2,2) = 4.569
+D:   a(2,3) = .675
+D:   a(2,4) = -.497
+D:   a(3,1) = 1.675
+D:   a(3,2) = -.764
+D:   a(3,3) = 2.781
+D:   a(3,4) = .778
+D:   a(4,1) = .564
+D:   a(4,2) = -.466
+D:   a(4,3) = 1.387
+D:   a(4,4) = 4.965
+U: Do part 21 for i=1(1)4.
+J:  3.58200   -.67000    .87300   1.05500
+J:  -.25100   4.56900    .67500   -.49700
+J:  1.67500   -.76400   2.78100    .77800
+J:   .56400   -.46600   1.38700   4.96500
+#
+# P-3131 (Shaw, Apr 1965) PDF page 8, printed page -7-.
+# JOSS heads the page: 1317 4-28-65 JCS
+P:
+U: Do part 1 for n=1(1)N.
+U: Do part 21 for i=1(1)4.
+J:   .32861    .02877   -.08326   -.05390
+J:   .04839    .21513   -.07921    .02366
+J:  -.19033    .04018    .42024   -.02139
+J:   .02038    .00570   -.11537    .21573
+# A blank line. Nothing on the page says who made it: taken as the user's.
+U:
+U: *  Invert the matrix back again:
+U:
+U: Do part 1 for n=1(1)N.
+U: Do part 21 for i=1(1)N.
+J:  3.58200   -.67000    .87300   1.05500
+J:  -.25100   4.56900    .67500   -.49700
+J:  1.67500   -.76400   2.78100    .77800
+J:   .56400   -.46600   1.38700   4.96500
+U: Delete all.
+U:
+U: *  From Litton Industries' "Problematical Recreations" we get:
+U: *  Problem:  Find four digits A, T, O and M such that
+U: *            sqrt(ATOM) = A+TO+M.
+U: *  C. L. Baker's solution:
+U:
+U: Form 1:
+U: ATOM = ____   sqrt(ATOM) = __
+U: 1 Type x*2, x in form 1 if x*2-9·ip(x*2/10)-99·ip(x*2/1000) = x.
+U: Do step 1 for x=32(1)99.
+J: ATOM = 1296   sqrt(ATOM) = 36
+J: ATOM = 6724   sqrt(ATOM) = 82
+U: Delete all.
+#
+# P-3131 (Shaw, Apr 1965) PDF page 9, printed page -8-.
+# JOSS heads the page: 1337 4-28-65 JCS
+P:
+U: *  Production of a formatted table:
+U:
+U: 1.1 Do part 2 if fp(x/20) = 1/20.
+U: 1.2 Line if fp(x/5) = 1/5.
+U: 1.3 Type x, x*2, x*3, sqrt(x), log(x), exp(x) in form 1.
+U:
+U: 2.1 Page.
+U: 2.2 Type "Table of elementary functions:".
+U: 2.3 Line.
+U: 2.4 Line.
+U: 2.5 Type form 2.
+U:
+U: Form 1:
+U: __   ___   _____   _._____   _._____   ...........
+U:
+U: Form 2:
+U:  x   x*2    x*3    sqrt(x)    log(x)      exp(x)
+U:
+U: Type all.
+J:
+J: 1.1 Do part 2 if fp(x/20) = 1/20.
+J: 1.2 Line if fp(x/5) = 1/5.
+J: 1.3 Type x, x*2, x*3, sqrt(x), log(x), exp(x) in form 1.
+J:
+J: 2.1 Page.
+J: 2.2 Type "Table of elementary functions:".
+J: 2.3 Line.
+J: 2.4 Line.
+J: 2.5 Type form 2.
+J:
+J:
+J: Form 1:
+J: __   ___   _____   _._____   _._____   ...........
+J:
+J: Form 2:
+J:  x   x*2    x*3    sqrt(x)    log(x)      exp(x)
+J:
+J:
+U: Do part 1 for x=1(1)20.
+#
+# P-3131 (Shaw, Apr 1965) PDF page 10, printed page -9-. Entire page is JOSS output (continuation of 'Do part 1 for x=1(1)20.' from page-09.txt, after step 2.1 Page.).
+# JOSS heads the page: 1341 4-28-65 JCS
+P:
+J: Table of elementary functions:
+J:
+J:
+J:  x   x*2    x*3    sqrt(x)    log(x)      exp(x)
+J:
+J:  1     1       1   1.00000    .00000    2.71828 00
+J:  2     4       8   1.41421    .69315    7.38906 00
+J:  3     9      27   1.73205   1.09861    2.00855 01
+J:  4    16      64   2.00000   1.38629    5.45982 01
+J:  5    25     125   2.23607   1.60944    1.48413 02
+J:
+J:  6    36     216   2.44949   1.79176    4.03429 02
+J:  7    49     343   2.64575   1.94591    1.09663 03
+J:  8    64     512   2.82843   2.07944    2.98096 03
+J:  9    81     729   3.00000   2.19722    8.10308 03
+J: 10   100    1000   3.16228   2.30259    2.20265 04
+J:
+J: 11   121    1331   3.31662   2.39790    5.98741 04
+J: 12   144    1728   3.46410   2.48491    1.62755 05
+J: 13   169    2197   3.60555   2.56495    4.42413 05
+J: 14   196    2744   3.74166   2.63906    1.20260 06
+J: 15   225    3375   3.87298   2.70805    3.26902 06
+J:
+J: 16   256    4096   4.00000   2.77259    8.88611 06
+J: 17   289    4913   4.12311   2.83321    2.41550 07
+J: 18   324    5832   4.24264   2.89037    6.56600 07
+J: 19   361    6859   4.35890   2.94444    1.78482 08
+J: 20   400    8000   4.47214   2.99573    4.85165 08

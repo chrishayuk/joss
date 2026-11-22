@@ -1,0 +1,7 @@
+* JOSS as a desk calculator: each line is done as soon as it is typed.
+Type 2+2.
+Type 365·24·60·60.
+Type 22/7, 355/113.
+Type 2*10, 2*.5, 10*(-3).
+Type [(1+2)·(3+4)]*2.
+Type |3-10|.

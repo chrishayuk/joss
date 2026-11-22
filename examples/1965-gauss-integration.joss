@@ -1,0 +1,20 @@
+* From J. C. Shaw, "JOSS: Examples of the Use of an Experimental On-Line Computing Service", RAND P-3131, April 1965, page 4.
+*  Integration of 1/x by Gauss two-point rule:
+
+1.1 Type X,Y in form 1 if fp(X)=0.
+1.2 Do part 2 for x=X+p·h, X+q·h.
+2.1 Set y=1/x.
+2.2 Set Y=Y+.5·h·y.
+Form 1:
+__   _._____
+Set p=.5-.5/sqrt(3).
+Set q=.5+.5/sqrt(3).
+Set Y=0.
+Set h=.1.
+Do part 1 for X=1(h)10.
+Type 10, log(10) in form 1.
+*  Notice above that JOSS allows backspacing and strikeovers.
+Type all.
+Delete all.
+! users 6
+Type users.

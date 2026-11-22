@@ -1,0 +1,30 @@
+# JOSS_Program_Notes_and_Tests.pdf, page 11 of 43. A test strike of a new typewriter
+# type ball: the full JOSS character set, keyboard order, each key lower case then
+# upper case. Not a JOSS session. [hw] = handwritten.
+
+[hw] Cliff!
+[hw]    It came in.
+[hw]         Mal
+# ?? signature read as "Mal"
+
+                    New TW Ball.
+
+1'2"3#4$5≤6≥7<8>9(0)-_+*qQwWeErRtTyYuUiIoOpP·|aAsSdDfFgGhHjJkKlL;:=≠zZxXcCvVbBnNmM,[.]/?
+# line 1 is in a small (elite) face; line 2 repeats the same string in a larger face
+# and wraps after "bB" ("nNmM,[.]/?" on the next line). Several letters in line 2
+# struck weakly. Key pairs (lower/upper):
+#   1'  2"  3#  4$  5≤  6≥  7<  8>  9(  0)  -_  +*
+#   qQ wW eE rR tT yY uU iI oO pP  ·|
+#   aA sS dD fF gG hH jJ kK lL  ;:  =≠
+#   zZ xX cC vV bB nN mM  ,[  .]  /?
+# i.e. centred dot is lower case and | upper case on one key; * is upper case of +;
+# [ and ] are upper case of , and .
+[hw, circled, above line 2] 868
+# ?? unclear annotation
+
+[hw] ugh!  CLB
+[hw] At least there were no goofs!
+[hw] Try it with a fresh ribbon.
+[hw] Elite suffers some but you
+[hw] now can get a full 80 character
+[hw] input line and margins!

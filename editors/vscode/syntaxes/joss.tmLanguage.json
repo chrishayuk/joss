@@ -1,0 +1,109 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "JOSS",
+  "scopeName": "source.joss",
+  "patterns": [
+    { "include": "#directive" },
+    { "include": "#comment" },
+    { "include": "#form" },
+    { "include": "#step" },
+    { "include": "#instruction" }
+  ],
+  "repository": {
+    "directive": {
+      "comment": "Not typed at the console: a key pressed, or a setting for the replay.",
+      "name": "meta.preprocessor.joss",
+      "match": "^(!)\\s*(interrupt\\s+after\\s+[0-9]+\\s+lines|joss\\s+196[45]|users\\s+[0-9]+|time\\s+[0-9]+)\\s*$",
+      "captures": {
+        "1": { "name": "punctuation.definition.directive.joss" },
+        "2": { "name": "keyword.control.directive.joss" }
+      }
+    },
+    "comment": {
+      "comment": "A star at either end kills the line.",
+      "patterns": [
+        {
+          "name": "comment.line.asterisk.joss",
+          "match": "^[ \\t#]*(\\*).*$",
+          "captures": { "1": { "name": "punctuation.definition.comment.joss" } }
+        },
+        {
+          "name": "comment.line.asterisk.joss",
+          "match": "^.*(\\*)[ \\t#]*$",
+          "captures": { "1": { "name": "punctuation.definition.comment.joss" } }
+        }
+      ]
+    },
+    "form": {
+      "comment": "Form n: and then one line, which is a picture and not an instruction.",
+      "begin": "^\\s*(Form)\\s+([0-9]+)\\s*(:)\\s*$\\n?",
+      "end": "^(.*)$\\n?",
+      "beginCaptures": {
+        "1": { "name": "keyword.control.joss" },
+        "2": { "name": "entity.name.type.form.joss" },
+        "3": { "name": "punctuation.separator.form.joss" }
+      },
+      "endCaptures": {
+        "1": {
+          "name": "string.unquoted.form.joss",
+          "patterns": [
+            { "name": "variable.parameter.field.scientific.joss", "match": "\\.{7,}" },
+            { "name": "variable.parameter.field.fixed.joss", "match": "-?(?:_+(?:\\._*)?|\\._+)" }
+          ]
+        }
+      }
+    },
+    "step": {
+      "match": "^\\s*([0-9]+(?:\\.[0-9]+)?)(?=[ \\t#])",
+      "captures": { "1": { "name": "entity.name.section.step.joss" } }
+    },
+    "instruction": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.joss",
+          "begin": "\"",
+          "end": "\"|$",
+          "beginCaptures": { "0": { "name": "punctuation.definition.string.begin.joss" } },
+          "endCaptures": { "0": { "name": "punctuation.definition.string.end.joss" } }
+        },
+        {
+          "name": "keyword.control.joss",
+          "match": "(?<![A-Za-z])(Set|Do|Type|Delete|Line|Page|To|Done|Stop|Demand|Cancel|Go|Form)(?![A-Za-z])"
+        },
+        {
+          "match": "(?<![A-Za-z])(step|part|form)(?![A-Za-z])\\s*([0-9]+(?:\\.[0-9]+)?|\\.[0-9]+)?",
+          "captures": {
+            "1": { "name": "storage.type.noun.joss" },
+            "2": { "name": "entity.name.section.reference.joss" }
+          }
+        },
+        {
+          "name": "storage.type.noun.joss",
+          "match": "(?<![A-Za-z])(all|steps|parts|forms|values|size|time|users)(?![A-Za-z])"
+        },
+        { "name": "keyword.control.conditional.joss", "match": "(?<![A-Za-z])if(?![A-Za-z])" },
+        { "name": "keyword.control.loop.joss", "match": "(?<![A-Za-z])for(?![A-Za-z])" },
+        { "name": "keyword.other.in.joss", "match": "(?<![A-Za-z])in(?![A-Za-z])" },
+        { "name": "keyword.operator.logical.joss", "match": "(?<![A-Za-z])(and|or)(?![A-Za-z])" },
+        {
+          "name": "support.function.joss",
+          "match": "(?<![A-Za-z])(sqrt|log|exp|sin|cos|arg|ip|fp|dp|xp|sgn|max|min)(?![A-Za-z])"
+        },
+        { "name": "invalid.illegal.word.joss", "match": "[A-Za-z]{2,}" },
+        { "name": "variable.other.letter.joss", "match": "[A-Za-z]" },
+        { "name": "variable.language.line.joss", "match": "\\$" },
+        { "name": "constant.numeric.joss", "match": "[0-9]+(?:\\.[0-9]+)?|\\.[0-9]+" },
+        { "name": "constant.language.blank.joss", "match": "_+" },
+        { "name": "keyword.operator.comparison.joss", "match": "≠|!=|≤|<=|≥|>=|<|>" },
+        { "name": "keyword.operator.equals.joss", "match": "=" },
+        { "name": "keyword.operator.times.joss", "match": "·|@|×" },
+        { "name": "keyword.operator.power.joss", "match": "\\*" },
+        { "name": "keyword.operator.arithmetic.joss", "match": "[-+/]" },
+        { "name": "keyword.operator.absolute.joss", "match": "\\|" },
+        { "name": "punctuation.section.brackets.joss", "match": "[()\\[\\]]" },
+        { "name": "punctuation.separator.comma.joss", "match": "," },
+        { "name": "punctuation.terminator.joss", "match": "\\." }
+      ]
+    }
+  }
+}

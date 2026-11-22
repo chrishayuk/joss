@@ -1,0 +1,58 @@
+# P-3131 (Shaw, Apr 1965) PDF page 3, printed page -2-. U: = user (green), J: = JOSS (black). See NOTES.md.
+J: 1230 4-28-65 JCS
+# ?? page-heading line (time date initials) is in JOSS black; the 5 blank lines after it are attributed to JOSS by inference
+J:
+J:
+J:
+J:
+J:
+U: *  Some elements of the language:
+U:
+U: Type 2+2.
+J:      2+2 =       4
+U: Type 2+2+.
+J: Eh?
+U: Type x.
+J: Error above:  x is undefined.
+U: Set x=3.
+U: Type x.
+J:        x =       3
+U: Type x+2, x-2, 2·x, x/2, x*2.
+J:      x+2 =       5
+J:      x-2 =       1
+J:      2·x =       6
+J:      x/2 =       1.5
+J:      x*2 =       9
+U: Type [(|x-5|·3+4)·2-15]·3+10.
+J: [(|x-5|·3+4)·2-15]·3+10 =  25
+U: Type sqrt(144), log(10), exp(1), sin(.2), cos(.2), arg(3,3), 4·arg(3,3).
+J: sqrt(144) =     12
+J:  log(10) =       2.30258509
+J:   exp(1) =       2.71828183
+J:  sin(.2) =        .198669331
+J:  cos(.2) =        .980066578
+J: arg(3,3) =        .785398163
+J: 4·arg(3,3) =     3.14159265
+U: Type sgn(-3.5), sgn(0), sgn(3.5).
+J: sgn(-3.5) =     -1
+J:   sgn(0) =       0
+J: sgn(3.5) =       1
+U: Type max(6·x, 20, x*3).
+J: max(6·x, 20, x*3) =  27
+U: Type min(6·x, 20, x*3).
+J: min(6·x, 20, x*3) =  18
+U: Set y=123.456.
+U: Type y, ip(y), fp(y), dp(y), xp(y).
+J:        y =     123.456
+J:    ip(y) =     123
+J:    fp(y) =        .456
+J:    dp(y) =       1.23456
+J:    xp(y) =       2
+U: Type 1.23456·10*2.
+J: 1.23456·10*2 =  123.456
+U: Type all values.
+J:
+J:        x =       3
+J:        y =     123.456
+J:
+U: Delete all values.

@@ -1,0 +1,19 @@
+* From J. C. Shaw, "JOSS: Examples of the Use of an Experimental On-Line Computing Service", RAND P-3131, April 1965, page 2.
+*  Some elements of the language:
+
+Type 2+2.
+Type 2+2+.
+Type x.
+Set x=3.
+Type x.
+Type x+2, x-2, 2·x, x/2, x*2.
+Type [(|x-5|·3+4)·2-15]·3+10.
+Type sqrt(144), log(10), exp(1), sin(.2), cos(.2), arg(3,3), 4·arg(3,3).
+Type sgn(-3.5), sgn(0), sgn(3.5).
+Type max(6·x, 20, x*3).
+Type min(6·x, 20, x*3).
+Set y=123.456.
+Type y, ip(y), fp(y), dp(y), xp(y).
+Type 1.23456·10*2.
+Type all values.
+Delete all values.

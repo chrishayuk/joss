@@ -1,0 +1,20 @@
+# page-16 (PDF p. 16, printed p. 8). RETYPED scenario text, continuous with page-15. See page-10 header.
+U: Set R = 100.
+U: Set L = .2.
+U: Set C = .5·10*(-6).
+U: Set Q = .001.
+U: Do part 1.
+J: F = 503.292122
+J: f = 501.716868
+J: I =   3.17220634
+J: d =   1.99315603·10*(-4)
+U: Set d = .0002.
+U: 2.1 Type 1000·t, I·exp[-R·t/(2·L)] sin(k·f·t) in form 3.
+# ?? Printed here with a blank where JOSS's own listing (example-3.txt, facsimile) has the
+# multiplication dot: "...(2·L)]·sin(k·f·t)". Almost certainly a dropped dot in the retyping.
+U: Form 3:
+U: __.__ ms.   -_.______ amp.
+U: Do part 2 for t = 0(d)100·d.
+# [See Example 2 in Appendix A for JOSS' output at this point.]  -> example-2.txt
+U: Type all.
+# [See Example 3 in Appendix A for JOSS' output at this point.]  -> example-3.txt

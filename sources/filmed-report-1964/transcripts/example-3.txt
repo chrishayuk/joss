@@ -1,0 +1,30 @@
+# Example 3 (Appendix A, printed p. 21 = PDF p. 29). FACSIMILE of real JOSS typewriter output.
+# Output of: Type all.   (the command itself, typed by the user on page-16, is not in the figure)
+# All lines typed by JOSS. Column 0 = JOSS left margin (the step numbers start there).
+# Blank-line counts are measured from line pitch; the figure looks like a paste-up (lines 1.1/1.2
+# overlap vertically), so the blank-line counts are less certain than the columns.
+J: 1.1 Set F = sqrt[1/(L·C)]/k.
+J: 1.2 Set f = sqrt[1/(L·C)-R*2/(4·L*2)]/k.
+J: 1.3 Set I = k·F*2·Q/f.
+J: 1.4 Set d = .1/f.
+J: 1.5 Type F, f, I, d.
+J:
+J: 2.1 Type 1000·t, I·exp[-R·t/(2·L)]·sin(k·f·t) in form 3.
+J:
+J:
+J: Form 3:
+J: __.__ ms.   -_.______ amp.
+# The 13th character of the form line is a hyphen "-" (printed mid-height), directly followed by "_".
+# Output (example-2.txt) shows this 9-column field -_.______ holding the sign there only when negative.
+J:
+J:
+J:        d =      2·10*(-4)
+J:        f =    501.716868
+J:        k =      6.2831853
+J:        t =      2·10*(-2)
+J:        C =      5·10*(-7)
+J:        F =    503.292122
+J:        I =      3.17220634
+J:        L =       .2
+J:        Q =      1·10*(-3)
+J:        R =    100

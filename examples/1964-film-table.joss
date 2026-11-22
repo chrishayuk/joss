@@ -1,0 +1,21 @@
+* From C. L. Baker, "JOSS: Scenario of a Filmed Report", RAND RM-4162-PR, June 1964: the film of 21 March 1964, pages 4 to 6 and examples 1 and 2.
+! joss 1964
+1.1 Type x, sqrt(x), log(x), exp(x), _.
+! interrupt after 16 lines
+Do step 1.1 for x = 1(1)100.
+1.1 Type x, sqrt(x), log(x), exp(x) in form 1.
+Form1:*
+Form 1:
+___  __._______  __._______   .............
+! interrupt after 6 lines
+Go.
+1.05 Do part 2 if fp(x/40) = 1/40.
+2.1 Page.
+2.2 Type form 2.
+Form 2:
+ X     SQRT(X)     LOG(X)        EXP(X)
+! interrupt after 9 lines
+Do part 1 for x = 1(1)100.
+1.07 Line if fp(x/5) = 1/5.
+Do part 1 for x = 1(1)100.
+Type all.

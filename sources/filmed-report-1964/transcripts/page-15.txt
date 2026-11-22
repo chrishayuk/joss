@@ -1,0 +1,29 @@
+# page-15 (PDF p. 15, printed p. 7). RETYPED scenario text, continuous with page-14. See page-10 header.
+U: Type all.
+J: 1.05 Do part 2 if fp(x/40) = 1/40.
+J: 1.07 Line if fp(x/5) = 1/5.
+J: 1.1 Type x, sqrt(x), log(x), exp(x) in form 1.
+J:
+J: 2.1 Page.
+J: 2.2 Type form 2.
+J:
+J: Form 1:
+J: ___  __._______  __._______   .............
+J:
+J: Form 2:
+J:  X     SQRT(X)     LOG(X)        EXP(X)
+J:
+J: x =   100
+J: y = 22026.4658
+# NOTE: this retyped "Type all" differs in layout from the two facsimile "Type all" outputs
+# (example-3.txt, example-5.txt): those have two blank lines before the forms and before the values,
+# no blank line between forms, and the values indented with "=" in column 9. Prefer the facsimiles.
+U: Set k = 2·3.14159265.
+U: 1.1 Set F = sqrt[1/(L·C)]/k.
+U: 1.2 Set f = sqrt[1/(L·C)-R*2/(4·L*2)]/k.
+U: 1.3 Set I = k·F*2·Q/f.
+U: 1.4 Set d = .1/f.
+U: 1.5 Type F, f, I, d.
+# ?? No "Delete all." is printed between the first program and this one, yet the later Type all
+# (example-3.txt) shows no steps 1.05/1.07/2.2, no forms 1-2 and no x or y. A Delete all (or
+# equivalent) must have happened in the film but is not in the scenario.

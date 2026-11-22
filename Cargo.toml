@@ -1,0 +1,24 @@
+[package]
+name = "joss"
+version = "0.1.0"
+edition = "2021"
+description = "JOSS (JOHNNIAC Open-Shop System, RAND 1963-65): the first conversational computing language, reconstructed from the original papers and sessions"
+
+[lib]
+name = "joss"
+path = "src/lib.rs"
+
+[[bin]]
+name = "joss"
+path = "src/main.rs"
+
+[dependencies]
+
+# The language server has its own crate so that the interpreter keeps no
+# dependencies. `cargo build` here builds only the interpreter.
+[workspace]
+members = ["lsp"]
+default-members = ["."]
+
+[profile.release]
+opt-level = 3

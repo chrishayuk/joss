@@ -1,0 +1,19 @@
+* $ is the number of the line the typewriter is on, from 1 to 54.
+* Here it numbers the lines, and puts a blank line after every fifth.
+1.1 Type $, x, x*2 in form 1.
+1.2 Line if fp(x/5) = 0.
+Form 1:
+line __:   __ squared is ___
+Do part 1 for x = 1(1)10.
+line 14:    1 squared is   1
+line 15:    2 squared is   4
+line 16:    3 squared is   9
+line 17:    4 squared is  16
+line 18:    5 squared is  25
+
+line 20:    6 squared is  36
+line 21:    7 squared is  49
+line 22:    8 squared is  64
+line 23:    9 squared is  81
+line 24:   10 squared is 100
+

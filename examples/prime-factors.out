@@ -1,0 +1,27 @@
+* The prime factors of a number, by trial division.
+1.1 To step 1.5 if fp(n/d) ≠ 0.
+1.2 Type d in form 1.
+1.3 Set n = n/d.
+1.4 To step 1.1.
+1.5 Set d = d+1.
+1.6 To step 1.1 if d·d ≤ n.
+1.7 Type n in form 1 if n > 1.
+Form 1:
+______
+
+Set n = 510510.
+Set d = 2.
+Do part 1.
+     2
+     3
+     5
+     7
+    11
+    13
+    17
+Set n = 1001.
+Set d = 2.
+Do part 1.
+     7
+    11
+    13

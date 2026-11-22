@@ -1,0 +1,33 @@
+# P-2922 (Shaw, Aug 1964) Fig. 3i, PDF page 24, printed page -23-. U:/J: as labelled in the figure margin. See NOTES.md.
+U: 6.1 Type form 61.
+U: 6.2 Line.
+U: 6.3 Do part 7 for t=0(h)4.
+U:
+U: 7.1 Type t, a in form 62 if fp(t/.5)=0.
+U: 7.2 Do part 8 for x = t+h·(.5-k), t+h·(.5+k).
+U:
+U: 8.1 Set y = c·exp(-x*2/2).
+U: 8.2 Set a = a+.5·h·y.
+U:
+U: Form 61:
+U:   t      Integral
+U: Form 62:
+U: _.__     _.____
+U:
+U: Set a=0.
+U: Set k=1/sqrt(12).
+U: Set h=.1.
+U: Set c=1/sqrt(2·3.14159265).
+U:
+U: Do part 6.
+J:   t      Integral
+J:
+J:  .00      .0000
+J:  .50      .1915
+J: 1.00      .3413
+J: 1.50      .4332
+J: 2.00      .4772
+J: 2.50      .4938
+J: 3.00      .4987
+J: 3.50      .4998
+J: 4.00      .5000

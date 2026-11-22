@@ -1,0 +1,18 @@
+* Simpson's rule for the integral of 4/(1+x*2) from 0 to 1, which is pi.
+* The ends have weight 1, the odd points 4 and the even points 2.
+* Twenty strips give seven correct places.
+1.1 Do part 2.
+1.2 Set s = s + w·y.
+
+2.1 Set y = 4/(1+x*2).
+
+Set h = .05.
+Set s = 0.
+Set w = 1.
+Do part 1 for x = 0, 1.
+Set w = 4.
+Do part 1 for x = h (2·h) 1-h.
+Set w = 2.
+Do part 1 for x = 2·h (2·h) 1-2·h.
+Type s·h/3.
+Type 4·arg(1,1).

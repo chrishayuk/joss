@@ -1,0 +1,264 @@
+# J. C. Shaw, "JOSS: A Designer's View of an Experimental On-Line Computing System",
+# RAND P-2922, August 1964 (AFIPS Fall Joint Computer Conference, 1964).
+# Figures 3a to 3i, "Samples of JOSS language and interaction": nine pages produced
+# at a JOSS console, with U and J marked in the margin by the paper itself.
+#
+# U: typed by the user       J: typed by JOSS, column for column
+# D: a line JOSS began and the user finished (Demand)
+# P: the paper moved to a new page      ! a key pressed, or a setting
+# ~: what this reconstruction types instead of the J: line above it
+#
+! joss 1964
+#
+# P-2922 (Shaw, Aug 1964) Fig. 3a, PDF page 16, printed page -15-.
+U: Type 2+2.
+J:      2+2 =      4
+U:
+U: Set x=3.
+U: Type x.
+J:        x =      3
+U: Type x+2, x-2, 2·x, x/2, x*2.
+J:      x+2 =      5
+J:      x-2 =      1
+J:      2·x =      6
+J:      x/2 =      1.5
+J:      x*2 =      9
+U:
+U: Type [(|x-5|·3+4)·2-15]·3+10.
+J: [(|x-5|·3+4)·2-15]·3+10 = 25
+#
+# P-2922 (Shaw, Aug 1964) Fig. 3b, PDF page 17, printed page -16-.
+U: Type sqrt(3), sqrt(4).
+J:  sqrt(3) =      1.73205081
+J:  sqrt(4) =      2
+U:
+U: Type sqrt(-1).
+J: Error above:  Negative argument for sqrt.
+U:
+U: Set e=2.71828183.
+U: Type log(1), log(2), log(e).
+J:   log(1) =      0
+J:   log(2) =       .69314718
+~:   log(2) =       .693147181
+# log 2 is .69314718056. JOSS dropped a nought at the end, so its log 2 was
+# .693147180: one unit low in the ninth digit.
+J:   log(e) =      1
+U:
+U: Type exp(0), exp(.5), exp(1).
+J:   exp(0) =      1
+J:  exp(.5) =      1.64872127
+J:   exp(1) =      2.71828183
+U:
+U: Type sin(.5), cos(.5), sin(.5)*2+cos(.5)*2.
+J:  sin(.5) =       .479425539
+J:  cos(.5) =       .877582562
+J: sin(.5)*2+cos(.5)*2 = 1
+U:
+U: Type arg(1,0), arg(0,1), arg(-1,0), 4·arg(3,3).
+J: arg(1,0) =      0
+J: arg(0,1) =      1.57079633
+J: arg(-1,0) =     3.14159265
+J: 4·arg(3,3) =    3.14159265
+#
+# P-2922 (Shaw, Aug 1964) Fig. 3c, PDF page 18, printed page -17-.
+U: Set y = 123.456.
+U: Type y, ip(y), fp(y), dp(y), xp(y).
+J:        y =    123.456
+J:    ip(y) =    123
+J:    fp(y) =       .456
+J:    dp(y) =      1.23456
+J:    xp(y) =      2
+U: Type 1.23456·10*2.
+J: 1.23456·10*2 = 123.456
+U:
+U: Type sgn(-3.5), sgn(0), sgn(3.5).
+J: sgn(-3.5) =    -1
+J:   sgn(0) =      0
+J: sgn(3.5) =      1
+U:
+U: Type max(1,2,3), min(1,2,3).
+J: max(1,2,3) =    3
+J: min(1,2,3) =    1
+#
+# P-2922 (Shaw, Aug 1964) Fig. 3d, PDF page 19, printed page -18-.
+U: Delete all.
+U:
+U: 1.1 Do part 2 for b=1(1)a.
+U:
+U: 2.1 Set c = sqrt(a*2 + b*2).
+U: 2.2 Type a, b, c in form 1.
+U:
+U: Form 1:
+U: a = __   b = __   c = __.___
+U:
+U: Do part 1 for a=1(1)3.
+J: a =  1   b =  1   c =  1.414
+J: a =  2   b =  1   c =  2.236
+J: a =  2   b =  2   c =  2.828
+J: a =  3   b =  1   c =  3.162
+J: a =  3   b =  2   c =  3.606
+J: a =  3   b =  3   c =  4.243
+U:
+U: Type all steps.
+J:
+J: 1.1 Do part 2 for b=1(1)a.
+J:
+J: 2.1 Set c = sqrt(a*2 + b*2).
+J: 2.2 Type a, b, c in form 1.
+J:
+U: Type all forms.
+J:
+J: Form 1:
+J: a = __   b = __   c = __.___
+J:
+U: Type all.
+J:
+J: 1.1 Do part 2 for b=1(1)a.
+J:
+J: 2.1 Set c = sqrt(a*2 + b*2).
+J: 2.2 Type a, b, c in form 1.
+J:
+J:
+J: Form 1:
+J: a = __   b = __   c = __.___
+J:
+J:
+J:        a =      3
+J:        b =      3
+J:        c =      4.24264069
+# The figure ends here. The blank line JOSS types after this is below its edge.
+J?
+#
+# P-2922 (Shaw, Aug 1964) Fig. 3e, PDF page 20, printed page -19-.
+U: 2.15 Line if fp(c)=0.
+U: 2.2 Type a, b, c in form 1 if fp(c)=0.
+U: Type part 2.
+J: 2.1 Set c = sqrt(a*2 + b*2).
+J: 2.15 Line if fp(c)=0.
+J: 2.2 Type a, b, c in form 1 if fp(c)=0.
+U: Do part 1 for a=1(1)15.
+J:
+J: a =  4   b =  3   c =  5.000
+J:
+J: a =  8   b =  6   c = 10.000
+J:
+J: a = 12   b =  5   c = 13.000
+J:
+J: a = 12   b =  9   c = 15.000
+J:
+J: a = 15   b =  8   c = 17.000
+U:
+U: Delete part 2.
+U: Type part 2.
+J: Error above:  No such part.
+U: Type all values.
+J:
+J:        a =     15
+J:        b =     15
+J:        c =     21.2132034
+J:
+U: Delete all.
+#
+# P-2922 (Shaw, Aug 1964) Fig. 3f, PDF page 21, printed page -20-.
+U: 3.1 Type x, sqrt(x), log(x), exp(x), __.
+U: Do step 3.1 for x=1,2,3,100.
+J:        x =      1
+J:  sqrt(x) =      1
+J:   log(x) =      0
+J:   exp(x) =      2.71828183
+J:
+J:        x =      2
+J:  sqrt(x) =      1.41421356
+J:   log(x) =       .69314718
+~:   log(x) =       .693147181
+# log 2 is .69314718056. JOSS dropped a nought at the end, so its log 2 was
+# .693147180: one unit low in the ninth digit.
+J:   exp(x) =      7.3890561
+J:
+J:        x =      3
+J:  sqrt(x) =      1.73205081
+J:   log(x) =      1.09861229
+J:   exp(x) =     20.0855369
+J:
+J:        x =    100
+J:  sqrt(x) =     10
+J:   log(x) =      4.60517019
+J:   exp(x) =      2.68811714·10*43
+# The figure ends here. The blank line JOSS types after this is below its edge.
+J?
+#
+# P-2922 (Shaw, Aug 1964) Fig. 3g, PDF page 22, printed page -21-.
+U: 3.1 Type x, sqrt(x), log(x), exp(x) in form 3.
+U: Form 3:
+U: _.__   _.___   _.____   .........
+U:
+U: Do step 3.1 for x = 8.50(.01)8.54(.02)8.60, 9, 9.5.
+J: 8.50   2.915   2.1401    4.915 03
+J: 8.51   2.917   2.1412    4.964 03
+J: 8.52   2.919   2.1424    5.014 03
+J: 8.53   2.921   2.1436    5.064 03
+J: 8.54   2.922   2.1448    5.115 03
+J: 8.56   2.926   2.1471    5.219 03
+J: 8.58   2.929   2.1494    5.324 03
+J: 8.60   2.933   2.1518    5.432 03
+J: 9.00   3.000   2.1972    8.103 03
+J: 9.50   3.082   2.2513    1.336 04
+#
+# P-2922 (Shaw, Aug 1964) Fig. 3h, PDF page 23, printed page -22-.
+U: 4.1 Demand b(i).
+U: 4.2 Set s = s+b(i).
+U:
+U: Set s=0.
+U: Do part 4 for i=1(1)4.
+D:     b(1) = 543
+D:     b(2) = 237
+D:     b(3) = 411
+D:     b(4) = 733
+U: Type s.
+J:        s =   1924
+U: 5.1 Set b(i) = b(i)/s.
+U: Do part 5 for i=1(1)4.
+U: Type b.
+J:     b(1) =       .282224532
+J:     b(2) =       .123180873
+J:     b(3) =       .213617464
+J:     b(4) =       .380977131
+U: Set s=0.
+U: Do step 4.2 for i=1(1)4.
+U: Type s.
+J:        s =      1
+U: Delete all.
+#
+# P-2922 (Shaw, Aug 1964) Fig. 3i, PDF page 24, printed page -23-.
+U: 6.1 Type form 61.
+U: 6.2 Line.
+U: 6.3 Do part 7 for t=0(h)4.
+U:
+U: 7.1 Type t, a in form 62 if fp(t/.5)=0.
+U: 7.2 Do part 8 for x = t+h·(.5-k), t+h·(.5+k).
+U:
+U: 8.1 Set y = c·exp(-x*2/2).
+U: 8.2 Set a = a+.5·h·y.
+U:
+U: Form 61:
+U:   t      Integral
+U: Form 62:
+U: _.__     _.____
+U:
+U: Set a=0.
+U: Set k=1/sqrt(12).
+U: Set h=.1.
+U: Set c=1/sqrt(2·3.14159265).
+U:
+U: Do part 6.
+J:   t      Integral
+J:
+J:  .00      .0000
+J:  .50      .1915
+J: 1.00      .3413
+J: 1.50      .4332
+J: 2.00      .4772
+J: 2.50      .4938
+J: 3.00      .4987
+J: 3.50      .4998
+J: 4.00      .5000

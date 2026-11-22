@@ -1,0 +1,28 @@
+* From J. C. Shaw, "JOSS: A Designer's View of an Experimental On-Line Computing System", RAND P-2922, August 1964, figures 3a to 3c.
+! joss 1964
+Type 2+2.
+
+Set x=3.
+Type x.
+Type x+2, x-2, 2·x, x/2, x*2.
+
+Type [(|x-5|·3+4)·2-15]·3+10.
+Type sqrt(3), sqrt(4).
+
+Type sqrt(-1).
+
+Set e=2.71828183.
+Type log(1), log(2), log(e).
+
+Type exp(0), exp(.5), exp(1).
+
+Type sin(.5), cos(.5), sin(.5)*2+cos(.5)*2.
+
+Type arg(1,0), arg(0,1), arg(-1,0), 4·arg(3,3).
+Set y = 123.456.
+Type y, ip(y), fp(y), dp(y), xp(y).
+Type 1.23456·10*2.
+
+Type sgn(-3.5), sgn(0), sgn(3.5).
+
+Type max(1,2,3), min(1,2,3).

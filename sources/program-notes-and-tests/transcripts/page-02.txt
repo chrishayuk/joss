@@ -1,0 +1,65 @@
+# JOSS_Program_Notes_and_Tests.pdf, page 2 of 43. Typed notes; [hw] = handwritten,
+# [struck] = struck out. Paragraph line breaks as on the page.
+
+JOSS (continued)
+
+
+Functions:
+# ?? typed heading reads "Functiona:" (typo for "Functions:")
+
+sqrt(x)
+log(x)
+exp(x)
+sin(x)
+cos(x)
+arg(x,y)
+ip(x)
+fp(x)
+[struck] coef(x)    [hw] dp(x)
+[struck] sfx(x)     [hw] xp(x)
+sgn(x)
+max(a,b,...,z)
+min(a,b,...,z)
+
+
+The conditional clause may be used at the end of any legitimate step.
+
+   if a<b or c=d and e≤x≤f.
+
+All six numerical relations may be used.  The "and" and "or" are
+evaluated from left to right.
+# ?? typed "numeriaal" (overstruck typo) for "numerical"
+
+
+Brackets and parentheses may be used interchangably.  The absolute
+value bars may be used for brackets in expressions but not for
+enclosing subscripts or arguments.
+
+The dollar sign may be used to refer to the line number on the page
+for editing purposes.
+
+An asterisk at either end of the input line kills the line unless
+it is a form.
+
+Arithmetic operators:
+
+x+y    x-y    x·y    x/y    x*y
+# the fifth operator is the raised exponent asterisk of the JOSS typewriter
+
+
+52 letters for identifiers.  Any letter may be singly or doubly
+subscripted.  No declarations.  A new assignment overrides a
+previous assignment even to the extent of changing dimensions.
+Subscripts must be integers from 0 to 99.
+
+Activity of user during "green" and JOSS during "red" are mutually
+exclusive.  A task may be completed or stopped or interrupted or
+errored.  The last three changes to "green" are flagged by messages.
+Only one suspended task is allowed and that may be continued by
+[struck: "GO"] Go or cancelled by Cancel or Do.
+# "Go", "Cancel", "Do" are underlined in the original
+
+
+Eight slots on the drum for users.  [struck: "1000"] 1024 words for each user
+which covers tables, steps, forms and values.  User may type size
+of his program but is otherwise unconcerned for storage.

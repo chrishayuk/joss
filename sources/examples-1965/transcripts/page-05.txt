@@ -1,0 +1,60 @@
+# P-3131 (Shaw, Apr 1965) PDF page 5, printed page -4-. U: = user (green), J: = JOSS (black). See NOTES.md.
+J: 1250 4-28-65 JCS
+# ?? page-heading line (time date initials) is in JOSS black; the 5 blank lines after it are attributed to JOSS by inference
+J:
+J:
+J:
+J:
+J:
+U: *  Integration of 1/x by Gauss two-point rule:
+U:
+U: 1.1 Type X,Y in form 1 if fp(X)=0.
+U: 1.2 Do part 2 for x=X+p·h, X+q·h.
+U: 2.1 Set y=1/x.
+U: 2.2 Set Y=Y+.5·h·y.
+U: Form 1:
+U: __   _._____
+# ?? user-typed form line partly overprinted by the next line in the scan; taken to be identical to the JOSS-typed copy of Form 1 further down (which is clear)
+U: Set p=.5-.5/sqrt(3).
+U: Set q=.5+.5/sqrt(3).
+U: Set Y=0.
+U: Set h=.1.
+U: Do part 1 for X=1(h)10.
+J:  1    .00000
+J:  2    .69315
+J:  3   1.09861
+J:  4   1.38629
+J:  5   1.60944
+J:  6   1.79176
+J:  7   1.94591
+J:  8   2.07944
+J:  9   2.19722
+J: 10   2.30259
+U: Type 10, log(10) in form 1.
+# the "0" of log(10) is a strikeover: user typed "log(1)" , backspaced over ")" and struck "0" on top of it, then typed ")" again (see the user comment two lines below). Printed position holds both ")" and "0"; "0" is what JOSS used (output is log(10))
+J: 10   2.30259
+U: *  Notice above that JOSS allows backspacing and strikeovers.
+U: Type all.
+J:
+J: 1.1 Type X,Y in form 1 if fp(X)=0.
+J: 1.2 Do part 2 for x=X+p·h, X+q·h.
+J:
+J: 2.1 Set y=1/x.
+J: 2.2 Set Y=Y+.5·h·y.
+J:
+J:
+J: Form 1:
+J: __   _._____
+J:
+J:
+J:        h =        .1
+J:        p =        .211324866
+J:        q =        .788675134
+J:        x =      10.0788675
+J:        y =        .0992174964
+J:        X =      10
+J:        Y =       2.31253534
+J:
+U: Delete all.
+U: Type users.
+J: 6

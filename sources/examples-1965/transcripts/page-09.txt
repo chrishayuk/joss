@@ -1,0 +1,48 @@
+# P-3131 (Shaw, Apr 1965) PDF page 9, printed page -8-. U: = user (green), J: = JOSS (black). See NOTES.md.
+J: 1337 4-28-65 JCS
+# ?? page-heading line (time date initials) is in JOSS black; the 5 blank lines after it are attributed to JOSS by inference
+J:
+J:
+J:
+J:
+J:
+U: *  Production of a formatted table:
+U:
+U: 1.1 Do part 2 if fp(x/20) = 1/20.
+U: 1.2 Line if fp(x/5) = 1/5.
+U: 1.3 Type x, x*2, x*3, sqrt(x), log(x), exp(x) in form 1.
+U:
+U: 2.1 Page.
+U: 2.2 Type "Table of elementary functions:".
+U: 2.3 Line.
+U: 2.4 Line.
+U: 2.5 Type form 2.
+U:
+U: Form 1:
+U: __   ___   _____   _._____   _._____   ...........
+U:
+U: Form 2:
+U:  x   x*2    x*3    sqrt(x)    log(x)      exp(x)
+U:
+U: Type all.
+J:
+J: 1.1 Do part 2 if fp(x/20) = 1/20.
+J: 1.2 Line if fp(x/5) = 1/5.
+J: 1.3 Type x, x*2, x*3, sqrt(x), log(x), exp(x) in form 1.
+J:
+J: 2.1 Page.
+J: 2.2 Type "Table of elementary functions:".
+J: 2.3 Line.
+J: 2.4 Line.
+J: 2.5 Type form 2.
+J:
+J:
+J: Form 1:
+J: __   ___   _____   _._____   _._____   ...........
+J:
+J: Form 2:
+J:  x   x*2    x*3    sqrt(x)    log(x)      exp(x)
+J:
+J:
+U: Do part 1 for x=1(1)20.
+# output of this command begins with step 2.1 "Page." and continues on the next page (page-10.txt)

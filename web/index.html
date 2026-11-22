@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JOSS: a console of 1965</title>
+<style>
+  :root { --paper: #f6f1e3; --ink: #1c1b18; --green: #1d6b3a; --rule: #d8cfb8; --page: #e9e4d6; --dim: #6b6658; }
+  @media (prefers-color-scheme: dark) {
+    :root { --paper: #f1ecdc; --page: #23221f; --rule: #cfc6ae; --dim: #a39d8c; }
+    body { color: #e8e3d4; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--page); font: 15px/1.5 system-ui, sans-serif; color: var(--ink); }
+  main { max-width: 1280px; margin: 0 auto; padding: 24px 16px 48px; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  p { margin: 0 0 12px; max-width: 76ch; }
+  .dim { color: var(--dim); }
+  .bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin: 12px 0; }
+  select, button, input { font: inherit; }
+  button { padding: 4px 12px; border: 1px solid var(--dim); background: transparent; color: inherit; border-radius: 3px; cursor: pointer; }
+  button:disabled { opacity: .45; cursor: default; }
+  button.key { font-family: ui-monospace, Menlo, monospace; min-width: 2.2em; padding: 4px 6px; }
+  .panes { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 16px; }
+  @media (max-width: 860px) { .panes { grid-template-columns: 1fr; } }
+  .label { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--dim); margin: 0 0 6px; }
+  #program, .cm-editor { width: 100%; min-height: 320px; font: 14px/1.5 ui-monospace, Menlo, monospace; background: #fff; color: #111; border: 1px solid var(--rule); padding: 8px; }
+  #program { resize: vertical; white-space: pre; }
+  .paper { background: var(--paper); color: var(--ink); border: 1px solid var(--rule); padding: 20px 18px; min-height: 420px; max-height: 70vh; overflow: auto; font: 14px/1.45 "Courier New", Courier, monospace; }
+  .paper pre { margin: 0; font: inherit; white-space: pre; }
+  .user { color: var(--green); }
+  .joss { color: var(--ink); font-weight: 600; }
+  .key-line { color: #9a5b00; font-style: italic; font-family: system-ui, sans-serif; font-size: 12px; }
+  .sheet { border-top: 1px dashed var(--rule); margin: 10px 0; color: var(--dim); font-size: 12px; font-family: system-ui, sans-serif; }
+  .entry { display: flex; gap: 0; align-items: baseline; }
+  .entry span { white-space: pre; font-weight: 600; }
+  #line { flex: 1; border: 0; outline: 0; background: transparent; color: var(--green); font: inherit; padding: 0; min-width: 4ch; }
+  .lamp { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 6px; background: #b53a2a; }
+  .lamp.green { background: #2e9a55; }
+  #report { white-space: pre-wrap; font: 13px/1.5 ui-monospace, Menlo, monospace; background: var(--paper); color: var(--ink); border: 1px solid var(--rule); padding: 12px; margin-top: 12px; display: none; }
+  .joss-hover { max-width: 46ch; font: 13px/1.45 system-ui, sans-serif; padding: 4px 6px; }
+  .joss-hover code { font-family: ui-monospace, Menlo, monospace; }
+</style>
+</head>
+<body>
+<main>
+  <h1>JOSS</h1>
+  <p>The JOHNNIAC Open-Shop System, RAND, as it stood in 1965: a typewriter, a green ribbon for you and a black one for JOSS.
+     Type a line and press return. A line that begins with a number is kept as a step; anything else is done at once.
+     When something goes wrong, put it right and type <code>Go.</code></p>
+  <p class="dim">Times is <b>·</b> (type <code>@</code>), and <b>*</b> is “to the power”. Type <code>!=</code>, <code>&lt;=</code>, <code>&gt;=</code> for ≠ ≤ ≥. Every instruction ends with a full stop.</p>
+
+  <div class="bar">
+    <label>Sitting <select id="examples"></select></label>
+    <label>JOSS of <select id="year"><option>1965</option><option>1964</option></select></label>
+    <button id="run">TYPE IT ALL IN</button>
+    <button id="fresh">FRESH PAPER</button>
+    <label>Original session <select id="transcripts"></select></label>
+    <button id="verify">REPLAY AND COMPARE WITH THE PAGE</button>
+  </div>
+
+  <div class="panes">
+    <div>
+      <p class="label">What to type <span id="hint"></span></p>
+      <textarea id="program" spellcheck="false"></textarea>
+    </div>
+    <div>
+      <p class="label"><span class="lamp" id="lamp"></span><span id="state">JOSS HAS THE TYPEWRITER</span></p>
+      <div class="paper" id="paper">
+        <pre id="page"></pre>
+        <div class="entry"><span id="asked"></span><input id="line" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Type a line for JOSS"></div>
+      </div>
+      <div class="bar">
+        <button class="key" data-key="·">·</button><button class="key" data-key="≠">≠</button><button class="key" data-key="≤">≤</button><button class="key" data-key="≥">≥</button>
+        <button id="interrupt" disabled>INTERRUPT</button>
+        <button id="go">Go.</button>
+        <label class="dim"><input type="checkbox" id="slow"> at typewriter speed</label>
+      </div>
+    </div>
+  </div>
+  <div id="report"></div>
+</main>
+
+<script type="module">
+import { Sitting, DEFAULT_PATIENCE } from "./session.js";
+
+const $ = (id) => document.getElementById(id);
+const wasmUrl = new URL("joss.wasm", import.meta.url).href;
+let worker = null;
+let nextId = 0;
+const waiting = new Map();
+
+function ask(message) {
+  if (!worker) {
+    worker = new Worker(new URL("worker.js", import.meta.url), { type: "module" });
+    worker.onmessage = ({ data }) => {
+      const pending = waiting.get(data.id);
+      waiting.delete(data.id);
+      if (data.error) pending.reject(new Error(data.error));
+      else pending.resolve(data.result);
+    };
+  }
+  const id = ++nextId;
+  return new Promise((resolve, reject) => {
+    waiting.set(id, { resolve, reject });
+    worker.postMessage({ id, wasmUrl, ...message });
+  });
+}
+const runner = (sitting) => ask({ sitting });
+
+let sitting = new Sitting(runner, { year: $("year").value });
+let shown = 0;          // lines of the page already on the paper
+let typing = null;      // the timer of the typewriter, while JOSS is typing
+let examples = [];
+let transcripts = [];
+
+function lineNode(line) {
+  if (line.who === "page") {
+    const sheet = document.createElement("div");
+    sheet.className = "sheet";
+    sheet.textContent = "new page";
+    return sheet;
+  }
+  const row = document.createElement("div");
+  if (line.who === "key") {
+    row.className = "key-line";
+    row.textContent = `[the INTERRUPT key: ${line.text}]`;
+    return row;
+  }
+  if (line.asked !== undefined) {
+    const asked = document.createElement("span");
+    asked.className = "joss";
+    asked.textContent = line.asked;
+    row.append(asked);
+  }
+  const text = document.createElement("span");
+  text.className = line.who;
+  text.textContent = line.text || (line.asked === undefined ? " " : "");
+  row.append(text);
+  return row;
+}
+
+function turn() {
+  const result = sitting.result;
+  const mine = !typing && !sitting.busy;
+  $("lamp").className = mine ? "lamp green" : "lamp";
+  $("state").textContent = !mine ? "JOSS HAS THE TYPEWRITER"
+    : result.waiting === "form" ? "YOUR TURN: TYPE THE FORM"
+    : result.waiting === "value" ? "YOUR TURN: JOSS WANTS A VALUE"
+    : result.suspended ? "YOUR TURN: A TASK IS WAITING FOR Go." : "YOUR TURN";
+  $("line").disabled = !mine;
+  $("interrupt").disabled = !typing;
+  const last = result.page[result.page.length - 1];
+  $("asked").textContent = mine && result.waiting === "value" && last?.who === "joss" ? last.asked ?? "" : "";
+  if (mine) $("line").focus({ preventScroll: true });
+  $("paper").scrollTop = $("paper").scrollHeight;
+}
+
+/** Puts the new lines of the page on the paper, JOSS's at typewriter speed if asked. */
+function show() {
+  const page = sitting.result.page;
+  // The line JOSS is waiting on is shown by the entry line, not the paper.
+  const end = sitting.result.waiting === "value" ? page.length - 1 : page.length;
+  const node = $("page");
+  if (shown > end) { node.textContent = ""; shown = 0; }
+  const slow = $("slow").checked;
+  let answered = 0;       // lines JOSS has typed of its latest answer
+  const step = () => {
+    while (shown < end) {
+      const line = page[shown++];
+      node.append(lineNode(line));
+      if (line.who === "joss") {
+        answered++;
+        if (slow) { typing = setTimeout(step, 90 + line.text.length * 12); typing.answered = answered; turn(); return; }
+      } else answered = 0;
+    }
+    typing = null;
+    turn();
+  };
+  step();
+}
+
+async function type(lines) {
+  if (sitting.busy || typing) return;
+  turn();
+  try {
+    await sitting.typeAll(lines);
+  } catch (error) {
+    $("page").append(lineNode({ who: "key", text: String(error.message || error) }));
+  }
+  show();
+}
+
+function fresh() {
+  clearTimeout(typing);
+  typing = null;
+  sitting = new Sitting(runner, { year: $("year").value, patience: DEFAULT_PATIENCE });
+  shown = 0;
+  $("page").textContent = "";
+  $("report").style.display = "none";
+  turn();
+}
+
+$("line").addEventListener("keydown", (event) => {
+  if (event.key !== "Enter") return;
+  const line = $("line").value;
+  $("line").value = "";
+  type([line]);
+});
+for (const key of document.querySelectorAll("[data-key]")) {
+  key.addEventListener("click", () => {
+    const input = $("line");
+    const at = input.selectionStart ?? input.value.length;
+    input.value = input.value.slice(0, at) + key.dataset.key + input.value.slice(input.selectionEnd ?? at);
+    input.focus();
+    input.setSelectionRange(at + 1, at + 1);
+  });
+}
+$("go").addEventListener("click", () => type(["Go."]));
+$("fresh").addEventListener("click", fresh);
+$("year").addEventListener("change", fresh);
+$("run").addEventListener("click", () => {
+  fresh();
+  type(source().replace(/\n$/, "").split("\n"));
+});
+$("interrupt").addEventListener("click", async () => {
+  // JOSS finishes the line it is on, and stops.
+  const after = typing?.answered ?? 0;
+  clearTimeout(typing);
+  typing = null;
+  // Drop what was shown of this answer: the replay types it again, cut short.
+  await sitting.interrupt(after);
+  $("page").textContent = "";
+  shown = 0;
+  const slow = $("slow").checked;
+  $("slow").checked = false;
+  show();
+  $("slow").checked = slow;
+});
+
+// The box on the left is a plain text box, or an editor if one can be loaded.
+let editor = null;
+const source = () => (editor ? editor.state.doc.toString() : $("program").value);
+function load(text) {
+  if (editor) editor.dispatch({ changes: { from: 0, to: editor.state.doc.length, insert: text } });
+  else $("program").value = text;
+}
+
+$("examples").addEventListener("change", () => {
+  const example = examples.find((e) => e.name === $("examples").value);
+  if (!example) return;
+  $("year").value = example.year;
+  load(example.lines.join("\n") + "\n");
+  fresh();
+});
+
+$("verify").addEventListener("click", async () => {
+  const transcript = transcripts.find((t) => t.name === $("transcripts").value);
+  if (!transcript) return;
+  $("report").style.display = "block";
+  $("report").textContent = "replaying…";
+  // Show the sitting on the paper as well: the lines the user typed in it.
+  const year = /^! joss 1964$/m.test(transcript.text) ? "1964" : "1965";
+  const typed = [];
+  for (const line of transcript.text.split("\n")) {
+    if (line.startsWith("U:")) typed.push(line.slice(3));
+    else if (line.startsWith("D:") || line.startsWith("D~")) typed.push(line.slice(line.indexOf("=") + 1).trim());
+    else if (/^! (interrupt|users|time)/.test(line)) typed.push(line);
+  }
+  $("year").value = year;
+  load(typed.join("\n") + "\n");
+  fresh();
+  await type(typed);
+  $("report").style.display = "block";
+  $("report").textContent = await ask({ verify: transcript.text });
+});
+
+const [exampleList, transcriptList] = await Promise.all([
+  fetch("examples.json").then((r) => r.json()),
+  fetch("transcripts.json").then((r) => r.json()),
+]);
+examples = exampleList;
+transcripts = transcriptList;
+for (const example of examples) $("examples").append(new Option(example.name));
+for (const transcript of transcripts) $("transcripts").append(new Option(transcript.name));
+
+import("./editor.js")
+  .then((module) => module.upgrade($("program")))
+  .then((view) => {
+    if (!view) return;
+    editor = view;
+    $("hint").textContent = "/ hover over any word";
+  })
+  .catch(() => {});
+
+const wanted = new URLSearchParams(location.search).get("example");
+$("examples").value = examples.some((e) => e.name === wanted) ? wanted : examples[0]?.name;
+$("examples").dispatchEvent(new Event("change"));
+if (new URLSearchParams(location.search).has("run")) $("run").click();
+turn();
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+* Factorial by recursion: part 1 asks for part 1.
+* JOSS has no arguments and no local values, so n is counted down on the
+* way in and back up on the way out.
+1.1 Set f = 1 if n ≤ 1.
+1.2 Done if n ≤ 1.
+1.3 Set n = n-1.
+1.4 Do part 1.
+1.5 Set n = n+1.
+1.6 Set f = f·n.
+Set n = 10.
+Do part 1.
+Type n, f.

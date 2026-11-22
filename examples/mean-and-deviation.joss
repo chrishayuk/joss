@@ -1,0 +1,19 @@
+* The mean and the standard deviation of numbers that JOSS asks for.
+1.1 Demand x(i).
+1.2 Set s = s + x(i).
+
+2.1 Set v = v + [x(i)-m]*2.
+
+Set n = 6.
+Set s = 0.
+Do part 1 for i = 1(1)n.
+61.5
+64
+58.25
+70
+66.75
+63.5
+Set m = s/n.
+Set v = 0.
+Do part 2 for i = 1(1)n.
+Type m, sqrt[v/(n-1)].

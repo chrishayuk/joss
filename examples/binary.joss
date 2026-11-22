@@ -1,0 +1,15 @@
+* A whole number in binary. The bits come out last first, so they are
+* kept in an indexed letter and typed from the top down.
+1.1 Set b(k) = n - 2·ip(n/2).
+1.2 Set n = ip(n/2).
+1.3 Set k = k+1.
+1.4 To step 1.1 if n > 0.
+
+2.1 Type b(i) in form 1.
+Form 1:
+_
+
+Set n = 1965.
+Set k = 0.
+Do part 1.
+Do part 2 for i = k-1(-1)0.

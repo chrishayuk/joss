@@ -1,0 +1,49 @@
+* From J. C. Shaw, "JOSS: Examples of the Use of an Experimental On-Line Computing Service", RAND P-3131, April 1965, page 5.
+*  Root finding:
+
+1.1 Set w=y.
+1.2 Do part 2 for x=x+d.
+1.3 Set d=d·y/(w-y).
+1.4 To part 1 if |y|≥e.
+1.5 Type "Root".
+
+2.1 Set y=exp(x)-20·log(x).
+2.2 Type x,y in form 1.
+
+Form 1:
+x = __.______   y = __.______
+
+Type step 1.4.
+1.4 To part 1 if |y|≥e.
+Do part 2 for x=.5(.5)3.
+x =   .500000   y = 15.511665
+x =  1.000000   y =  2.718282
+x =  1.500000   y = -3.627613
+x =  2.000000   y = -6.473888
+x =  2.500000   y = -6.143321
+x =  3.000000   y = -1.886709
+Do part 2 for x=3.5, 4.
+x =  3.500000   y =  8.060193
+x =  4.000000   y = 26.872263
+Do part 2 for x=1.2.
+x =  1.200000   y =  -.326314
+Do part 1 for d=-.05.
+x =  1.150000   y =   .362954
+Error at step 1.4:  e is undefined.
+Set e=.00005.
+Go.
+x =  1.176329   y =  -.005521
+x =  1.175934   y =  -.000092
+x =  1.175928   y =   .000000
+Root
+Do part 2 for x=3.1.
+x =  3.100000   y =  -.430091
+Do part 1 for d=.1.
+x =  3.200000   y =  1.269514
+x =  3.125305   y =  -.023794
+x =  3.126680   y =  -.001278
+x =  3.126758   y =   .000001
+Root
+Do part 2 for x=x-.000001.
+x =  3.126757   y =  -.000015
+Delete all.

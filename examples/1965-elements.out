@@ -1,0 +1,51 @@
+* From J. C. Shaw, "JOSS: Examples of the Use of an Experimental On-Line Computing Service", RAND P-3131, April 1965, page 2.
+*  Some elements of the language:
+
+Type 2+2.
+     2+2 =       4
+Type 2+2+.
+Eh?
+Type x.
+Error above:  x is undefined.
+Set x=3.
+Type x.
+       x =       3
+Type x+2, x-2, 2·x, x/2, x*2.
+     x+2 =       5
+     x-2 =       1
+     2·x =       6
+     x/2 =       1.5
+     x*2 =       9
+Type [(|x-5|·3+4)·2-15]·3+10.
+[(|x-5|·3+4)·2-15]·3+10 =  25
+Type sqrt(144), log(10), exp(1), sin(.2), cos(.2), arg(3,3), 4·arg(3,3).
+sqrt(144) =     12
+ log(10) =       2.30258509
+  exp(1) =       2.71828183
+ sin(.2) =        .198669331
+ cos(.2) =        .980066578
+arg(3,3) =        .785398163
+4·arg(3,3) =     3.14159265
+Type sgn(-3.5), sgn(0), sgn(3.5).
+sgn(-3.5) =     -1
+  sgn(0) =       0
+sgn(3.5) =       1
+Type max(6·x, 20, x*3).
+max(6·x, 20, x*3) =  27
+Type min(6·x, 20, x*3).
+min(6·x, 20, x*3) =  18
+Set y=123.456.
+Type y, ip(y), fp(y), dp(y), xp(y).
+       y =     123.456
+   ip(y) =     123
+   fp(y) =        .456
+   dp(y) =       1.23456
+   xp(y) =       2
+Type 1.23456·10*2.
+1.23456·10*2 =  123.456
+Type all values.
+
+       x =       3
+       y =     123.456
+
+Delete all values.

@@ -1,0 +1,35 @@
+* The date of Easter in the Gregorian calendar (the anonymous algorithm
+* of 1876). JOSS has no remainder function; part 9 is one: r becomes the
+* remainder of u divided by v.
+1.01 Set u = y.
+1.02 Set v = 19.
+1.03 Do part 9.
+1.04 Set a = r.
+1.05 Set b = ip(y/100).
+1.06 Set c = y - 100·b.
+1.07 Set d = ip(b/4).
+1.08 Set e = b - 4·d.
+1.09 Set f = ip[(b+8)/25].
+1.10 Set g = ip[(b-f+1)/3].
+1.11 Set u = 19·a+b-d-g+15.
+1.12 Set v = 30.
+1.13 Do part 9.
+1.14 Set h = r.
+1.15 Set i = ip(c/4).
+1.16 Set k = c - 4·i.
+1.17 Set u = 32+2·e+2·i-h-k.
+1.18 Set v = 7.
+1.19 Do part 9.
+1.20 Set l = r.
+1.21 Set m = ip[(a+11·h+22·l)/451].
+1.22 Set u = h+l-7·m+114.
+1.23 Set v = 31.
+1.24 Do part 9.
+1.25 Type y, ip(u/31), r+1 in form 1.
+
+9.1 Set r = u - v·ip(u/v).
+
+Form 1:
+____   month _   day __
+
+Do part 1 for y = 1964, 1965, 1966, 2000.

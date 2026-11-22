@@ -1,0 +1,58 @@
+# JOSS_Program_Notes_and_Tests.pdf, page 1 of 43.
+# Typed command summary (not a console session: no U:/J: prefixes). Typewriter text
+# is given plain; handwritten additions are marked [hw]; struck-out text is marked
+# [struck]. Line order as on the page.
+
+JOSS
+
+
+Direct only:
+
+Cancel.
+Go.
+[struck, x-ed out with typewriter, illegible; about 7 characters]
+Form 1:
+Delete step 1.1.
+Delete part 1.
+Delete form 1.
+Delete all steps.
+Delete all parts.
+Delete all forms.
+Delete all.
+[struck by a pen line] Delete all values.
+[hw] Punch.
+[hw] Read deck 3173.
+# ?? deck number read as "3173"; middle digits could be "3/73" or "3173"
+[hw] x=3
+# ?? handwritten; evidently the "short Set" form (direct only) x=3
+Indirect only:
+
+1.1 To step 3.7.
+1.1 To part 3.
+1.1 Done.
+1.1 Stop.
+[hw] 1.1 Demand x.
+
+
+Both direct and indirect:
+
+Line.
+Page.
+Set x=y+1.
+Do part 1.     [hw] Do step 1.1.
+Delete a, b, c.
+[struck, x-ed out with typewriter, about 18 characters] [hw] Delete all values.
+[struck by a pen line] Type 2+2, x, y+1.
+Type step 1.1.
+Type part 1.
+Type form 1.
+Type all steps.
+Type all parts.
+Type all forms.
+Type all values.
+Type "ok".
+Type size.
+Type a,_,b, c in form 1.
+# ?? the "_" between the commas is a handwritten insertion over typed "a, b, c"
+[hw] Type a, b, V(3), V, A(i,j), A, _.
+[hw] Type all.

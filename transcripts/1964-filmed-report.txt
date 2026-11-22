@@ -1,0 +1,526 @@
+# C. L. Baker, "JOSS: Scenario of a Filmed Report", RAND RM-4162-PR, June 1964.
+# The session filmed at a JOSS console on 21 March 1964, pp. 2-10 of the report,
+# with the five facsimiles of typewriter output from its Appendix A put back
+# where the scenario says "See Example N".
+#
+# U: typed by the user       J: typed by JOSS, column for column (a facsimile)
+# J~ typed by JOSS, but known only from the report's retyping of it, which closes
+#    up the columns: compared with the spaces left out
+# D~ a line JOSS began and the user finished (Demand), retyped
+# P: the paper moved to a new page      ! a key pressed, or a setting
+# ~: what this reconstruction types instead of the J: line above it
+#
+# Five things are put right, each marked where it happens. Not reproduced: the
+# sign-on (JOSS typed "Press 'IN' for JOSS service." and "Please identify
+# yourself."; the user typed RAND) and the line "3-21-64 RAND" that headed each page.
+! joss 1964
+U: Type 2+2.
+J~ 2+2 = 4
+U: Type 2+2-3-3+4+4.
+J~ 2+2-3-3+4+4 = 6
+U: Type -1.2·1.2.
+J~ -1.2·1.2 = -1.44
+U: Type 7/2.
+J~ 7/2 = 3.5
+U: Type 7/0.
+J~ Error above:  Zero divisor.
+U: Type 2*8.
+J~ 2*8 = 256
+U: Type 3+2,3-2,3·2,_,3/2,3*2.
+J~ 3+2 = 5
+J~ 3-2 = 1
+J~ 3·2 = 6
+J~
+J~ 3/2 = 1.5
+J~ 3*2 = 9
+U: Type [.7*5-2.3*(-.7)]/[7*6-|9*5-5*7|*(2/3)].
+J~ [.7*5-2.3*(-.7)]/[7*6-|9*5-5*7|*(2/3)] = -3.33630357·10*(-6)
+~: [.7*5-2.3*(-.7)]/[7*6-|9*5-5*7|*(2/3)] =-3.33630356·10*(-6)
+# One unit in the ninth digit. The answer is that sensitive to 2.3*(-.7), which
+# is .5582008774: JOSS evidently had .558200878 where this has .558200877.
+U: Type sqrt(49).
+J~ sqrt(49) = 7
+U: Type sqrt(sqrt(sqrt(sqrt(3*2*2*2*2)))).
+J~ sqrt(sqrt(sqrt(sqrt(3*2*2*2*2)))) = 3
+U: Type cos (3.14159265/4).
+# Put right (4): the report prints the answer without the space the user typed
+# after cos. JOSS labels an answer with the expression as typed.
+J~ cos (3.14159265/4) = .707106781
+U: Type log(2.71828183).
+J~ log(2.71828183) = 1
+U: Type y.
+J~ Error above:  Undefined.
+U: Set y = exp(10).
+U: Type y.
+J~ y = 22026.4658
+U: Type y, ip(y), fp(y), dp(y), xp(y).
+J~     y = 22026.4658
+J~ ip(y) = 22026
+J~ fp(y) =      .4658
+J~ dp(y) =     2.20264658
+J~ xp(y) =     4
+U: 1.1 Type x, sqrt(x), log(x), exp(x), _.
+# The user presses INTERRUPT while JOSS is typing. "JOSS has calculated several lines
+# and will stop when they have been printed" (p. 4). Here: after sixteen lines.
+! interrupt after 16 lines
+U: Do step 1.1 for x = 1(1)100.
+J~       x =  1
+J~ sqrt(x) =  1
+J~  log(x) =  0
+J~  exp(x) =  2.71828183
+J~
+J~       x =  2
+J~ sqrt(x) =  1.41421356
+J~  log(x) =   .69314718
+~:   log(x) =       .693147181
+# log 2 is .69314718056. JOSS typed nine digits and dropped a nought at the end,
+# so its log 2 was .693147180: one unit low in the ninth digit.
+J~  exp(x) =  7.3890561
+J~
+J~       x =  3
+J~ sqrt(x) =  1.73205081
+J~  log(x) =  1.09861229
+J~  exp(x) = 20.0855369
+J~
+J~       x =  4
+J~ Interrupted at step 1.1.
+# Put right (1): the report has a comma before "in form 1". The step as JOSS
+# lists it further on has none.
+U: 1.1 Type x, sqrt(x), log(x), exp(x) in form 1.
+U: Form1:*
+U: Form 1:
+U: ___  __._______  __._______   .............
+! interrupt after 6 lines
+U: Go.
+J~   4   2.0000000   1.3862944    5.4598150 01
+J~   5   2.2360680   1.6094379    1.4841316 02
+J~   6   2.4494897   1.7917595    4.0342879 02
+J~   7   2.6457513   1.9459102    1.0966332 03
+J~   8   2.8284271   2.0794415    2.9809580 03
+J~   9   3.0000000   2.1972246    8.1030839 03
+J~ Interrupted at step 1.1.
+U: 1.05 Do part 2 if fp(x/40) = 1/40.
+U: 2.1 Page.
+U: 2.2 Type form 2.
+U: Form 2:
+U:  X     SQRT(X)     LOG(X)        EXP(X)
+! interrupt after 9 lines
+U: Do part 1 for x = 1(1)100.
+J~  X     SQRT(X)     LOG(X)        EXP(X)
+J~   1   1.0000000    .0000000    2.7182818 00
+J~   2   1.4142136    .6931472    7.3890561 00
+J~   3   1.7320508   1.0986123    2.0085537 01
+J~   4   2.0000000   1.3862944    5.4598150 01
+J~   5   2.2360680   1.6094379    1.4841316 02
+J~   6   2.4494897   1.7917595    4.0342879 02
+J~   7   2.6457513   1.9459102    1.0966332 03
+J~   8   2.8284271   2.0794415    2.9809580 03
+J~ Interrupted at step 1.05.
+U: 1.07 Line if fp(x/5) = 1/5.
+U: Do part 1 for x = 1(1)100.
+P:
+J:  X     SQRT(X)     LOG(X)        EXP(X)
+J:
+J:   1   1.0000000    .0000000    2.7182818 00
+J:   2   1.4142136    .6931472    7.3890561 00
+J:   3   1.7320508   1.0986123    2.0085537 01
+J:   4   2.0000000   1.3862944    5.4598150 01
+J:   5   2.2360680   1.6094379    1.4841316 02
+J:
+J:   6   2.4494897   1.7917595    4.0342879 02
+J:   7   2.6457513   1.9459102    1.0966332 03
+J:   8   2.8284271   2.0794415    2.9809580 03
+J:   9   3.0000000   2.1972246    8.1030839 03
+J:  10   3.1622777   2.3025851    2.2026466 04
+J:
+J:  11   3.3166248   2.3978953    5.9874142 04
+J:  12   3.4641016   2.4849067    1.6275479 05
+J:  13   3.6055513   2.5649494    4.4241339 05
+J:  14   3.7416574   2.6390573    1.2026043 06
+J:  15   3.8729834   2.7080502    3.2690174 06
+J:
+J:  16   4.0000000   2.7725887    8.8861105 06
+J:  17   4.1231056   2.8332133    2.4154953 07
+J:  18   4.2426407   2.8903718    6.5659969 07
+J:  19   4.3588989   2.9444390    1.7848230 08
+J:  20   4.4721360   2.9957323    4.8516520 08
+J:
+J:  21   4.5825757   3.0445224    1.3188157 09
+J:  22   4.6904158   3.0910425    3.5849129 09
+J:  23   4.7958315   3.1354942    9.7448035 09
+J:  24   4.8989795   3.1780538    2.6489122 10
+J:  25   5.0000000   3.2188758    7.2004899 10
+J:
+J:  26   5.0990195   3.2580965    1.9572961 11
+J:  27   5.1961524   3.2958369    5.3204824 11
+J:  28   5.2915026   3.3322045    1.4462571 12
+J:  29   5.3851648   3.3672958    3.9313343 12
+J:  30   5.4772256   3.4011974    1.0686475 13
+J:
+J:  31   5.5677644   3.4339872    2.9048850 13
+J:  32   5.6568543   3.4657359    7.8962960 13
+J:  33   5.7445627   3.4965076    2.1464358 14
+J:  34   5.8309519   3.5263605    5.8346174 14
+J:  35   5.9160798   3.5553481    1.5860135 15
+J:
+J:  36   6.0000000   3.5835189    4.3112316 15
+J:  37   6.0827625   3.6109179    1.1719142 16
+J:  38   6.1644140   3.6375862    3.1855932 16
+J:  39   6.2449980   3.6635617    8.6593400 16
+J:  40   6.3245553   3.6888795    2.3538527 17
+P:
+J:  X     SQRT(X)     LOG(X)        EXP(X)
+J:
+J:  41   6.4031242   3.7135721    6.3984349 17
+J:  42   6.4807407   3.7376696    1.7392749 18
+J:  43   6.5574385   3.7612001    4.7278395 18
+J:  44   6.6332496   3.7841896    1.2851600 19
+J:  45   6.7082039   3.8066625    3.4934271 19
+J:
+J:  46   6.7823300   3.8286414    9.4961194 19
+J:  47   6.8556546   3.8501476    2.5813129 20
+J:  48   6.9282032   3.8712010    7.0167359 20
+J:  49   7.0000000   3.8918203    1.9073466 21
+J:  50   7.0710678   3.9120230    5.1847055 21
+J:
+J:  51   7.1414284   3.9318256    1.4093491 22
+J:  52   7.2111026   3.9512437    3.8310080 22
+J:  53   7.2801099   3.9702919    1.0413759 23
+J:  54   7.3484692   3.9889841    2.8307533 23
+J:  55   7.4161985   4.0073332    7.6947853 23
+J:
+J:  56   7.4833148   4.0253517    2.0916595 24
+J:  57   7.5498344   4.0430513    5.6857200 24
+J:  58   7.6157731   4.0604430    1.5455389 25
+J:  59   7.6811458   4.0775374    4.2012104 25
+J:  60   7.7459667   4.0943446    1.1420074 26
+J:
+J:  61   7.8102497   4.1108739    3.1042979 26
+J:  62   7.8740079   4.1271344    8.4383567 26
+J:  63   7.9372539   4.1431347    2.2937832 27
+J:  64   8.0000000   4.1588831    6.2351491 27
+J:  65   8.0622578   4.1743873    1.6948892 28
+J:
+J:  66   8.1240384   4.1896547    4.6071866 28
+J:  67   8.1853528   4.2046926    1.2523632 29
+J:  68   8.2462113   4.2195077    3.4042761 29
+J:  69   8.3066239   4.2341065    9.2537817 29
+J:  70   8.3666003   4.2484952    2.5154387 30
+J:
+J:  71   8.4261498   4.2626799    6.8376712 30
+J:  72   8.4852814   4.2766661    1.8586717 31
+~:  72   8.4852814   4.2766661    1.8586718 31
+# e to the 72nd is 1.858671745...·10*31. To nine digits that is 1.85867175, which
+# this form would round to ...718. JOSS typed ...717: its own exp(72) was one
+# unit low in the ninth digit.
+J:  73   8.5440038   4.2904594    5.0523936 31
+J:  74   8.6023253   4.3040651    1.3733830 32
+J:  75   8.6602540   4.3174881    3.7332420 32
+J:
+J:  76   8.7177979   4.3307333    1.0148004 33
+J:  77   8.7749644   4.3438054    2.7585135 33
+J:  78   8.8317609   4.3567088    7.4984170 33
+J:  79   8.8881944   4.3694479    2.0382811 34
+J:  80   8.9442719   4.3820266    5.5406224 34
+P:
+J:  X     SQRT(X)     LOG(X)        EXP(X)
+J:
+J:  81   9.0000000   4.3944492    1.5060973 35
+J:  82   9.0553851   4.4067193    4.0939970 35
+J:  83   9.1104336   4.4188406    1.1128638 36
+J:  84   9.1651514   4.4308168    3.0250773 36
+J:  85   9.2195445   4.4426513    8.2230127 36
+J:
+J:  86   9.2736185   4.4543473    2.2352466 37
+J:  87   9.3273791   4.4659081    6.0760302 37
+J:  88   9.3808315   4.4773368    1.6516363 38
+J:  89   9.4339811   4.4886364    4.4896128 38
+J:  90   9.4868330   4.4998097    1.2204033 39
+J:
+J:  91   9.5393920   4.5108595    3.3174001 39
+J:  92   9.5916631   4.5217886    9.0176284 39
+J:  93   9.6436508   4.5325995    2.4512455 40
+J:  94   9.6953597   4.5432948    6.6631762 40
+J:  95   9.7467943   4.5538769    1.8112391 41
+J:
+J:  96   9.7979590   4.5643482    4.9234583 41
+J:  97   9.8488578   4.5747110    1.3383347 42
+J:  98   9.8994949   4.5849675    3.6379710 42
+J:  99   9.9498744   4.5951199    9.8890303 42
+J: 100  10.0000000   4.6051702    2.6881171 43
+U: Type all.
+J~ 1.05 Do part 2 if fp(x/40) = 1/40.
+J~ 1.07 Line if fp(x/5) = 1/5.
+J~ 1.1 Type x, sqrt(x), log(x), exp(x) in form 1.
+J~
+J~ 2.1 Page.
+J~ 2.2 Type form 2.
+J~
+J~ Form 1:
+J~ ___  __._______  __._______   .............
+J~
+J~ Form 2:
+J~  X     SQRT(X)     LOG(X)        EXP(X)
+J~
+J~ x =   100
+J~ y = 22026.4658
+# Put right (2): the report goes straight on to the next problem, but the
+# listing that follows (Example 3) has none of the first program's steps, forms
+# or values in it. Something like this was typed and cut from the scenario.
+U: Delete all.
+U: Set k = 2·3.14159265.
+U: 1.1 Set F = sqrt[1/(L·C)]/k.
+U: 1.2 Set f = sqrt[1/(L·C)-R*2/(4·L*2)]/k.
+U: 1.3 Set I = k·F*2·Q/f.
+U: 1.4 Set d = .1/f.
+U: 1.5 Type F, f, I, d.
+U: Set R = 100.
+U: Set L = .2.
+U: Set C = .5·10*(-6).
+U: Set Q = .001.
+U: Do part 1.
+J~ F = 503.292122
+J~ f = 501.716868
+J~ I =   3.17220634
+J~ d =   1.99315603·10*(-4)
+U: Set d = .0002.
+# Put right (3): the report has a space where the facsimile listing has the dot.
+U: 2.1 Type 1000·t, I·exp[-R·t/(2·L)]·sin(k·f·t) in form 3.
+U: Form 3:
+U: __.__ ms.   -_.______ amp.
+U: Do part 2 for t = 0(d)100·d.
+J:   .00 ms.     .000000 amp.
+J:   .20 ms.    1.778902 amp.
+J:   .40 ms.    2.733649 amp.
+J:   .60 ms.    2.591195 amp.
+J:   .80 ms.    1.508396 amp.
+J:  1.00 ms.    -.026650 amp.
+J:  1.20 ms.   -1.405807 amp.
+J:  1.40 ms.   -2.136197 amp.
+J:  1.60 ms.   -2.010678 amp.
+J:  1.80 ms.   -1.156910 amp.
+J:  2.00 ms.     .041508 amp.
+J:  2.20 ms.    1.110600 amp.
+J:  2.40 ms.    1.669108 amp.
+J:  2.60 ms.    1.560014 amp.
+J:  2.80 ms.     .887011 amp.
+J:  3.00 ms.    -.048484 amp.
+J:  3.20 ms.    -.877107 amp.
+J:  3.40 ms.   -1.303985 amp.
+J:  3.60 ms.   -1.210201 amp.
+J:  3.80 ms.    -.679828 amp.
+J:  4.00 ms.     .050339 amp.
+J:  4.20 ms.     .692491 amp.
+J:  4.40 ms.    1.018606 amp.
+J:  4.60 ms.     .938705 amp.
+J:  4.80 ms.     .520840 amp.
+J:  5.00 ms.    -.048997 amp.
+J:  5.20 ms.    -.546570 amp.
+J:  5.40 ms.    -.795583 amp.
+J:  5.60 ms.    -.728019 amp.
+J:  5.80 ms.    -.398878 amp.
+J:  6.00 ms.     .045781 amp.
+J:  6.20 ms.     .431272 amp.
+J:  6.40 ms.     .621313 amp.
+J:  6.60 ms.     .564544 amp.
+J:  6.80 ms.     .305351 amp.
+J:  7.00 ms.    -.041586 amp.
+J:  7.20 ms.    -.340199 amp.
+J:  7.40 ms.    -.485157 amp.
+J:  7.60 ms.    -.437718 amp.
+J:  7.80 ms.    -.233656 amp.
+J:  8.00 ms.     .037003 amp.
+J:  8.20 ms.     .268284 amp.
+J:  8.40 ms.     .378791 amp.
+J:  8.60 ms.     .339337 amp.
+J:  8.80 ms.     .178717 amp.
+J:  9.00 ms.    -.032410 amp.
+J:  9.20 ms.    -.211514 amp.
+J:  9.40 ms.    -.295709 amp.
+J:  9.60 ms.    -.263032 amp.
+J:  9.80 ms.    -.136634 amp.
+J: 10.00 ms.     .028035 amp.
+J: 10.20 ms.     .166713 amp.
+J: 10.40 ms.     .230822 amp.
+J: 10.60 ms.     .203857 amp.
+J: 10.80 ms.     .104412 amp.
+J: 11.00 ms.    -.024007 amp.
+J: 11.20 ms.    -.131368 amp.
+J: 11.40 ms.    -.180151 amp.
+J: 11.60 ms.    -.157972 amp.
+J: 11.80 ms.    -.079750 amp.
+J: 12.00 ms.     .020387 amp.
+J: 12.20 ms.     .103490 amp.
+J: 12.40 ms.     .140586 amp.
+J: 12.60 ms.     .122398 amp.
+J: 12.80 ms.     .060882 amp.
+J: 13.00 ms.    -.017193 amp.
+J: 13.20 ms.    -.081508 amp.
+J: 13.40 ms.    -.109698 amp.
+J: 13.60 ms.    -.094821 amp.
+J: 13.80 ms.    -.046454 amp.
+J: 14.00 ms.     .014412 amp.
+J: 14.20 ms.     .064180 amp.
+J: 14.40 ms.     .085586 amp.
+J: 14.60 ms.     .073447 amp.
+J: 14.80 ms.     .035426 amp.
+J: 15.00 ms.    -.012019 amp.
+J: 15.20 ms.    -.050524 amp.
+J: 15.40 ms.    -.066765 amp.
+J: 15.60 ms.    -.056883 amp.
+J: 15.80 ms.    -.027000 amp.
+J: 16.00 ms.     .009978 amp.
+J: 16.20 ms.     .039765 amp.
+J: 16.40 ms.     .052078 amp.
+J: 16.60 ms.     .044047 amp.
+J: 16.80 ms.     .020566 amp.
+J: 17.00 ms.    -.008252 amp.
+J: 17.20 ms.    -.031289 amp.
+J: 17.40 ms.    -.040616 amp.
+J: 17.60 ms.    -.034103 amp.
+J: 17.80 ms.    -.015656 amp.
+J: 18.00 ms.     .006800 amp.
+J: 18.20 ms.     .024615 amp.
+J: 18.40 ms.     .031673 amp.
+J: 18.60 ms.     .026400 amp.
+J: 18.80 ms.     .011910 amp.
+J: 19.00 ms.    -.005586 amp.
+J: 19.20 ms.    -.019360 amp.
+J: 19.40 ms.    -.024697 amp.
+J: 19.60 ms.    -.020434 amp.
+J: 19.80 ms.    -.009054 amp.
+J: 20.00 ms.     .004576 amp.
+U: Type all.
+# The figure is a clipping that begins at the first step. The blank line JOSS
+# types before a listing is above the cut.
+J?
+J: 1.1 Set F = sqrt[1/(L·C)]/k.
+J: 1.2 Set f = sqrt[1/(L·C)-R*2/(4·L*2)]/k.
+J: 1.3 Set I = k·F*2·Q/f.
+J: 1.4 Set d = .1/f.
+J: 1.5 Type F, f, I, d.
+J:
+J: 2.1 Type 1000·t, I·exp[-R·t/(2·L)]·sin(k·f·t) in form 3.
+J:
+J:
+J: Form 3:
+J: __.__ ms.   -_.______ amp.
+J:
+J:
+J:        d =      2·10*(-4)
+J:        f =    501.716868
+J:        k =      6.2831853
+J:        t =      2·10*(-2)
+J:        C =      5·10*(-7)
+J:        F =    503.292122
+J:        I =      3.17220634
+J:        L =       .2
+J:        Q =      1·10*(-3)
+J:        R =    100
+# ... and the blank line after the values is below it.
+J?
+U: Delete all.
+U: 1.1 Page.
+U: 1.2 Type form 1.
+U: Form 1:
+U:  P      L       M
+U: 1.3 Do part 2 for p = 81, 72, 45, 9.
+U: 2.1 Line.
+U: 2.2 Do part 3 for L = .1, .2(.2)2.
+U: 3.1 Set m = -2.5·k·log[cos(p/c)·.64/sqrt(.5)/L*2].
+U: 3.2 Type p, L, m in form 2.
+U: Form 2:
+U: __    _.__   -_.__
+U: Set c = 180/3.14159265.
+U: Set k = 1/log(10).
+U: Do part 1.
+J:  P      L       M
+J:
+J: 81     .10   -2.88
+J: 81     .20   -1.37
+J: 81     .40     .13
+J: 81     .60    1.01
+J: 81     .80    1.64
+J: 81    1.00    2.12
+J: 81    1.20    2.52
+J: 81    1.40    2.85
+J: 81    1.60    3.14
+J: 81    1.80    3.40
+J: 81    2.00    3.63
+J:
+J: 72     .10   -3.62
+J: 72     .20   -2.11
+J: 72     .40    -.61
+J: 72     .60     .27
+J: 72     .80     .90
+J: 72    1.00    1.38
+J: 72    1.20    1.78
+J: 72    1.40    2.11
+J: 72    1.60    2.40
+J: 72    1.80    2.66
+J: 72    2.00    2.89
+J:
+J: 45     .10   -4.52
+J: 45     .20   -3.01
+J: 45     .40   -1.51
+J: 45     .60    -.62
+J: 45     .80     .00
+J: 45    1.00     .48
+J: 45    1.20     .88
+J: 45    1.40    1.22
+J: 45    1.60    1.51
+J: 45    1.80    1.76
+J: 45    2.00    1.99
+J:
+J:  9     .10   -4.88
+J:  9     .20   -3.37
+J:  9     .40   -1.87
+J:  9     .60    -.99
+J:  9     .80    -.36
+J:  9    1.00     .12
+J:  9    1.20     .52
+J:  9    1.40     .85
+J:  9    1.60    1.14
+J:  9    1.80    1.40
+J:  9    2.00    1.63
+U: Type all.
+# The figure is a clipping that begins at the first step. The blank line JOSS
+# types before a listing is above the cut.
+J?
+J: 1.1 Page.
+J: 1.2 Type form 1.
+J: 1.3 Do part 2 for p = 81, 72, 45, 9.
+J:
+J: 2.1 Line.
+J: 2.2 Do part 3 for L = .1, .2(.2)2.
+J:
+J: 3.1 Set m = -2.5·k·log[cos(p/c)·.64/sqrt(.5)/L*2].
+J: 3.2 Type p, L, m in form 2.
+J:
+J:
+J: Form 1:
+J:  P      L       M
+J: Form 2:
+J: __    _.__   -_.__
+J:
+J:
+J:        c =     57.2957796
+J:        k =       .434294482
+J:        m =      1.62686274
+J:        p =      9
+J:        L =      2
+# ... and the blank line after the values is below it.
+J?
+U: Delete all.
+U: 1.1 Demand q(x,y).
+U: 2.1 Do part 1 for x = 1(1)y.
+U: Do part 2 for y = 1(1)8.
+D~ q(1,1) = 3.456
+D~ q(1,2) = -4.32
+D~ q(2,2) = 8
+D~ q(1,3) = 4.324567
+D~ q(2,3) = -56.45
+D~ q(3,3) = 0.000987
+D~ q(1,4) = 4.44444444
+D~ q(2,4) = -4.444433
+D~ q(3,4) =

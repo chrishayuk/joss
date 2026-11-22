@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: wasm32-wasip1
+          components: rustfmt, clippy
+
+      - name: Install wasmtime
+        uses: bytecodealliance/actions/wasmtime/setup@v1
+
+      - name: Format
+        run: cargo fmt --all --check
+
+      - name: Lint
+        run: cargo clippy --workspace --all-targets -- -D warnings
+
+      - name: Test (native; the original sessions, the examples and every sitting in the tutorial)
+        run: cargo test --workspace
+
+      - name: Test (WASI, inside wasmtime)
+        run: cargo test --target wasm32-wasip1
+
+      - name: Native and WASI builds type the same page
+        run: scripts/wasi-check.sh
+
+      - name: Browser playground (the WASI host, in node)
+        run: |
+          node web/build.mjs
+          node web/test.mjs

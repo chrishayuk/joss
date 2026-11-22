@@ -1,0 +1,65 @@
+# JOSS "666" listing, J. C. Shaw, 1-9-65 -- every message text stored in the program.
+# Source of each text: the packed octal data words (five 8-bit characters per word),
+# decoded with the listing's own character table (region A, PDF pp. 7-9), and
+# cross-checked against the upper-case comment printed beside each message.
+# The printer comments are upper-case only and print ≤ < as "-", so the case and
+# the relation signs below come from the octal, not from the comments.
+# <CR> = carriage return + end of message.  Two spaces where shown are real.
+#
+# --- Error messages: region E, PDF pp. 37-42.  "En" = error number. ---
+E0   I need more storage space.
+E1   I have an overflow.
+E2    is undefined.                        (preceded by the letter, with indices if any: see D0)
+E3   I have a zero divisor.
+E4   Index value must be integer and 0≤index≤99.
+E5   Please limit numbers to 9 significant digits.
+E6   Eh?
+E7   You haven't told me to do anything yet.      (Go with no suspended task)
+E8   I have too many values for the form.
+E9   Don't give this command indirectly.
+E10  Don't give this command directly.
+E11  Please limit step labels to 9 digits.
+E12  Form number must be integer and 0<form<10*9.
+E13  Step number must satisfy 1≤step<10*9.
+E14  I have a negative argument for sqrt.
+E15  Field definition has fewer than 7 periods.
+E16  I can't find the required step.
+E17  I can't find the required part.
+E18  Part number must be integer and 0<part<10*9.
+E19  I can't find the required form.
+E20  I have an argument ≤ 0 for log.
+E21  I have a negative base to a fractional power.
+E22  Please keep |x|<100 for sin(x) or cos(x).
+E23  I have zero to a negative power.
+E24  I have too few values for the form.
+E25  I need individual values for a form.
+E26  I can't find the part for iteration.
+E27  I can't find the step for iteration.
+E28  Illegal set of values for iteration.
+E29  (unused: directory slot empty, no text)
+E30  Your fields run together in the form.
+E31  I can't express value in your form.
+# Reading notes: E20 final word(s) ".<CR>" and E12/E18 terminators partly failed machine
+# reading (one digit each) but are unambiguous. E30 "fields" and E26-28 "ation" read
+# from re-OCR of single lines; all agree with the comments.
+#
+# --- Error-message framing: drum routine D0, PDF pp. 10-12 ---
+"Error "    "during "    "at "    "step "    "above"    ":  "  (colon + TWO spaces)
+"It's a mess.  Let's start over."            (two spaces after "mess.")
+#
+# --- Other messages ---
+G12 (Stop), p. 79:          "Stopped by step " + step number + "."
+X10, p. 124 (*90):          "I'm at step " + step number + "."     (interrupt during a task;
+                             the listing comment calls this the 'INTERRUPTED' message)
+X10, p. 124 (*91):          "Revoked."                             (interrupt of a direct command)
+X10, p. 124 (*92):          "Just one to four letters please.<CR>Initials please:  "
+X11, p. 125 (*28):          "<CR>JOSS at your service.<CR>Initials please:  "
+X11, p. 126 (*38,*39):      "  You are now number " + n + " in the queue."
+                             # ?? the word "number" is from the comment; its octal line misread
+X10, p. 122 (*43):          "Call 233 for latest JOSS information."
+X10, p. 122 (*44):          "Please wind up your work and turn off as soon as possible."
+D3,  p. 19  (*66):          "Form"   (heading "Form n:" typed by Type all forms)
+D4/D6, pp. 23, 29:          "·10*"   (scientific-notation infix; first character is code 32,
+                             the centred multiply dot)
+# Count: 31 error texts + "It's a mess..." + 8 others (Stopped, I'm at, Revoked, Just one
+# to four, JOSS at your service, You are now, Call 233, Please wind up) = 40.

@@ -1,0 +1,7 @@
+* Compound interest: what p grows to in n years at r per cent a year.
+1.1 Type n, p·(1+r/100)*n in form 1.
+Form 1:
+after __ years   ______.__
+Set p = 1000.
+Set r = 5.
+Do part 1 for n = 0(5)30.

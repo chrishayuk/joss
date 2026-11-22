@@ -1,0 +1,28 @@
+# page-11 (PDF p. 11, printed p. 3). RETYPED scenario text, continuous with page-10. See page-10 header.
+U: Type 7/0.
+J: Error above:  Zero divisor.
+# Two spaces after the colon as printed; the report typist also double-spaces after colons in the
+# narration, so this may be her convention rather than JOSS's.
+U: Type 2*8.
+J: 2*8 = 256
+U: Type 3+2,3-2,3·2,_,3/2,3*2.
+J: 3+2 = 5
+J: 3-2 = 1
+J: 3·2 = 6
+J:
+J: 3/2 = 1.5
+J: 3*2 = 9
+U: Type [.7*5-2.3*(-.7)]/[7*6-|9*5-5*7|*(2/3)].
+J: [.7*5-2.3*(-.7)]/[7*6-|9*5-5*7|*(2/3)] = -3.33630357·10*(-6)
+# Chart A (PDF p. 21) shows "7^6 + |9^5 - 5^7|^(2/3)" but the typed line has "7*6-|...". The printed
+# result -3.33630357·10*(-6) agrees with the minus sign as typed (plus would give about -3.296·10*(-6)).
+U: Type sqrt(49).
+J: sqrt(49) = 7
+U: Type sqrt(sqrt(sqrt(sqrt(3*2*2*2*2)))).
+J: sqrt(sqrt(sqrt(sqrt(3*2*2*2*2)))) = 3
+U: Type cos (3.14159265/4).
+J: cos(3.14159265/4) = .707106781
+# ?? The user line is printed with a space after "cos"; the JOSS echo is printed without it. Either
+# JOSS drops the space in the echo or one of the two lines is a typist slip - cannot tell from this document.
+U: Type log(2.71828183).
+J: log(2.71828183) = 1

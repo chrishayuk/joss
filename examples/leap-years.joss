@@ -1,0 +1,7 @@
+* Leap years. A year is a leap year if it divides by 4 and not by 100,
+* or if it divides by 400. "and" and "or" are taken from left to right,
+* which here is the order wanted.
+1.1 Type y in form 1 if fp(y/4) = 0 and fp(y/100) ≠ 0 or fp(y/400) = 0.
+Form 1:
+____ is a leap year
+Do part 1 for y = 1896(1)1908, 1964, 1965, 2000, 2100.

@@ -1,0 +1,11 @@
+* From J. C. Shaw, "JOSS: Examples of the Use of an Experimental On-Line Computing Service", RAND P-3131, April 1965, page 7.
+*  From Litton Industries' "Problematical Recreations" we get:
+*  Problem:  Find four digits A, T, O and M such that
+*            sqrt(ATOM) = A+TO+M.
+*  C. L. Baker's solution:
+
+Form 1:
+ATOM = ____   sqrt(ATOM) = __
+1 Type x*2, x in form 1 if x*2-9·ip(x*2/10)-99·ip(x*2/1000) = x.
+Do step 1 for x=32(1)99.
+Delete all.

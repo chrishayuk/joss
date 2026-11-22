@@ -1,0 +1,10 @@
+* The Fibonacci numbers: each is the sum of the two before it.
+1.1 Type i, a in form 1.
+1.2 Set c = a+b.
+1.3 Set a = b.
+1.4 Set b = c.
+Form 1:
+F(__) = _______
+Set a = 0.
+Set b = 1.
+Do part 1 for i = 0(1)25.

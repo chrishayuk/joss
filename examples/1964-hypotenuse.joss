@@ -1,0 +1,25 @@
+* From J. C. Shaw, "JOSS: A Designer's View of an Experimental On-Line Computing System", RAND P-2922, August 1964, figures 3d and 3e.
+! joss 1964
+
+1.1 Do part 2 for b=1(1)a.
+
+2.1 Set c = sqrt(a*2 + b*2).
+2.2 Type a, b, c in form 1.
+
+Form 1:
+a = __   b = __   c = __.___
+
+Do part 1 for a=1(1)3.
+
+Type all steps.
+Type all forms.
+Type all.
+2.15 Line if fp(c)=0.
+2.2 Type a, b, c in form 1 if fp(c)=0.
+Type part 2.
+Do part 1 for a=1(1)15.
+
+Delete part 2.
+Type part 2.
+Type all values.
+Delete all.

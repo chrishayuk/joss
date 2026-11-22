@@ -1,0 +1,19 @@
+* Euclid's algorithm for the greatest common divisor, with To for the loop.
+* The remainder of a divided by b is a - b·ip(a/b).
+1.1 Set r = a - b·ip(a/b).
+1.2 Set a = b.
+1.3 Set b = r.
+1.4 To step 1.1 if b ≠ 0.
+
+2.1 Set a = u.
+2.2 Set b = v.
+2.3 Do part 1.
+2.4 Type u, v, a in form 1.
+Form 1:
+The greatest common divisor of _____ and _____ is ____.
+
+Set u = 1071.
+Do part 2 for v = 462, 1029, 1000.
+The greatest common divisor of  1071 and   462 is   21.
+The greatest common divisor of  1071 and  1029 is   21.
+The greatest common divisor of  1071 and  1000 is    1.

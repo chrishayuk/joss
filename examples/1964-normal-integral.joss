@@ -1,0 +1,23 @@
+* From J. C. Shaw, "JOSS: A Designer's View of an Experimental On-Line Computing System", RAND P-2922, August 1964, figure 3i.
+! joss 1964
+6.1 Type form 61.
+6.2 Line.
+6.3 Do part 7 for t=0(h)4.
+
+7.1 Type t, a in form 62 if fp(t/.5)=0.
+7.2 Do part 8 for x = t+h·(.5-k), t+h·(.5+k).
+
+8.1 Set y = c·exp(-x*2/2).
+8.2 Set a = a+.5·h·y.
+
+Form 61:
+  t      Integral
+Form 62:
+_.__     _.____
+
+Set a=0.
+Set k=1/sqrt(12).
+Set h=.1.
+Set c=1/sqrt(2·3.14159265).
+
+Do part 6.

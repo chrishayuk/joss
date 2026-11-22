@@ -1,0 +1,22 @@
+* Factorials. Each time round, f is multiplied by the next n.
+1.1 Set f = f·n.
+1.2 Type n, f in form 1.
+Form 1:
+__ factorial is _________
+Set f = 1.
+Do part 1 for n = 1(1)12.
+ 1 factorial is         1
+ 2 factorial is         2
+ 3 factorial is         6
+ 4 factorial is        24
+ 5 factorial is       120
+ 6 factorial is       720
+ 7 factorial is      5040
+ 8 factorial is     40320
+ 9 factorial is    362880
+10 factorial is   3628800
+11 factorial is  39916800
+12 factorial is 479001600
+* 13 factorial has ten digits. JOSS keeps nine, and says so by its notation.
+Type 13·f.
+    13·f =       6.2270208·10*9

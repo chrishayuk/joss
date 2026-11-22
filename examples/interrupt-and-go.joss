@@ -1,0 +1,11 @@
+* The interrupt key. JOSS is typing a long table when the user sees that
+* the form is not what was wanted, and presses INTERRUPT. JOSS says where
+* it is. The form is changed, and Go carries on from that step.
+1.1 Type x, x*3 in form 1.
+Form 1:
+__ ______
+! interrupt after 4 lines
+Do part 1 for x = 1(1)12.
+Form 1:
+The cube of __ is ____.
+Go.

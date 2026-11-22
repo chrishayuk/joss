@@ -1,0 +1,33 @@
+# P-3149 (Shaw, May 1965) Figure 1, PDF page 6, printed page -5-. U/J assigned from command structure and print weight (JOSS output bolder). See NOTES.md.
+U: *   PRIME NUMBERS
+U:
+U: 1.1 Do part 2 for d = 2(1)ip[sqrt(x)] if x > 3.
+U: 1.2 Type x if x ≠ 0.
+U:
+U: 2.1 Set x = 0 if fp(x/d) = 0.
+U:
+U: Do part 1 for x = 2(1)50.
+J:        x =       2
+J:        x =       3
+J:        x =       5
+J:        x =       7
+J:        x =      11
+J:        x =      13
+J:        x =      17
+J:        x =      19
+J:        x =      23
+J:        x =      29
+J:        x =      31
+J:        x =      37
+J:        x =      41
+J:        x =      43
+J:        x =      47
+U:
+U: Type all steps.
+J:
+J: 1.1 Do part 2 for d = 2(1)ip[sqrt(x)] if x > 3.
+J: 1.2 Type x if x ≠ 0.
+J:
+J: 2.1 Set x = 0 if fp(x/d) = 0.
+J:
+U: Delete all.

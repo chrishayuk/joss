@@ -1,0 +1,41 @@
+* From C. L. Baker, "JOSS: Scenario of a Filmed Report", RAND RM-4162-PR, June 1964: the film of 21 March 1964, pages 2 to 4. JOSS as a desk calculator.
+Type 2+2.
+     2+2 =      4
+Type 2+2-3-3+4+4.
+2+2-3-3+4+4 =   6
+Type -1.2·1.2.
+-1.2·1.2 =     -1.44
+Type 7/2.
+     7/2 =      3.5
+Type 7/0.
+Error above:  Zero divisor.
+Type 2*8.
+     2*8 =    256
+Type 3+2,3-2,3·2,_,3/2,3*2.
+     3+2 =      5
+     3-2 =      1
+     3·2 =      6
+
+     3/2 =      1.5
+     3*2 =      9
+Type [.7*5-2.3*(-.7)]/[7*6-|9*5-5*7|*(2/3)].
+[.7*5-2.3*(-.7)]/[7*6-|9*5-5*7|*(2/3)] =-3.33630356·10*(-6)
+Type sqrt(49).
+sqrt(49) =      7
+Type sqrt(sqrt(sqrt(sqrt(3*2*2*2*2)))).
+sqrt(sqrt(sqrt(sqrt(3*2*2*2*2)))) = 3
+Type cos (3.14159265/4).
+cos (3.14159265/4) = .707106781
+Type log(2.71828183).
+log(2.71828183) = 1
+Type y.
+Error above:  Undefined.
+Set y = exp(10).
+Type y.
+       y =  22026.4658
+Type y, ip(y), fp(y), dp(y), xp(y).
+       y =  22026.4658
+   ip(y) =  22026
+   fp(y) =       .4658
+   dp(y) =      2.20264658
+   xp(y) =      4

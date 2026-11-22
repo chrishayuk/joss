@@ -1,0 +1,25 @@
+* A polynomial worked out by Horner's rule. The coefficients are in c,
+* highest power first: here x*3 - 6·x*2 + 11·x - 6.
+1.1 Set y = y·x + c(i).
+
+2.1 Set y = 0.
+2.2 Do part 1 for i = 0(1)n.
+2.3 Type x, y in form 1.
+Form 1:
+x = _._   y = ___.___
+
+Set n = 3.
+Set c(0) = 1.
+Set c(1) = -6.
+Set c(2) = 11.
+Set c(3) = -6.
+Do part 2 for x = 0(.5)4.
+x =  .0   y =  -6.000
+x =  .5   y =  -1.875
+x = 1.0   y =    .000
+x = 1.5   y =    .375
+x = 2.0   y =    .000
+x = 2.5   y =   -.375
+x = 3.0   y =    .000
+x = 3.5   y =   1.875
+x = 4.0   y =   6.000

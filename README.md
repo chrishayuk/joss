@@ -1,0 +1,327 @@
+# joss
+
+JOSS, the JOHNNIAC Open-Shop System that J. C. Shaw wrote at RAND in
+1963-64, rebuilt in Rust with no dependencies from the papers and the
+program listing that survive, and held to one test: type the console
+sessions printed in those papers again, and get the same page.
+
+```
+Type 2+2.
+     2+2 =       4
+```
+
+JOSS was a conversation at a typewriter. You typed a line; JOSS did what it
+said, or kept it as a step of a program, or told you what was wrong with it;
+and then it was your turn again. When a program went wrong you did not start
+over. You put the one thing right and typed `Go.`
+
+```
+1.1 Set x(1) = [-b+sqrt(b*2-4·a·c)] / [2·a].
+Set b = -1.
+Set c = -6.
+Do part 1.
+Error at step 1.1:  a is undefined.
+Set a = 0.
+Go.
+Error at step 1.1:  I have a zero divisor.
+Set a = 1.
+Go.
+```
+
+This is the JOSS of the JOHNNIAC, as it stood in 1964 and 1965. It is not
+the larger JOSS that followed on the PDP-6 in 1966, which is what most
+descriptions of "JOSS" describe.
+
+## Install
+
+You need [Rust](https://rustup.rs). To install the console and the language
+server from this repository:
+
+```bash
+cargo install --git https://github.com/chrishayuk/joss joss joss-lsp
+```
+
+That puts `joss` and `joss-lsp` in `~/.cargo/bin`. Then:
+
+```bash
+joss                       # sit at the console
+echo 'Type 2+2.' | joss
+```
+
+Or try it with nothing installed, in the
+[playground](https://chrishayuk.com/demos/joss).
+
+## Build and run
+
+```bash
+cargo build --release
+target/release/joss                              # a console: type a line, JOSS answers
+target/release/joss examples/1965-primes.joss    # replay a file of typed lines
+```
+
+A `.joss` file is what would be typed at the console, a line at a time.
+`joss file` prints the page: your lines and JOSS's answers. Other ways to run
+it:
+
+| | |
+|---|---|
+| `joss --marked file` | the page with `U: ` or `J: ` in front of each line, to show who typed it |
+| `joss --quiet file` | only what JOSS typed |
+| `joss --colour file` | your lines in green, as the console's ribbon had them |
+| `joss --year 1964 file` | the JOSS of March 1964: its wording and its columns (see below) |
+| `joss --check file` | read a file without running it and say what is wrong with it |
+| `joss --verify transcripts/*.txt` | replay the original sessions and compare with the page |
+| `joss --patience N` | press the interrupt key after N steps |
+
+In a file, a line `! interrupt after 16 lines` is not typed. It is the
+INTERRUPT key, pressed once JOSS has typed sixteen lines of its next answer.
+
+## The language
+
+A line that begins with a number is a **step**, kept for later. Steps 1.1,
+1.2 and 1.35 belong to **part** 1. Anything else is done at once. Every
+instruction is a sentence: a capital letter at the start, a full stop at the
+end.
+
+| | |
+|---|---|
+| `Set x = 3.` | give a letter a value. There are 52 names: `a`-`z` and `A`-`Z` |
+| `Set a(i,j) = 0.` | a letter may have one or two indices, each 0 to 99 |
+| `Type x, x*2, sqrt(x).` | type values, each on a line with its expression |
+| `Type "text".` | type text |
+| `Type a, b in form 1.` | type values into the blanks of a form |
+| `Form 1:` | the next line typed is form 1: `x = __.__   y = ..........` |
+| `Do part 1.` `Do step 1.1.` | do the steps of a part, or one step |
+| `Do part 1 for x = 1(1)10, 20, 50(50)200.` | do it for each value: 1 in steps of 1 to 10, then 20, then 50 to 200 |
+| `... if a<b≤c and d≠e or f=g.` | any instruction may carry a condition |
+| `1.4 To step 1.1.` `To part 3.` | go on from there instead |
+| `1.4 Done.` | no more of this part, this time round |
+| `1.4 Stop.` | break off; `Go.` carries on |
+| `1.4 Demand x.` | ask for a value: JOSS types `x = ` and waits |
+| `Go.` | carry on with a task that an error, `Stop` or the interrupt key broke off |
+| `Cancel.` | forget that task |
+| `Type step 1.1.` `Type part 1.` `Type form 1.` | type them back |
+| `Type all.` `Type all steps.` `Type all forms.` `Type all values.` | everything, or one kind |
+| `Delete x, y.` `Delete step 1.1.` `Delete part 1.` `Delete form 1.` `Delete all.` | remove |
+| `Line.` `Page.` | a blank line; a new page |
+| `Type size.` `Type time.` `Type users.` | storage in use; the time; how many are using JOSS |
+| `x=3` | `Set` without the word, when given directly |
+
+Arithmetic is `+`, `-`, `·` (times), `/` and `*` (to the power), with
+`( )` and `[ ]` for grouping, either kind, and `|x|` for the absolute value.
+The functions are `sqrt`, `log` (natural), `exp`, `sin`, `cos`, `arg(x,y)`,
+`ip` (integer part), `fp` (fraction part), `dp` (digit part), `xp` (exponent
+part), `sgn`, `max` and `min`. `$` is the number of the line the typewriter
+is on. A line that begins or ends with `*` is ignored, which makes it a note.
+
+Numbers are nine decimal digits and a power of ten from -99 to 99, and
+arithmetic is done in decimal: "The user may ask JOSS to add .1 ten times and
+the result is indeed 1."
+
+### Typing the typewriter's characters
+
+The JOSS typewriter had keys of its own. Four are not on a keyboard now, and
+each has a stand-in that is accepted when typed. JOSS always types the real
+one.
+
+| JOSS | meaning | you can type |
+|------|---------|--------------|
+| `·` | times | `@` |
+| `≠` | is not equal to | `!=` |
+| `≤` | at most | `<=` |
+| `≥` | at least | `>=` |
+
+`*` is not times. It is "to the power".
+
+A full tutorial is in [`tutorial/`](tutorial/01-introduction.md).
+
+## Fidelity to the original
+
+### The sessions
+
+RAND's papers print console sessions: the user's lines, JOSS's answers, the
+mistakes. Five of them are in [`transcripts/`](transcripts/), typed in from
+the scans with the columns measured. `joss --verify transcripts/*.txt`
+replays each one and compares every line JOSS types with the page.
+`cargo test` does the same.
+
+| Transcript | Source | User's lines | JOSS's lines that match | that differ |
+|---|---|---|---|---|
+| `1964-filmed-report` | Baker, RM-4162-PR, June 1964: a session filmed on 21 March 1964 | 78 | 317 column for column, 76 against a retyped page | 3 |
+| `1964-designers-view` | Shaw, P-2922, August 1964, figures 3a-3i | 95 | 132 | 2 |
+| `1965-examples` | Shaw, P-3131, April 1965: eight pages in two colours | 167 | 197 | 0 |
+| `1965-experience-figure-1` | Shaw, P-3149, May 1965: prime numbers | 11 | 21 | 0 |
+| `1965-experience-figure-2` | Shaw, P-3149, May 1965: a quadratic equation, nine mistakes, and `Go.` | 34 | 19 | 0 |
+
+That is 762 of 767 lines, 686 of them column for column. (A further six
+blank lines fall off the cut edge of a figure.)
+
+The five that differ are all one unit in the ninth digit of a logarithm or
+an exponential:
+
+- `log(2)` is typed `.69314718` three times, which is `.693147180` with the
+  nought dropped. log 2 is .69314718056, which rounds to `.693147181`.
+- `[.7*5-2.3*(-.7)]/[7*6-|9*5-5*7|*(2/3)]` is typed ending `…357`. Here it
+  ends `…356`. The answer moves by that much if `2.3*(-.7)` is one unit out.
+- In a table of a hundred exponentials, the row for 72 ends in a 7. e to the
+  72nd, rounded to nine digits and then to eight, ends in an 8.
+
+JOSS's own `log` and `exp` were slightly off, and the ones here are correctly
+rounded. Each difference is written into its transcript (a `~:` line under
+the `J:` line), so the test holds the reconstruction to them as well. Among
+Shaw's working papers is a handwritten note on the log routine dated 11-19-64
+that ends "Check it."
+
+Putting the film's scenario right took three changes, each marked in the
+transcript. The report leaves out a `Delete all.` that the listing it prints
+later proves was typed, has a comma that JOSS's own listing of the same step
+does not, and drops one multiplication dot.
+
+### The messages
+
+"For its comments, it simply selects from a stock of forty 'canned'
+messages." The papers show about a dozen. The rest are from the program: the
+JOHNNIAC assembly listing headed "JOSS 666, JCS 1-9-65" keeps each message as
+octal words, five characters to a word, and they were decoded with the
+listing's own table of characters. See [`sources/AUDIT.md`](sources/AUDIT.md)
+and [`src/messages.rs`](src/messages.rs).
+
+### 1964 and 1965
+
+The pages disagree with each other, because JOSS changed. "After a year's
+experience with neutral, impersonal messages, we introduced personal pronouns
+and some informal diction."
+
+| | `--year 1964` | `--year 1965` (the default) |
+|---|---|---|
+| A zero divisor | `Zero divisor.` | `I have a zero divisor.` |
+| A letter with no value | `Undefined.` | `x is undefined.` |
+| The interrupt key | `Interrupted at step 1.1.` | `I'm at step 1.1.` |
+| `Type 2+2.` | `     2+2 =      4` | `     2+2 =       4` (one column further right) |
+| A small number | `.02` is typed `2·10*(-2)` | fixed point down to `.001` |
+| `Type all.` | no blank line between forms | a blank line after each form |
+
+The 1964 wording is known only where a 1964 page shows it: four messages and
+the interrupt. Where no 1964 page shows a message, `--year 1964` uses the
+words of 1965. An earlier, undated listing has a third and older wording
+("Attempting division by zero."), which is not implemented.
+
+### What is not original
+
+- `log`, `exp`, `sin`, `cos` and `arg` are computed with the Rust standard
+  library and rounded to nine digits. JOSS's routines are in the listing and
+  have not been read. `a*b` follows Shaw's description of the routine: the
+  special cases, then `exp[b·log(a)]`.
+- How much storage a step, a value and a level of a task take is an
+  estimate, so `Type size.` and the point at which JOSS says "I need more
+  storage space." are approximate. The block is 720 words, the figure for
+  available space on Shaw's storage map.
+- What JOSS typed for `arg(0,0)` was not found. The message here is made up
+  and marked as such.
+- `Type size.`, `Type time.` and `Type users.` type a bare number, as the one
+  `Type users.` in the papers does. The time is fixed unless a file sets it.
+- Not here: `Read` and `Punch` (programs on punched cards, added late in
+  1964), the sign-on ("Initials please:"), the heading JOSS typed at the top
+  of each page, the queue for a console, and the other seven users.
+- The interrupt key is modelled by counting lines of output, or steps. The
+  page records that it was pressed, not exactly when.
+- A value too long to fit on the line after a long label should go on the
+  next line. It does not.
+- Shaw's typed summary of the language has `Type a,_,b, c in form 1.`, with
+  the `_` written in by hand. What a blank line in the middle of a form
+  would mean is not clear, and here it is "Eh?".
+- A power with a sign goes in brackets, `10*(-3)`, as JOSS itself types it.
+  Whether `10*-3` was accepted is not known; here it is "Eh?".
+
+## Examples
+
+Every sitting in [`examples/`](examples/README.md) has a `.out` file with the
+page it gives, and `cargo test` replays them all. There are 55. Eighteen are
+the programs of the original papers, under their year, with the user's lines
+as they stand in the transcripts: `1965-quadratic-with-mistakes`,
+`1965-primes`, `1965-root-finding`, `1965-matrix-inversion`, `1965-table`,
+`1964-film-table` and the rest. Thirty-seven were written for this
+repository: Euclid's algorithm with `To`, a sieve, Simpson's rule, a bubble
+sort on an indexed letter, a loan table in a form, `Stop` as a breakpoint, an
+error put right with `Go.`
+
+## Tutorial
+
+[`tutorial/`](tutorial/01-introduction.md) is a 17-chapter tutorial, from
+`Type 2+2.` to forms, `Demand`, mistakes and `Go.`, the programs of the
+papers, and a reference. It has 156 sittings in it, each followed by the page
+JOSS types. `cargo test` runs every one and compares (`tests/tutorial.rs`).
+
+## In the browser
+
+`web/` is a playground that runs the console in a web page. The interpreter
+is compiled unchanged for WASI (`wasm32-wasip1`), and `web/wasi.js` is a small
+host that supplies standard input and output, so no other library is needed.
+
+JOSS waits for a line, and a WebAssembly program cannot be paused in a page
+while it does. So it is not: each time a line is typed, the whole sitting is
+replayed from its first line (`web/session.js`). JOSS has no clock in it and
+no chance, so each replay types the same page and then one line more. The
+INTERRUPT button works the same way: it records where it was pressed and
+replays.
+
+The box on the left is an editor with colours, problems as you type, hover
+help and completion, all from the language server, which runs in the page as
+well (`web/editor.js`, `web/lsp-worker.js`). The page can also replay each of
+the original sessions and show how it compares.
+
+```bash
+node web/build.mjs                  # builds web/joss.wasm, web/joss-lsp.wasm, web/examples.json
+node web/test.mjs                   # replays every example and transcript through the wasm build
+python3 -m http.server -d web 8000  # then open http://localhost:8000
+```
+
+Add `?example=1965-primes` to the address to open a particular sitting, and
+`&run` to type it in straight away.
+
+## In your editor
+
+`joss --check file.joss` reads a file without running it and says what it can
+see: lines that are not JOSS (and where they stop being JOSS, which the
+original never said), a `Do` of a part with no steps, a form with too few
+blanks for the values, a letter that is used and never given a value, a step
+that a later line replaces.
+
+The same analysis drives a language server, `joss-lsp` in `lsp/`, with hover
+help for every word and character, go to definition for steps, parts and
+forms, references, rename, completion and more. `editors/vscode` is a Visual
+Studio Code extension that bundles the server and the interpreter as
+WebAssembly and adds syntax highlighting and a run button. See
+[`editors/README.md`](editors/README.md).
+
+The interpreter itself has no dependencies. The language server is a separate
+crate in the same workspace and uses `serde_json`.
+
+## Sources
+
+The papers and the listings are at
+[Bitsavers](https://bitsavers.org/pdf/rand/joss/). [`sources/`](sources/README.md)
+has what was read out of them: the transcripts of every console session, the
+notes on how each page was measured, and the audit of the listings.
+[`docs/scans/`](docs/scans/README.md) has the pages that matter most, reduced.
+
+All of the reading was done by a coding agent and its sub-agents in one
+session. Nobody has checked it against the pages by eye.
+
+## Tests
+
+```bash
+cargo test
+```
+
+The unit tests cover the arithmetic, the forms, the layout of a typed value
+in each year, the parser and the static analysis. The integration tests
+replay the five original sessions and compare every line with the page;
+replay a session written to hold the reconstruction to what the listing says
+about the things no page shows (`tests/sessions/`); replay every example; and
+run every sitting in the tutorial.
+
+```bash
+cargo test -p joss-lsp                   # the language server
+cd editors/vscode && npm install && npm run build && npm test
+```

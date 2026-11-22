@@ -1,0 +1,31 @@
+# JOSS_Program_Notes_and_Tests.pdf, page 4 of 43. Typed. Transcribed from OCR and
+# checked against the page image at reading level only (not column-measured).
+
+JOSS Regions:
+
+=  Directory for Routines
+A  Character Properties of Input Characters
+B  Drum Control Words
+C  System Statistics
+D  Drum Routines
+E  Error Directory
+F  Function Directory
+G  Process Directory
+H  Context
+I  Integers
+J  Parameters, Origins, Constants
+K  Constants General
+L  Lists
+M  Core Area for Drum Routines
+N  Table of Powers of Ten
+P  Single Data Words
+Q  Lists
+R  Read-Write-Interpret Block (82 words)
+S  Output Block
+T  Temporary Storage
+U  Tables
+V  Variables
+W  Words
+X  Executive Routines
+Y
+Z  Run Context and Statistics

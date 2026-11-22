@@ -1,0 +1,29 @@
+# P-2922 (Shaw, Aug 1964) Fig. 3h, PDF page 23, printed page -22-. U:/J: as labelled in the figure margin. See NOTES.md.
+U: 4.1 Demand b(i).
+U: 4.2 Set s = s+b(i).
+U:
+U: Set s=0.
+U: Do part 4 for i=1(1)4.
+J:     b(1) = 
+U+ 543
+# Demand lines (labelled "J/U:" in the figure): J: text is the JOSS prompt, ending with one space after "="; the "U+" record is the user reply typed on the same typewriter line starting at col 11. Same for the next 3 lines.
+J:     b(2) = 
+U+ 237
+J:     b(3) = 
+U+ 411
+J:     b(4) = 
+U+ 733
+U: Type s.
+J:        s =   1924
+U: 5.1 Set b(i) = b(i)/s.
+U: Do part 5 for i=1(1)4.
+U: Type b.
+J:     b(1) =       .282224532
+J:     b(2) =       .123180873
+J:     b(3) =       .213617464
+J:     b(4) =       .380977131
+U: Set s=0.
+U: Do step 4.2 for i=1(1)4.
+U: Type s.
+J:        s =      1
+U: Delete all.

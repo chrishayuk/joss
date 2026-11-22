@@ -1,0 +1,20 @@
+* The roots of a·x*2 + b·x + c = 0, real or complex.
+1.1 Set d = b*2 - 4·a·c.
+1.2 To part 2 if d < 0.
+1.3 Type c, [-b+sqrt(d)]/[2·a], [-b-sqrt(d)]/[2·a] in form 1.
+1.4 Done.
+
+2.1 Type c, -b/[2·a], sqrt(-d)/[2·a] in form 2.
+
+Form 1:
+c = ___   real roots     ___.____ and ___.____
+Form 2:
+c = ___   complex roots  ___.____ plus and minus ___.____ i
+
+Set a = 1.
+Set b = -2.
+Do part 1 for c = -8, -1, 1, 5.
+c =  -8   real roots       4.0000 and  -2.0000
+c =  -1   real roots       2.4142 and   -.4142
+c =   1   real roots       1.0000 and   1.0000
+c =   5   complex roots    1.0000 plus and minus   2.0000 i

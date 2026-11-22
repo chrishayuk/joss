@@ -1,0 +1,29 @@
+# P-2922 (Shaw, Aug 1964) Fig. 3b, PDF page 17, printed page -16-. U:/J: as labelled in the figure margin. See NOTES.md.
+U: Type sqrt(3), sqrt(4).
+J:  sqrt(3) =      1.73205081
+J:  sqrt(4) =      2
+U:
+U: Type sqrt(-1).
+J: Error above:  Negative argument for sqrt.
+U:
+U: Set e=2.71828183.
+U: Type log(1), log(2), log(e).
+J:   log(1) =      0
+J:   log(2) =       .69314718
+J:   log(e) =      1
+U:
+U: Type exp(0), exp(.5), exp(1).
+J:   exp(0) =      1
+J:  exp(.5) =      1.64872127
+J:   exp(1) =      2.71828183
+U:
+U: Type sin(.5), cos(.5), sin(.5)*2+cos(.5)*2.
+J:  sin(.5) =       .479425539
+J:  cos(.5) =       .877582562
+J: sin(.5)*2+cos(.5)*2 = 1
+U:
+U: Type arg(1,0), arg(0,1), arg(-1,0), 4·arg(3,3).
+J: arg(1,0) =      0
+J: arg(0,1) =      1.57079633
+J: arg(-1,0) =     3.14159265
+J: 4·arg(3,3) =    3.14159265

@@ -1,0 +1,12 @@
+* JOSS counts in tens, so a tenth is exactly a tenth.
+* Add .1 ten times and the answer is 1, with nothing left over.
+1.1 Set s = s+.1.
+Set s = 0.
+Do part 1 for i = 1(1)10.
+Type s.
+       s =       1
+Type s-1.
+     s-1 =       0
+* Thirds are another matter: nine digits of them, and no more.
+Type 1/3+1/3+1/3.
+1/3+1/3+1/3 =     .999999999

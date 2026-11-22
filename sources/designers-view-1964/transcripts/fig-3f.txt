@@ -1,0 +1,24 @@
+# P-2922 (Shaw, Aug 1964) Fig. 3f, PDF page 21, printed page -20-. U:/J: as labelled in the figure margin. See NOTES.md.
+U: 3.1 Type x, sqrt(x), log(x), exp(x), __.
+# the blank item is drawn as a 2-cell-wide underscore (cols 37-38) followed by "."; read as two underscores "__" (measured run width 86 px = 2.1 cells)
+U: Do step 3.1 for x=1,2,3,100.
+J:        x =      1
+J:  sqrt(x) =      1
+J:   log(x) =      0
+J:   exp(x) =      2.71828183
+J:
+J:        x =      2
+J:  sqrt(x) =      1.41421356
+J:   log(x) =       .69314718
+J:   exp(x) =      7.3890561
+J:
+J:        x =      3
+J:  sqrt(x) =      1.73205081
+J:   log(x) =      1.09861229
+J:   exp(x) =     20.0855369
+J:
+J:        x =    100
+J:  sqrt(x) =     10
+J:   log(x) =      4.60517019
+J:   exp(x) =      2.68811714·10*43
+# a trailing blank line (from the "__" item) presumably follows but lies at/under the figure frame; not transcribed

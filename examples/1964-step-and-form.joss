@@ -1,0 +1,9 @@
+* From J. C. Shaw, "JOSS: A Designer's View of an Experimental On-Line Computing System", RAND P-2922, August 1964, figures 3f and 3g.
+! joss 1964
+3.1 Type x, sqrt(x), log(x), exp(x), __.
+Do step 3.1 for x=1,2,3,100.
+3.1 Type x, sqrt(x), log(x), exp(x) in form 3.
+Form 3:
+_.__   _.___   _.____   .........
+
+Do step 3.1 for x = 8.50(.01)8.54(.02)8.60, 9, 9.5.

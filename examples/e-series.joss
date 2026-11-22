@@ -1,0 +1,12 @@
+* e as the sum of 1/k! for k = 0, 1, 2, ...
+* t is the term; each is the one before divided by k. Every term is rounded
+* to nine digits, so the last place of the sum cannot be trusted.
+1.1 Set t = t/k.
+1.2 Set e = e+t.
+1.3 Type k, e in form 1.
+Form 1:
+__ terms   _.________
+Set t = 1.
+Set e = 1.
+Do part 1 for k = 1(1)12.
+Type exp(1).

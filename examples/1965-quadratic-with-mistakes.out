@@ -1,0 +1,54 @@
+* From J. C. Shaw, "JOSS: Experience with an Experimental Computing Service for Users at Remote Typewriter Consoles", RAND P-3149, May 1965, figure 2.
+1.1 Set x(1) = [-b+sqrt(b*2-4·a·c)] / [2·a].
+1.2 Set x(2) = [-b-sqrt(b*2-4·a·c)] / [2·a].
+1.3 Type x(1), x(2) in form 1.
+Set b = -1.
+Set c = -6.
+Do part1.1.
+Eh?
+Do part 1.1.
+Error above:  Part number must be integer and 0<part<10*9.
+Do part 1.
+Error at step 1.1:  a is undefined.
+Set a = 0.
+Go.
+Error at step 1.1:  I have a zero divisor.
+Set a = -1.
+Go.
+Error at step 1.1:  I have a negative argument for sqrt.
+Set a = 1.
+Go.
+Error at step 1.3:  I can't find the required form.
+Form 1:
+a =___   b =___   c =___   roots:    .____    .____
+Go.
+Error at step 1.3:  I have too few values for the form.
+1.3 Type a, b, c, x(1), x(2) in form 1.
+Go.
+Error at step 1.3:  I can't express value in your form.
+Form 1:
+a =___   b =___   c =___   roots: ___.________.____
+Go.
+Error at step 1.3:  Your fields run together in the form.
+Form 1:
+a =___   b =___   c =___   roots: ___.____ ___.____
+Go.
+a =  1   b = -1   c = -6   roots:   3.0000  -2.0000
+Do part 1 for c = -1(1)-4.
+Error above:  Illegal set of values for iteration.
+Do part 1 for c = -1(-1)-4.
+a =  1   b = -1   c = -1   roots:   1.6180   -.6180
+a =  1   b = -1   c = -2   roots:   2.0000  -1.0000
+a =  1   b = -1   c = -3   roots:   2.3028  -1.3028
+a =  1   b = -1   c = -4   roots:   2.5616  -1.5616
+2.1 Do step 2.1 for i = 1(1)100.
+Do step 2.1.
+I need more storage space.
+Delete step 2.1.
+Go.
+It's a mess.  Let's start over.
+Go.
+Error above:  You haven't told me to do anything yet.
+Do part 1 for c = -5.
+a =  1   b = -1   c = -5   roots:   2.7913  -1.7913
+Delete all.

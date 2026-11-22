@@ -1,0 +1,22 @@
+# page-10 (PDF p. 10, printed p. 2). RETYPED scenario text (report typist), not a facsimile.
+# Attribution is given explicitly by the report's "U:" / "J:" labels. Columns are exactly as printed
+# in the report, measured on its 10-pitch grid from the start of its text column - but the report
+# squeezes JOSS's real output columns (see NOTES.md section (a)); do not trust the spacing around "=".
+# Pages 10-18 are one continuous console session.
+# [User presses POWER button, and JOSS responds by typing:]
+J: Press 'IN' for JOSS service.
+# [User presses IN button.]
+J: Please identify yourself.
+U: RAND
+J: 3-21-64 RAND
+# The report prints a footnote dagger after RAND: "This line is typed by JOSS at the top of a new page
+# (8 1/2" x 11"). One-inch margins and similar date-lines are automatically supplied for each page."
+# Exact column position of the date line on the real page is not shown anywhere in this document.
+U: Type 2+2.
+J: 2+2 = 4
+U: Type 2+2-3-3+4+4.
+J: 2+2-3-3+4+4 = 6
+U: Type -1.2·1.2.
+J: -1.2·1.2 = -1.44
+U: Type 7/2.
+J: 7/2 = 3.5

@@ -1,0 +1,26 @@
+* A bubble sort of the values of an indexed letter.
+1.1 Do part 2 for j = 1(1)n-i.
+
+2.1 Do part 3 if a(j) > a(j+1).
+
+3.1 Set t = a(j).
+3.2 Set a(j) = a(j+1).
+3.3 Set a(j+1) = t.
+
+Set a(1) = 31.
+Set a(2) = 4.
+Set a(3) = 15.
+Set a(4) = 92.
+Set a(5) = 6.
+Set a(6) = 53.
+Set a(7) = 58.
+Set n = 7.
+Do part 1 for i = 1(1)n-1.
+Type a.
+    a(1) =       4
+    a(2) =       6
+    a(3) =      15
+    a(4) =      31
+    a(5) =      53
+    a(6) =      58
+    a(7) =      92

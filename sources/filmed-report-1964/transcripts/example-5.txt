@@ -1,0 +1,30 @@
+# Example 5 (Appendix A, printed p. 24 = PDF p. 32). FACSIMILE of real JOSS typewriter output.
+# Output of: Type all.   (the command itself, typed by the user on page-18, is not in the figure)
+# All lines typed by JOSS. Column 0 = JOSS left margin (the step numbers start there).
+# Blank-line counts measured from line pitch (figure may be a paste-up; see example-3.txt).
+J: 1.1 Page.
+J: 1.2 Type form 1.
+J: 1.3 Do part 2 for p = 81, 72, 45, 9.
+J:
+J: 2.1 Line.
+J: 2.2 Do part 3 for L = .1, .2(.2)2.
+J:
+J: 3.1 Set m = -2.5·k·log[cos(p/c)·.64/sqrt(.5)/L*2].
+J: 3.2 Type p, L, m in form 2.
+J:
+J:
+J: Form 1:
+J:  P      L       M
+J: Form 2:
+J: __    _.__   -_.__
+# ?? In this figure column 7 of the form line (the "." of the middle field _.__) is blank - the scan
+# shows "_ __". The retyped copy on page-17 shows "_.__" and the output (example-4.txt) has its
+# decimal point in exactly that column, so the period is taken to be a print/scan dropout.
+# The first character of the last field is a hyphen "-" (as in Form 3, example-3.txt).
+J:
+J:
+J:        c =     57.2957796
+J:        k =       .434294482
+J:        m =      1.62686274
+J:        p =      9
+J:        L =      2

@@ -1,0 +1,17 @@
+* The 3n+1 problem. Halve n if it is even, otherwise treble it and add 1,
+* and go on until it is 1.
+1.1 Type n in form 1.
+1.2 Done if n = 1.
+1.3 Set k = k+1.
+1.4 To step 1.7 if fp(n/2) = 0.
+1.5 Set n = 3·n+1.
+1.6 To step 1.1.
+1.7 Set n = n/2.
+1.8 To step 1.1.
+Form 1:
+_____
+
+Set k = 0.
+Set n = 7.
+Do part 1.
+Type k.

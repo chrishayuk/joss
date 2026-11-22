@@ -187,10 +187,11 @@ the `J:` line), so the test holds the reconstruction to them as well. Among
 Shaw's working papers is a handwritten note on the log routine dated 11-19-64
 that ends "Check it."
 
-Putting the film's scenario right took three changes, each marked in the
-transcript. The report leaves out a `Delete all.` that the listing it prints
-later proves was typed, has a comma that JOSS's own listing of the same step
-does not, and drops one multiplication dot.
+Putting the film's scenario right took four changes, each marked in the
+transcript. The report leaves out something like a `Delete all.` (the listing
+it prints later has none of the first program in it), has a comma that the
+listing of the same step does not, drops one multiplication dot, and prints an
+answer labelled without the space the user typed after `cos`.
 
 ### The messages
 

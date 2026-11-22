@@ -2,6 +2,7 @@
 name = "joss-lsp"
 version = "0.1.0"
 edition = "2021"
+license = "Apache-2.0"
 description = "A language server for JOSS, the JOHNNIAC Open-Shop System of 1963-65"
 
 [dependencies]

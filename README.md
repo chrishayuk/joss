@@ -351,3 +351,10 @@ run every sitting in the tutorial.
 cargo test -p joss-lsp                   # the language server
 cd editors/vscode && npm install && npm run build && npm test
 ```
+
+## Licence
+
+Apache License 2.0 - see [LICENSE](LICENSE). That covers the code, the
+examples and the tutorial. The page images in `docs/scans` are reproduced
+for reference and remain the copyright of The RAND Corporation; the
+transcripts in `transcripts/` and `sources/` are readings of those pages.

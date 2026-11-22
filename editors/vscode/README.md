@@ -52,3 +52,7 @@ To try it without installing, open this folder in VS Code and press F5.
 | `server/lsp.js`, `server/joss-lsp.wasm` | The language server from `../../lsp`, compiled for WASI. |
 | `server/run.js`, `server/joss.wasm` | The interpreter, compiled for WASI. |
 | `server/wasi.js` | A small WASI host for Node, with no dependencies. |
+
+## Licence
+
+Apache License 2.0. See [LICENSE](LICENSE).

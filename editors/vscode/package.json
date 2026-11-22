@@ -78,7 +78,7 @@
     "build": "node build.mjs",
     "test": "node --test test/*.test.mjs",
     "test:vscode": "node test/vscode/run.mjs",
-    "package": "node build.mjs && vsce package --no-dependencies --skip-license"
+    "package": "node build.mjs && vsce package --no-dependencies"
   },
   "dependencies": {
     "vscode-languageclient": "^9.0.1"

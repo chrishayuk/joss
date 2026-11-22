@@ -3,7 +3,7 @@ name = "joss"
 version = "0.1.1"
 edition = "2021"
 license = "Apache-2.0"
-description = "JOSS (JOHNNIAC Open-Shop System, RAND 1963-65): the first conversational computing language, reconstructed from the original papers and sessions"
+description = "JOSS (JOHNNIAC Open-Shop System, RAND 1963-65): an early conversational computing language, reconstructed from the original papers and sessions"
 
 [lib]
 name = "joss"

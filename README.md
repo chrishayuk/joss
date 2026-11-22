@@ -162,36 +162,69 @@ replays each one and compares every line JOSS types with the page.
 
 | Transcript | Source | User's lines | JOSS's lines that match | that differ |
 |---|---|---|---|---|
-| `1964-filmed-report` | Baker, RM-4162-PR, June 1964: a session filmed on 21 March 1964 | 78 | 317 column for column, 76 against a retyped page | 3 |
-| `1964-designers-view` | Shaw, P-2922, August 1964, figures 3a-3i | 95 | 132 | 2 |
+| `1964-filmed-report` | Baker, RM-4162-PR, June 1964: a session filmed on 21 March 1964 | 78 | 318 column for column, 78 against a retyped page | 0 |
+| `1964-designers-view` | Shaw, P-2922, August 1964, figures 3a-3i | 95 | 134 | 0 |
 | `1965-examples` | Shaw, P-3131, April 1965: eight pages in two colours | 167 | 197 | 0 |
 | `1965-experience-figure-1` | Shaw, P-3149, May 1965: prime numbers | 11 | 21 | 0 |
 | `1965-experience-figure-2` | Shaw, P-3149, May 1965: a quadratic equation, nine mistakes, and `Go.` | 34 | 19 | 0 |
 
-That is 762 of 767 lines, 686 of them column for column. (A further six
-blank lines fall off the cut edge of a figure.)
+That is all 767 lines, 689 of them column for column. (A further six blank
+lines fall off the cut edge of a figure.) What this measures, exactly: each
+line is compared with the transcript as typed in from the scans, after the
+editorial changes listed below; spaces at the end of a line are not counted;
+a line the report's typist retyped (`J~`) is compared with all its spaces
+left out; and page throws and operators' messages are not compared. It is
+a regression test against those transcripts, not an independent check of
+the scans.
 
-The five that differ are all one unit in the ninth digit of a logarithm or
-an exponential:
+Three numbers on the pages of 1964 are not what correctly rounded
+arithmetic gives, each by one unit in its last digit:
 
-- `log(2)` is typed `.69314718` three times, which is `.693147180` with the
-  nought dropped. log 2 is .69314718056, which rounds to `.693147181`.
-- `[.7*5-2.3*(-.7)]/[7*6-|9*5-5*7|*(2/3)]` is typed ending `…357`. Here it
-  ends `…356`. The answer moves by that much if `2.3*(-.7)` is one unit out.
-- In a table of a hundred exponentials, the row for 72 ends in a 7. e to the
-  72nd, rounded to nine digits and then to eight, ends in an 8.
+- `log(2)` is typed `.69314718` three times. log 2 is .69314718056, which
+  rounds to `.693147181`.
+- `[.7*5-2.3*(-.7)]/[7*6-|9*5-5*7|*(2/3)]` is typed ending `…357`;
+  correctly rounded functions give `…356`.
+- In a table of a hundred exponentials, the row for 72 ends `1.8586717`.
+  e to the 72nd, rounded to nine digits and then to eight, is `1.8586718`.
 
-JOSS's own `log` and `exp` were slightly off, and the ones here are correctly
-rounded. Each difference is written into its transcript (a `~:` line under
-the `J:` line), so the test holds the reconstruction to them as well. Among
-Shaw's working papers is a handwritten note on the log routine dated 11-19-64
-that ends "Check it."
+All three come out as printed when the arithmetic follows the listing of
+January 1965: routine F1 for `log`, F2 for `exp`, and =35 for `a*b`
+([`src/routines.rs`](src/routines.rs), `Num::pow` in
+[`src/num.rs`](src/num.rs)). F1 cuts a logarithm below 1 off at nine
+digits instead of rounding it, so log 2 is .693147180; F2 works from
+x·log10(e) with an eleven-digit constant, which at x = 72 gives 1.85867174;
+and =35 does a whole power below 30 by repeated squaring, each product
+rounded, and the rest as exp[b·log(a)] through F1 and F2. An earlier
+version of this repository used correctly rounded functions and called the
+three numbers JOSS's errors; that was a guess, and the listing does not bear
+it out. What is shown is that the reconstruction's reading of the routines
+reproduces the pages. The original program has not been run.
 
-Putting the film's scenario right took four changes, each marked in the
-transcript. The report leaves out something like a `Delete all.` (the listing
-it prints later has none of the first program in it), has a comma that the
-listing of the same step does not, drops one multiplication dot, and prints an
-answer labelled without the space the user typed after `cos`.
+Among Shaw's working papers is a handwritten note on F1 dated 11-19-64. It
+reads, after a worked range for the coefficient, "Check it. Looks like
+coefficient between 1 and sqrt(2) gets doubled several times." The note is
+about how F1 brings the coefficient into range, which works as written; it
+does not mention the cut-off ninth digit, and nothing in it explains the
+printed log 2.
+
+### Editorial changes to the transcriptions
+
+Every change made to the text of a source is listed here and marked where it
+is made, with its kind: a **slip** (wrong under any reading of the source),
+a **conflict** (the source says two things and this follows the other), an
+**interpretation** (our reading of what was meant), or **ours** (a
+consequence of choices made for this reconstruction).
+
+| Where | Change | Kind |
+|---|---|---|
+| Film, `transcripts/1964-filmed-report.txt` (1) | A comma before "in form 1" removed: RM-4162 p. 13 has it, the listing of the same step on p. 15 does not | conflict |
+| Same (2) | `Delete all.` inserted: the next listing (Example 3) has nothing of the first program in it, so something cleared it; this exact line is not on any page | interpretation |
+| Same (3) | A multiplication dot inserted before `sin`: p. 16 has a space, the facsimile listing on p. 29 has the dot | conflict |
+| Same (4) | A space added after `cos` in JOSS's answer, as the user typed it: one of the two printed lines was retyped inaccurately | interpretation |
+| Same (5), and `sources/filmed-report-1964/transcripts/example-5.txt` | A decimal point restored in a form, `_ __` to `_.__`: the scenario's copy (p. 17) and the output support it; that it dropped out is inferred | interpretation |
+| Film, `page-11.txt` | The Chart A expression is taken with `-` as typed at the console (p. 11), not `+` as in the chart (p. 21); the printed answer agrees with `-` | conflict |
+| Shaw's notes, `page-02.txt` | `Functiona:` read as `Functions:`, `numeriaal` as `numerical` | slip |
+| Undated listing, `messages.txt` | `OVERLFOW` (a comment) and `anotther` (a message) are kept as they are and noted | slip, not corrected |
 
 ### The messages
 
@@ -224,21 +257,28 @@ words of 1965. An earlier, undated listing has a third and older wording
 
 ### What is not original
 
-- `log`, `exp`, `sin`, `cos` and `arg` are computed with the Rust standard
-  library and rounded to nine digits. JOSS's routines are in the listing and
-  have not been read. `a*b` follows Shaw's description of the routine: the
-  special cases, then `exp[b·log(a)]`.
+- `log`, `exp` and `a*b` follow routines F1, F2 and =35 of the listing, as
+  read here: the order of operations, constants and rounding are the
+  listing's, but how JOHNNIAC rounded a quotient and a few other details of
+  the machine are assumed (they are listed in `src/routines.rs`). `sin`,
+  `cos` and `arg` are computed with the Rust standard library and rounded to
+  nine digits; their routines (F3, F4, F10) are in the listing and have not
+  been followed, except that `arg(0,0)` is 0, as F10 makes it. `sqrt` and
+  the four operations are correctly rounded, as Shaw says they were (P-2922,
+  p. 25).
 - How much storage a step, a value and a level of a task take is an
   estimate, so `Type size.` and the point at which JOSS says "I need more
   storage space." are approximate. The block is 720 words, the figure for
   available space on Shaw's storage map.
-- What JOSS typed for `arg(0,0)` was not found. The message here is made up
-  and marked as such.
 - `Type size.`, `Type time.` and `Type users.` type a bare number, as the one
   `Type users.` in the papers does. The time is fixed unless a file sets it.
-- Not here: `Read` and `Punch` (programs on punched cards, added late in
-  1964), the sign-on ("Initials please:"), the heading JOSS typed at the top
-  of each page, the queue for a console, and the other seven users.
+- Not here: the sign-on ("Initials please:"), the heading JOSS typed at the
+  top of each page, the queue for a console, and the other seven users.
+  `Read` and `Punch` are not here either, and were not working in January
+  1965: they are named in the listing's verb table and written into Shaw's
+  summary of the language by hand, but their routines (G9 and G10, pp.
+  76-77) go straight to "Eh?". P-3149 (May 1965, p. 12 as printed) says a punched card
+  file was rejected.
 - The interrupt key is modelled by counting lines of output, or steps. The
   page records that it was pressed, not exactly when.
 - A value too long to fit on the line after a long label should go on the
@@ -248,6 +288,9 @@ words of 1965. An earlier, undated listing has a third and older wording
   would mean is not clear, and here it is "Eh?".
 - A power with a sign goes in brackets, `10*(-3)`, as JOSS itself types it.
   Whether `10*-3` was accepted is not known; here it is "Eh?".
+- In 1964 a small number is typed with an exponent below a tenth. The pages
+  show `.2` typed plain and `.02` with an exponent; where between the two
+  the line fell is not shown, and a tenth is an assumption.
 
 ## Examples
 
@@ -331,8 +374,12 @@ has what was read out of them: the transcripts of every console session, the
 notes on how each page was measured, and the audit of the listings.
 [`docs/scans/`](docs/scans/README.md) has the pages that matter most, reduced.
 
-All of the reading was done by a coding agent and its sub-agents in one
-session. Nobody has checked it against the pages by eye.
+All of the reading was done by a coding agent and its sub-agents. No person
+has checked it against the pages by eye. An independent second model
+(OpenAI Codex) reviewed the repository and checked twenty places in the
+transcriptions against the scans, character by character; what it found and
+what was done about it is in
+[`docs/independent-review.md`](docs/independent-review.md).
 
 ## Tests
 

@@ -33,7 +33,9 @@ pub fn units_column(year: Year) -> usize {
 /// In 1965: "between .001 and 1,000,000". The JOSS of the 1964 film was
 /// quicker to use an exponent for a small number: its `Type all` has
 /// `L =       .2` but `t =      2·10*(-2)` and `Q =      1·10*(-3)`
-/// (RM-4162-PR, example 3), so there the line is drawn at a tenth.
+/// (RM-4162-PR, example 3), so the line lies somewhere above .02 and at or
+/// below .2. Drawing it at a tenth is an assumption: no page of 1964 shows a
+/// number between the two.
 pub fn is_fixed(n: Num, year: Year) -> bool {
     let smallest = if year == Year::Y1964 { -1 } else { -3 };
     n.is_zero() || (smallest..=5).contains(&n.exponent())

@@ -19,7 +19,8 @@ J: Form 2:
 J: __    _.__   -_.__
 # ?? In this figure column 7 of the form line (the "." of the middle field _.__) is blank - the scan
 # shows "_ __". The retyped copy on page-17 shows "_.__" and the output (example-4.txt) has its
-# decimal point in exactly that column, so the period is taken to be a print/scan dropout.
+# decimal point in exactly that column, so the period is restored here. Kind: interpretation
+# (that it is a print or scan dropout is inferred, not seen).
 # The first character of the last field is a hyphen "-" (as in Form 3, example-3.txt).
 J:
 J:

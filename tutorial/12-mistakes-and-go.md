@@ -439,9 +439,10 @@ the user typed.
 
 ## Error during step
 
-One message in a hundred begins "Error during step". It means the trouble
-is not in doing a step but in going round a `for`: the step or part being
-repeated has been deleted while the program was suspended.
+A few messages begin "Error during step" rather than "Error at step".
+It means the trouble is not in doing a step but in going round a `for`: the
+step or part being repeated has been deleted while the program was
+suspended.
 
 ```joss
 1.1 Do part 2 for i = 1(1)3.

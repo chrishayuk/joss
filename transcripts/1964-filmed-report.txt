@@ -10,7 +10,10 @@
 # P: the paper moved to a new page      ! a key pressed, or a setting
 # ~: what this reconstruction types instead of the J: line above it
 #
-# Four things are put right, each marked where it happens. Not reproduced: the
+# Five changes are made to the report's text, each marked where it happens and
+# each labelled by kind: a conflict (the report says two things and this follows
+# the other) or an interpretation (our reading of what was meant). (1) and (3)
+# are conflicts; (2), (4) and (5) are interpretations. Not reproduced: the
 # sign-on (JOSS typed "Press 'IN' for JOSS service." and "Please identify
 # yourself."; the user typed RAND) and the line "3-21-64 RAND" that headed each page.
 ! joss 1964
@@ -87,8 +90,8 @@ J~  exp(x) = 20.0855369
 J~
 J~       x =  4
 J~ Interrupted at step 1.1.
-# Put right (1): the report has a comma before "in form 1". The step as JOSS
-# lists it further on has none.
+# Changed (1), conflict: the report has a comma before "in form 1" here (p. 13).
+# The step as JOSS lists it further on (p. 15) has none; this follows p. 15.
 U: 1.1 Type x, sqrt(x), log(x), exp(x) in form 1.
 U: Form1:*
 U: Form 1:
@@ -267,9 +270,10 @@ J~  X     SQRT(X)     LOG(X)        EXP(X)
 J~
 J~ x =   100
 J~ y = 22026.4658
-# Put right (2): the report goes straight on to the next problem, but the
-# listing that follows (Example 3) has none of the first program's steps, forms
-# or values in it. Something like this was typed and cut from the scenario.
+# Changed (2), interpretation: the report goes straight on to the next problem,
+# but the listing that follows (Example 3) has none of the first program's
+# steps, forms or values in it. Something cleared them (this line, selective
+# deletions, or a fresh sitting); this exact line is not on any page.
 U: Delete all.
 U: Set k = 2·3.14159265.
 U: 1.1 Set F = sqrt[1/(L·C)]/k.
@@ -287,7 +291,8 @@ J~ f = 501.716868
 J~ I =   3.17220634
 J~ d =   1.99315603·10*(-4)
 U: Set d = .0002.
-# Put right (3): the report has a space where the facsimile listing has the dot.
+# Changed (3), conflict: the report has a space here (p. 16) where its facsimile
+# listing of the same step (p. 29) has the multiplication dot; this follows p. 29.
 U: 2.1 Type 1000·t, I·exp[-R·t/(2·L)]·sin(k·f·t) in form 3.
 U: Form 3:
 U: __.__ ms.   -_.______ amp.
@@ -505,6 +510,10 @@ J: Form 1:
 J:  P      L       M
 J: Form 2:
 J: __    _.__   -_.__
+# Changed (5), interpretation: the facsimile (p. 32) shows "_ __" for the middle
+# field. The scenario's copy of the form (p. 17) and the column of the point in
+# the output support "_.__"; that the point dropped out in printing or scanning
+# is inferred.
 J:
 J:
 J:        c =     57.2957796

@@ -45,6 +45,7 @@ with Tesseract a page at a time (`pdftoppm -r 200 -gray`, then
 the console pages, where the special characters, the underscores of the
 forms and the columns are the whole point. Those were read from the images.
 
-All of this reading was done by a coding agent and its sub-agents in one
-session. Nobody has checked it against the pages by eye. `../docs/scans/`
-has the pages that matter most, for anyone who would like to.
+All of this reading was done by a coding agent and its sub-agents. No person
+has checked it against the pages by eye. An independent second model checked
+twenty places against the scans (`../docs/independent-review.md`).
+`../docs/scans/` has the pages that matter most, for anyone who would like to.

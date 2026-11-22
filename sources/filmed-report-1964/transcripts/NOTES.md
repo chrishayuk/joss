@@ -430,12 +430,12 @@ interval = .1/f; evaluate i = I·e^(−Rt/2L)·sin 2πft for 100 intervals from 
 
 1. **One printed digit differs from recomputation** (transcribed as printed, confirmed at 400 dpi):
    example-1 x = 72, EXP mantissa `1.8586717`. e^72 = 1.858671745…·10^31; correctly rounded to 9
-   digits that is 1.85867175, which would print …718 — so JOSS's own 9-digit exp(72) was evidently
-   1.85867174 (one unit low in the 9th digit). Everything else in examples 1, 2 and 4 (245 lines)
-   reproduces exactly with "evaluate, round to 9 significant digits, then round half-up to the
-   field"; e.g. example-2 row 1.20 ms: −1.40580649… → −1.40580650 → `-1.405807`. An emulator needs
-   JOSS's actual exp algorithm to hit that one last digit; intermediate results inside an
-   expression were not needed at 9-digit precision to reproduce the tables.
+   digits that is 1.85867175, which would print …718. (The page alone does not show what JOSS
+   held: 1.858671745… also rounds directly to eight digits as …717.) Later resolved by following
+   routine F2 of the January 1965 listing (`src/routines.rs`), which gives 1.85867174 and so
+   `1.8586717`. Everything else in examples 1, 2 and 4 (245 lines) reproduces with "evaluate,
+   round to 9 significant digits, then round half-up to the field"; e.g. example-2 row 1.20 ms:
+   −1.40580649… → −1.40580650 → `-1.405807`.
 2. **Default `Type` layout for plain `Type x.`** is inferred, not directly shown — see (a)2–3.
    Negative-number sign column, long-label behaviour and positive-exponent scientific form are
    not attested in this document.

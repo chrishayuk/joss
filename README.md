@@ -48,6 +48,20 @@ joss                       # sit at the console
 echo 'Type 2+2.' | joss
 ```
 
+For Visual Studio Code, download `joss-language-0.1.0.vsix` from the
+[latest release](https://github.com/chrishayuk/joss/releases/latest) and
+install it:
+
+```bash
+code --install-extension joss-language-0.1.0.vsix
+```
+
+Open any `.joss` file and you get highlighting, hover help, problems as you
+type, and a run button. The extension carries its own copy of the
+interpreter and language server, so it works without the `cargo install`
+above. For Neovim, Helix and other editors see
+[`editors/README.md`](editors/README.md).
+
 Or try it with nothing installed, in the
 [playground](https://chrishayuk.com/demos/joss).
 

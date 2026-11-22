@@ -147,7 +147,10 @@ and one too small is nought.
 | `.......` | scientific notation: digits, then the power of ten; seven periods or more |
 
 Values are rounded to fit and set to the right. Anything else in the form
-is typed as it stands. `Type form 1.` types the form itself.
+is typed as it stands. `Type form 1.` types the form itself. The number
+after `Form` may be an expression, `Form n:`, as long as its value is a
+whole number from 1 to 999999999: the listing of January 1965 works it out
+like any other.
 
 When no form is given, a value is typed on a line of its own, labelled
 with its expression; in fixed point if it is nought or its size is from

@@ -344,7 +344,13 @@ pub fn analyse(source: &str) -> Analysis {
             }
             Ok(Line::Form(number)) => {
                 colour(index, &line, &map, &mut a.tokens);
-                match number.to_i64().filter(|n| *n > 0) {
+                // A form number that is an expression is known only when the
+                // line is typed; 0 stands for it here.
+                let known = match &number {
+                    parse::Expr::Num(n) => n.to_i64().filter(|n| *n > 0),
+                    _ => Some(0),
+                };
+                match known {
                     Some(n) => {
                         pending_form = Some(n);
                         LineInfo {

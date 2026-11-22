@@ -257,8 +257,10 @@ pub enum Line {
     /// A step number and the text after it, to keep. The text is kept as
     /// typed and read when the step is done.
     Step { number: Num, label: String, text: String },
-    /// `Form 2:`. The next line typed is the form.
-    Form(Num),
+    /// `Form 2:`. The next line typed is the form. The number may be any
+    /// expression: the January 1965 listing evaluates it (card G011E020,
+    /// "EVALUATE FORM NUMBER") and then checks it (G011E030, "VALIDATE").
+    Form(Expr),
 }
 
 /// The first and last characters that are not spaces, if any.
@@ -297,7 +299,7 @@ pub fn line(text: &str) -> Result<Line, Eh> {
         ranging: false,
     };
     if p.word("Form") {
-        let number = p.numeral()?;
+        let number = p.expr()?;
         p.expect(Tok::Colon)?;
         p.end()?;
         return Ok(Line::Form(number));
@@ -829,6 +831,8 @@ mod tests {
         ));
         assert!(matches!(line("1.35 Set i=i+1."), Ok(Line::Step { text, .. }) if text == "Set i=i+1."));
         assert!(matches!(line("Form 1:"), Ok(Line::Form(_))));
+        assert!(matches!(line("Form n:"), Ok(Line::Form(Expr::Var(_)))));
+        assert!(matches!(line("Form 1+1:"), Ok(Line::Form(Expr::Bin(..)))));
         assert!(matches!(line("x=3"), Ok(Line::ShortSet(..))));
         assert_eq!(line("* PRIME NUMBERS"), Ok(Line::Killed));
         assert_eq!(line("Set x=3. *"), Ok(Line::Killed));

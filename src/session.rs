@@ -328,9 +328,12 @@ impl Session {
                     self.complain_above(trouble);
                 }
             }
-            Ok(Line::Form(number)) => match number.to_i64().filter(|n| (1..1_000_000_000).contains(n)) {
-                Some(n) => self.pending_form = Some(n),
-                None => self.complain_above(Message::FormNumber.into()),
+            Ok(Line::Form(number)) => match self.eval(&number) {
+                Ok(value) => match value.to_i64().filter(|n| (1..1_000_000_000).contains(n)) {
+                    Some(n) => self.pending_form = Some(n),
+                    None => self.complain_above(Message::FormNumber.into()),
+                },
+                Err(trouble) => self.complain_above(trouble),
             },
             Ok(Line::ShortSet(place, value)) => self.direct(&Stmt {
                 verb: Verb::Set(place, value),

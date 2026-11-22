@@ -1,5 +1,10 @@
 //! The command line: `-i` types a file in, then carries on with what is typed.
 
+// These start the `joss` program as a process, which WASI cannot do. Under
+// WASI the same programs are compared with the native build by
+// scripts/wasi-check.sh.
+#![cfg(not(target_os = "wasi"))]
+
 use std::io::Write;
 use std::process::{Command, Stdio};
 

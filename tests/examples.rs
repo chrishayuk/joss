@@ -5,6 +5,11 @@
 //!
 //! Run with JOSS_BLESS=1 to rewrite the .out files from real runs.
 
+// These start the `joss` program as a process, which WASI cannot do. Under
+// WASI the same programs are compared with the native build by
+// scripts/wasi-check.sh.
+#![cfg(not(target_os = "wasi"))]
+
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::process::Command;

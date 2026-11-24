@@ -295,7 +295,7 @@ words of 1965. An earlier, undated listing has a third and older wording
 ## Examples
 
 Every sitting in [`examples/`](examples/README.md) has a `.out` file with the
-page it gives, and `cargo test` replays them all. There are 55. Eighteen are
+page it gives, and `cargo test` replays them all. There are 56. Eighteen are
 the programs of the original papers, under their year, with the user's lines
 as they stand in the transcripts: `1965-quadratic-with-mistakes`,
 `1965-primes`, `1965-root-finding`, `1965-matrix-inversion`, `1965-table`,

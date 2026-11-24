@@ -242,6 +242,13 @@ Demand, functions `sfx`/`cf`/`amp`. Since Shaw was encoding "I need more storage
 space." on 10-10-64, this listing is probably from before October 1964. That date is
 my inference.
 
+The missing Demand points earlier still. The session filmed on 21 March 1964 (Baker,
+RM-4162-PR; `transcripts/1964-filmed-report.txt`, `1.1 Demand q(x,y).`) already uses
+Demand. So unless the filmed system differed from the one assembled here, this listing
+is from before 21 March 1964. That too is an inference: the listing is undated, and
+nothing says the film's JOSS and this listing were the same version. (Noticed while
+writing `examples/tpk.joss`, November 2026.)
+
 ### Read with confidence
 
 - **Verbs** (X4, p. 31): `Set Do To Done Cancel Erase Type Return Page Read Punch Form Stop Go Delete` — both `Erase` and `Delete`; `Return` where Jan-65 has `Line`; no `Demand`.

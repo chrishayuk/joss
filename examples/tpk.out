@@ -1,0 +1,53 @@
+* The TPK algorithm of Knuth and Trabb Pardo, "The Early Development of
+* Programming Languages" (STAN-CS-76-562, 1976), p. 3: read eleven
+* numbers a(0)...a(10); then, from a(10) down to a(0), work out
+* f(t) = sqrt(|t|) + 5·t*3 and type i with f, or TOO LARGE if f > 400.
+* The input is Knuth's own: 1 1.5 2 2.25 2.5 2.75 3 3.25 3.5 4.5 5.5,
+* typed by the user in answer to Demand.
+* What JOSS made us change:
+* - JOSS of 1964-65 has no formulas of the user's own (Let came with the
+*   JOSS of 1966). As Knuth and Trabb Pardo ask, f is written out in
+*   step 2.1. Its argument is a(i), so no letter t is needed.
+* - There is no Read: Demand in step 1.1 asks for each a(i) in turn.
+* - Text and a number go on one line only through a form, so TOO LARGE
+*   is form 1 and the value is a field of form 2.
+* - If ... then ... else is two steps with opposite conditions.
+* - Numbers are nine decimal digits, so f is good to nine figures, and
+*   form 2 types it to six decimals.
+1.1 Demand a(i).
+
+2.1 Set y = sqrt(|a(i)|) + 5·a(i)*3.
+2.2 Type i in form 1 if y > 400.
+2.3 Type i, y in form 2 if y ≤ 400.
+
+3.1 Do part 1 for i = 0(1)10.
+3.2 Do part 2 for i = 10(-1)0.
+
+Form 1:
+__   TOO LARGE
+Form 2:
+__   ___.______
+
+Do part 3.
+    a(0) = 1
+    a(1) = 1.5
+    a(2) = 2
+    a(3) = 2.25
+    a(4) = 2.5
+    a(5) = 2.75
+    a(6) = 3
+    a(7) = 3.25
+    a(8) = 3.5
+    a(9) = 4.5
+   a(10) = 5.5
+10   TOO LARGE
+ 9   TOO LARGE
+ 8   216.245829
+ 7   173.443401
+ 6   136.732051
+ 5   105.642687
+ 4    79.706139
+ 3    58.453125
+ 2    41.414214
+ 1    18.099745
+ 0     6.000000

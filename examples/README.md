@@ -73,6 +73,7 @@ Idiomatic JOSS-I: nothing in them is later than January 1965.
 | `pi-series` | Pi by Machin's formula |
 | `e-series` | e as a sum of reciprocal factorials |
 | `horner` | A polynomial with its coefficients in an indexed letter |
+| `tpk` | Knuth and Trabb Pardo's TPK (1976): `Demand`, the formula written out, and TOO LARGE in a form |
 | `quadratic-roots` | Real or complex roots: `To part` chooses the ending |
 | `pascal-row` | A row of Pascal's triangle |
 | `multiplication-table` | A form with nine fields |

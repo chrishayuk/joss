@@ -14,6 +14,10 @@
 * - If ... then ... else is two steps with opposite conditions.
 * - Numbers are nine decimal digits, so f is good to nine figures, and
 *   form 2 types it to six decimals.
+* - Form 2 holds y only from -99.999999 to 999.999999. With negative
+*   input f can be any size below 400, and JOSS then stops with "I can't
+*   express value in your form." A field of dots, ..........., fits
+*   every value, in six figures and a power of ten.
 1.1 Demand a(i).
 
 2.1 Set y = sqrt(|a(i)|) + 5·a(i)*3.
